@@ -58,10 +58,18 @@
 
 <section class="section">
   <div class="container">
-    <div class="box">
-      <p class="is-italic">[Client testimonial goes here &mdash; a specific result, in the client's own words.]</p>
-      <p class="has-text-weight-semibold mt-2">&mdash; [Client name], [dog's name]</p>
-    </div>
+    {{ with .Site.GetPage "testimonials" }}
+      {{ with index (.Pages.ByParam "weight") 0 }}
+        <div class="box">
+          {{ if .Params.placeholder }}
+            <p class="is-size-7 has-text-weight-semibold mb-2">PLACEHOLDER &mdash; not a real client quote</p>
+          {{ end }}
+          <div class="content is-italic">{{ .Content }}</div>
+          <p class="has-text-weight-semibold mt-2">&mdash; {{ .Params.client }}, {{ .Params.dog }}</p>
+        </div>
+        <a class="button is-primary is-outlined mt-4" href="{{ "/testimonials" | relURL }}">See all testimonials</a>
+      {{ end }}
+    {{ end }}
   </div>
 </section>
 

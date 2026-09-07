@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ if .Params.placeholder }}
+      <p class="is-size-7 has-text-weight-semibold mb-2">PLACEHOLDER &mdash; not a real client quote</p>
+    {{ end }}
+    <div class="content is-italic">
+      {{ .Content }}
+    </div>
+    <p class="has-text-weight-semibold mt-2">&mdash; {{ .Params.client }}, {{ .Params.dog }}</p>
+    <a class="button is-text" href="{{ "/testimonials" | relURL }}">&larr; All testimonials</a>
+  </div>
+</section>
+{{ end }}

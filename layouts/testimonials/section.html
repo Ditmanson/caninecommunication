@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+
+    {{ range .Pages.ByParam "weight" }}
+      <div class="box mb-4">
+        {{ if .Params.placeholder }}
+          <p class="is-size-7 has-text-weight-semibold mb-2">PLACEHOLDER &mdash; not a real client quote</p>
+        {{ end }}
+        <div class="content is-italic">
+          {{ .Content }}
+        </div>
+        <p class="has-text-weight-semibold mt-2">&mdash; {{ .Params.client }}, {{ .Params.dog }}</p>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
