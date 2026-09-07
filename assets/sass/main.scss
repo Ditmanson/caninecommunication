@@ -41,6 +41,10 @@
 @use "bulma/sass/components/navbar";
 @use "bulma/sass/components/card";
 
+@use "bulma/sass/form/shared";
+@use "bulma/sass/form/input-textarea";
+@use "bulma/sass/form/tools";
+
 @use "bulma/sass/helpers/spacing";
 @use "bulma/sass/helpers/typography";
 @use "bulma/sass/helpers/color";

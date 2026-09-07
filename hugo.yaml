@@ -14,6 +14,12 @@ outputFormats:
     isPlainText: false
     noUgly: true
 
+params:
+  # Placeholder until Proton Pro is purchased - Proton Calendar's booking
+  # pages are standalone hosted links (calendar.proton.me/bookings/...),
+  # not embeddable, so swapping this one value is the entire migration.
+  protonBookingURL: "#"
+
 menu:
   main:
     - identifier: "Services"

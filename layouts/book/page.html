@@ -1,0 +1,75 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+    <p class="mb-5">Choose a service below. Scheduling and payment happen through secure, trusted providers.</p>
+
+    {{ $services := slice }}
+    {{ with .Site.GetPage "services" }}
+      {{ range .Pages.ByParam "weight" }}
+        {{ $services = $services | append (dict "title" .Title "price" .Params.price "duration" .Params.duration) }}
+      {{ end }}
+    {{ end }}
+
+    <div x-data='{ selected: 0, services: {{ $services | jsonify }} }' class="columns">
+      <div class="column">
+        <template x-for="(service, index) in services" :key="index">
+          <div
+            class="box mb-3"
+            :class="{ 'has-background-white-ter': selected === index }"
+            style="cursor: pointer;"
+            @click="selected = index"
+          >
+            <div class="is-flex is-justify-content-space-between">
+              <div>
+                <p class="has-text-weight-semibold" x-text="service.title"></p>
+                <p class="is-size-7" x-text="service.duration"></p>
+              </div>
+              <p class="has-text-weight-semibold" x-text="service.price"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="box">
+          <p class="is-size-7 has-text-weight-semibold mb-2">SELECTED</p>
+          <p class="title is-5" x-text="services[selected] ? services[selected].title : ''"></p>
+          <p class="mb-4" x-text="services[selected] ? services[selected].duration + ' &middot; ' + services[selected].price : ''"></p>
+
+          <a class="button is-primary is-fullwidth mb-2" href="{{ .Site.Params.protonBookingURL }}" target="_blank" rel="noopener noreferrer">
+            Schedule via Proton Calendar
+          </a>
+
+          {{/* Real Stripe Checkout session wired in #7 - markup only for now. */}}
+          <a class="button is-fullwidth mb-2" href="#" @click.prevent>
+            Pay deposit &mdash; Stripe
+          </a>
+
+          <p class="is-size-7">You'll pick a time on the scheduling page, then land back here to confirm.</p>
+        </div>
+
+        <div class="box mt-4">
+          <p class="has-text-weight-semibold mb-3">Stay in touch</p>
+          {{/* Real submit handler (hx-post to a DynamoDB-backed endpoint) wired in #5 - markup only for now. */}}
+          <form>
+            <div class="field">
+              <label class="label is-small">Name</label>
+              <div class="control">
+                <input class="input" type="text" name="name">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label is-small">Email</label>
+              <div class="control">
+                <input class="input" type="email" name="email">
+              </div>
+            </div>
+            <button class="button is-primary is-outlined" type="submit">Join the list</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
