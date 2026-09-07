@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+    <p class="subtitle">{{ .Params.duration }} &middot; {{ .Params.price }}</p>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <a class="button is-primary" href="{{ "/book" | relURL }}">Book a Session</a>
+    <a class="button is-text" href="{{ "/services" | relURL }}">&larr; All services</a>
+  </div>
+</section>
+{{ end }}
