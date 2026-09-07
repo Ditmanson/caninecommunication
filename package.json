@@ -1,0 +1,8 @@
+{
+  "name": "caninecommunication",
+  "private": true,
+  "description": "Sass source dependency for the Hugo Pipes build. Hugo compiles assets/sass/main.scss via a standalone Dart Sass binary on PATH (brew/apt install dart-sass) - this package.json exists only so `npm install` vendors Bulma's Sass source into node_modules; there is no separate JS build step.",
+  "dependencies": {
+    "bulma": "^1.0.4"
+  }
+}

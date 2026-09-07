@@ -1,0 +1,28 @@
+<nav class="navbar" role="navigation" aria-label="main navigation" x-data="{ open: false }">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ "/" | relURL }}">
+      <strong>{{ .Site.Title }}</strong>
+    </a>
+
+    <a role="button"
+       class="navbar-burger"
+       :class="{ 'is-active': open }"
+       aria-label="menu"
+       :aria-expanded="open"
+       @click="open = !open">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" :class="{ 'is-active': open }">
+    <div class="navbar-start">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" class="navbar-item">
+          {{ .Name }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</nav>

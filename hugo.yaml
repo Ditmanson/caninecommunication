@@ -1,0 +1,34 @@
+baseURL: "https://caninecommunication.com"
+title: "Canine Communication"
+
+menu:
+  main:
+    - identifier: "Services"
+      name: "Services"
+      url: "/services"
+      weight: 10
+
+    - identifier: "Testimonials"
+      name: "Testimonials"
+      url: "/testimonials"
+      weight: 20
+
+    - identifier: "FAQ"
+      name: "FAQ"
+      url: "/faq"
+      weight: 30
+
+    - identifier: "About"
+      name: "About"
+      url: "/about"
+      weight: 40
+
+    - identifier: "Contact"
+      name: "Contact"
+      url: "/contact"
+      weight: 50
+
+    - identifier: "Book"
+      name: "Book a Session"
+      url: "/book"
+      weight: 60

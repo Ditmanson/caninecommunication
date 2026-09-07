@@ -1,0 +1,78 @@
+// Sand & espresso theme, configured on Bulma's own variables so its
+// generated --bulma-* CSS custom properties carry our colors — this is
+// also what makes a future light/dark toggle cheap (Bulma already ships
+// a themes/light + themes/dark pair keyed off these same variables).
+//
+// Trimmed build: only the Bulma partials this site currently uses.
+// Add more `@use "bulma/sass/..."` lines here as later tickets need
+// them — do not switch to the wholesale `@use "bulma"` entry point.
+
+@use "bulma/sass/utilities/initial-variables" with (
+  $scheme-h: 35,
+  $scheme-s: 22%,
+  $family-sans-serif: '"Nunito Sans", -apple-system, "Segoe UI", sans-serif'
+);
+
+@use "bulma/sass/utilities/derived-variables" with (
+  $primary: hsl(25, 38%, 22%),
+  // espresso
+  $link: hsl(30, 58%, 48%) // caramel
+);
+
+@use "bulma/sass/utilities" as *;
+@use "bulma/sass/themes";
+
+@use "bulma/sass/base";
+
+@use "bulma/sass/grid/columns";
+@use "bulma/sass/grid/grid";
+
+@use "bulma/sass/elements/title";
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/box";
+@use "bulma/sass/elements/content";
+@use "bulma/sass/elements/icon";
+
+@use "bulma/sass/layout/container";
+@use "bulma/sass/layout/section";
+@use "bulma/sass/layout/hero";
+@use "bulma/sass/layout/footer";
+
+@use "bulma/sass/components/navbar";
+@use "bulma/sass/components/card";
+
+@use "bulma/sass/helpers/spacing";
+@use "bulma/sass/helpers/typography";
+
+// Bulma's light theme hardcodes scheme-main-l at 100% (not exposed as a
+// configurable !default), so the body background renders pure white
+// regardless of $scheme-h/$scheme-s above - only the 96%/98% secondary
+// surfaces pick up a visible tint. This overrides the same custom
+// property Bulma already generates (rather than hand-rolling a parallel
+// color system), but our own plain CSS necessarily compiles AFTER
+// everything `@use "bulma/sass/themes"` emits - including its dark-mode
+// rules - so an unconditional `:root` override here would win the
+// cascade even when the OS prefers dark and silently break Bulma's own
+// automatic dark theme. `not (prefers-color-scheme: dark)` keeps this
+// scoped to exactly the light case; the `[data-theme="light"]` rule
+// covers an explicit override on a dark-OS browser.
+@media not all and (prefers-color-scheme: dark) {
+  :root:not([data-theme="dark"]) {
+    --bulma-scheme-main: hsl(35, 22%, 96%);
+    --bulma-scheme-main-bis: hsl(35, 22%, 94%);
+    --bulma-scheme-main-ter: hsl(35, 22%, 92%);
+  }
+}
+[data-theme="light"] {
+  --bulma-scheme-main: hsl(35, 22%, 96%);
+  --bulma-scheme-main-bis: hsl(35, 22%, 94%);
+  --bulma-scheme-main-ter: hsl(35, 22%, 92%);
+}
+
+// Heading typeface. Bulma's $family-primary/$family-secondary don't
+// apply to headings by default, so this is set directly rather than
+// fighting Bulma's font variables for a one-off.
+h1, h2, h3, h4, h5, h6,
+.title, .subtitle {
+  font-family: "Lora", Georgia, serif;
+}
