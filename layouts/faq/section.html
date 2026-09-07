@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+
+    {{ range .Pages.ByParam "weight" }}
+      {{ $page := . }}
+      {{ with $page.OutputFormats.Get "fragment" }}
+        <div class="box mb-3" x-data="{ open: false }">
+          <button
+            type="button"
+            class="button is-fullwidth is-flex is-justify-content-space-between"
+            @click="open = !open"
+            hx-get="{{ .RelPermalink }}"
+            hx-target="next .faq-answer"
+            hx-trigger="click once"
+            hx-swap="innerHTML"
+          >
+            <span>{{ $page.Title }}</span>
+            <span x-text="open ? '-' : '+'"></span>
+          </button>
+          <div class="faq-answer mt-3" x-show="open"></div>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

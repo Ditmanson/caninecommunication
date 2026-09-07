@@ -1,6 +1,19 @@
 baseURL: "https://caninecommunication.com"
 title: "Canine Communication"
 
+# Fragment: a chrome-less output format (no baseof, no nav/footer) for a
+# single FAQ answer. Opted into per-page via `outputs: ["html", "fragment"]`
+# in front matter (see content/faq/*.md) rather than globally, so only FAQ
+# entries get one - the htmx accordion in layouts/faq/section.html hx-gets
+# this URL instead of shipping every answer in the initial page load.
+outputFormats:
+  Fragment:
+    mediaType: "text/html"
+    baseName: "fragment"
+    isHTML: true
+    isPlainText: false
+    noUgly: true
+
 menu:
   main:
     - identifier: "Services"

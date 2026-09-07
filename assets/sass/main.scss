@@ -44,6 +44,7 @@
 @use "bulma/sass/helpers/spacing";
 @use "bulma/sass/helpers/typography";
 @use "bulma/sass/helpers/color";
+@use "bulma/sass/helpers/flexbox";
 
 // Bulma's light theme hardcodes scheme-main-l at 100% (not exposed as a
 // configurable !default), so the body background renders pure white
