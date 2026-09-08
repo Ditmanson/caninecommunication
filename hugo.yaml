@@ -14,6 +14,15 @@ outputFormats:
     isPlainText: false
     noUgly: true
 
+# JSON output of the home page is this site's searchable content index
+# (layouts/index.json.json) - the cross-site AI agent's search_site_content
+# tool fetches it, same pattern griz.sh already uses for its own chatbot.
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 params:
   # Placeholder until Proton Pro is purchased - Proton Calendar's booking
   # pages are standalone hosted links (calendar.proton.me/bookings/...),
@@ -25,6 +34,10 @@ params:
   # domain/Proton/Stripe setup is done. Swap in the real Function URL
   # (printed by lambda/client-capture/deploy.sh) once it's deployed.
   clientCaptureURL: "#"
+
+  # Placeholder until the chat agent Lambda (lambda/chat-agent/, ticket #6)
+  # is actually deployed - same AWS-goes-last deferral as above.
+  chatAgentURL: "#"
 
 menu:
   main:

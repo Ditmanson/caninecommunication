@@ -1,0 +1,35 @@
+{{/* Chat widget: sends a question via a plain form POST (htmx's default
+     application/x-www-form-urlencoded, no JSON needed) and swaps the
+     Lambda's raw HTML answer straight in - same pattern as the FAQ
+     accordion and the client-capture form, not griz.sh's older
+     JSON+Mustache approach. See ADR 0003 for why. */}}
+<div class="box" x-data="{ asking: false }">
+  <p class="has-text-weight-semibold mb-3">Ask a question</p>
+  <form
+    hx-post="{{ .Site.Params.chatAgentURL }}"
+    hx-target="next .chat-answer"
+    hx-swap="innerHTML"
+    hx-disabled-elt="find button"
+    @htmx:before-request="asking = true"
+    @htmx:after-request="asking = false"
+  >
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input
+          class="input"
+          type="text"
+          name="question"
+          placeholder="Ask about training, services, or booking..."
+          required
+        >
+      </div>
+      <div class="control">
+        <button class="button is-primary" type="submit">
+          <span x-show="!asking">Ask</span>
+          <span x-show="asking">Asking&hellip;</span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="chat-answer content mt-3"></div>
+</div>

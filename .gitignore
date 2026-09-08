@@ -3,3 +3,5 @@ public/
 resources/
 .hugo_build.lock
 lambda/**/function.zip
+__pycache__/
+*.pyc

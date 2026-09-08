@@ -1,0 +1,49 @@
+{
+  "tools": [
+    {
+      "name": "search_site_content",
+      "enabled": true,
+      "description": "Search this business site's own published pages (services, FAQ, about, contact) by keyword. Returns matching pages with title, URL, and a short excerpt. Use this for questions about services, pricing structure, policies, or anything specific to this business.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Keywords to search for in page titles, tags, and content"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "search_griz_content",
+      "enabled": true,
+      "description": "Search griz.sh, this business owner's separate training blog, by keyword. Use this for general dog-training or dog-psychology questions that aren't specific to booking a session with this business - griz.sh has the deeper how-to and story content.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Keywords to search for in griz.sh's post titles, tags, and content"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "search_custom_responses",
+      "enabled": true,
+      "description": "Search a small set of hand-written canned answers the business owner maintains directly, for questions that don't map cleanly onto a real page (e.g. current availability). Use this only after search_site_content doesn't turn up a clear answer.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Keywords to search for in the canned response titles and tags"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

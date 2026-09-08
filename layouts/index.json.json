@@ -1,0 +1,23 @@
+{{- /* This site's searchable content index - fetched by the chat agent
+       Lambda's search_site_content tool (lambda/chat-agent/handler.py),
+       same shape (title/url/tags/summary) as griz.sh's own index.json so
+       one Lambda can search both with the same code path. Placeholder
+       content (e.g. the unfilled testimonial) is deliberately excluded so
+       the agent never surfaces it as if it were real.
+
+       truncate HTML-escapes its output (so an apostrophe rendered by
+       Hugo's smart typography as &rsquo; becomes &amp;rsquo;) - same
+       gotcha griz.sh's own index.json.json documents. htmlUnescape
+       after truncate undoes it. */ -}}
+{{- $pages := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- if not .Params.placeholder -}}
+    {{- $pages = $pages | append (dict
+        "title" .Title
+        "url" .Permalink
+        "tags" .Params.tags
+        "summary" (.Plain | truncate 400 | htmlUnescape)
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}
