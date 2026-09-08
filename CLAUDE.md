@@ -17,4 +17,5 @@ Business/booking site for griz.sh's owner — the professional, conversion-focus
 - Solo dev (owner + Claude). Iterative design, test-driven development.
 - Test on localhost only. Never deploy or go live without an explicit ask from the owner via a GitHub issue.
 - AWS-native — reuse the same AWS account/credentials already set up for griz.sh.
-- Frontend framework is not yet decided. Don't assume Hugo or Next.js until the ADR from ticket #4 exists in `docs/adr/`.
+- Stack decided (ticket #3/#4, ADR 0001): Hugo + Bulma (npm/Hugo Pipes) + htmx + Alpine.js.
+- **AWS goes last.** Write and commit Lambda/backend code, deploy scripts, and IaC freely — but do not run any `aws` command that actually creates or modifies a real resource (`create-table`, `create-function`, `create-function-url-config`, etc.) until the owner has purchased the domain, set up Proton Pro, and set up Stripe. This is a deliberate sequencing decision, not a cost concern — confirm explicitly before crossing from "code is ready" to "resource is live," even for reversible/cheap resources.

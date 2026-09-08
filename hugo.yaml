@@ -20,6 +20,12 @@ params:
   # not embeddable, so swapping this one value is the entire migration.
   protonBookingURL: "#"
 
+  # Placeholder until the client-capture Lambda (lambda/client-capture/,
+  # ticket #5) is actually deployed - deliberately deferred until
+  # domain/Proton/Stripe setup is done. Swap in the real Function URL
+  # (printed by lambda/client-capture/deploy.sh) once it's deployed.
+  clientCaptureURL: "#"
+
 menu:
   main:
     - identifier: "Services"

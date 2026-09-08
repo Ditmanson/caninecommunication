@@ -51,21 +51,31 @@
 
         <div class="box mt-4">
           <p class="has-text-weight-semibold mb-3">Stay in touch</p>
-          {{/* Real submit handler (hx-post to a DynamoDB-backed endpoint) wired in #5 - markup only for now. */}}
-          <form>
+          {{/* Endpoint is a placeholder (site.Params.clientCaptureURL) until
+               #5's Lambda/DynamoDB backend is actually deployed - AWS
+               deployment is deliberately deferred until domain/Proton/Stripe
+               setup is done, per the owner's sequencing decision. Swapping
+               in the real Function URL is the only change needed then. */}}
+          <form
+            hx-post="{{ .Site.Params.clientCaptureURL }}"
+            hx-target="find .capture-response"
+            hx-swap="innerHTML"
+            hx-disabled-elt="find button"
+          >
             <div class="field">
               <label class="label is-small">Name</label>
               <div class="control">
-                <input class="input" type="text" name="name">
+                <input class="input" type="text" name="name" required>
               </div>
             </div>
             <div class="field">
               <label class="label is-small">Email</label>
               <div class="control">
-                <input class="input" type="email" name="email">
+                <input class="input" type="email" name="email" required>
               </div>
             </div>
             <button class="button is-primary is-outlined" type="submit">Join the list</button>
+            <div class="capture-response mt-2"></div>
           </form>
         </div>
       </div>
