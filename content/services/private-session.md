@@ -1,15 +1,12 @@
 ---
-title: "Private Session"
+title: "Fundamentals Bootcamp"
 weight: 10
-duration: "60 min"
-price: "[PRICE]"
-summary: "One dog, one hour, focused on your specific goals."
+duration: "7 Sessions plus consult"
+price: "Approximatly $1,000"
+summary: "Fundamentals Bootcamp is required before your dog is eligable for any other service"
 ---
 
-A one-on-one session built around what you and your dog actually need —
-not a generic curriculum. We start by reading what your dog is
-communicating, then work on the specific behaviors or skills you want
-to build.
+# Day 0
+In home consult. We go over what to expect in the fundamentals bootcamp, and how it will bring new life to your relationship with your dog. 
 
-Good for: obedience foundations, leash manners, recall, or a
-tune-up on skills that have started to slip.
+For dangerous reactive dogs, we will discuss how many desensitization sessions will be needed before we can start. I need to be able to work safely around you and your dog, if you have an overly reactive dog then we will need to focus on relationship building first. I will break this down for you and you 
