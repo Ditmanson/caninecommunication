@@ -10,7 +10,7 @@ summary: "Fundamentals Bootcamp is required before your dog is eligible for any 
 
 ## Price: you say "approximately $1,000." What does that mean?
 
-K9-Communication requires certain tools. We will sit down on day zero and discuss what tools you need and don't currently have. Some tools you might have, but they might be the wrong size. I
+K9-Communication requires certain tools. We will sit down on day zero and discuss what tools you need and don't currently have. Some tools you might have, but they might be the wrong size.
 
 Equipment list:
 
@@ -28,7 +28,7 @@ At the end of the bootcamp, I'll buy back any equipment you don't want to keep a
 
 In-home consult. We go over what to expect in the Fundamentals Bootcamp and how it will bring new life to your relationship with your dog.
 
-For dangerously reactive dogs, we will discuss how many desensitization sessions will be needed before we can start. I need to be able to work safely around you and your dog. If you have an overly reactive dog, we will need to focus on relationship building first. I will break this down for you and you
+For dangerously reactive dogs, we will discuss how many desensitization sessions will be needed before we can start. I need to be able to work safely around you and your dog. If you have an overly reactive dog, we will need to focus on relationship building first. I will break this down for you during the consult.
 
 ## Day 1: Classical Conditioning and Reinforcer Markers
 

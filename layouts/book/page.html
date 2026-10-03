@@ -37,9 +37,11 @@
           <p class="title is-5" x-text="services[selected] ? services[selected].title : ''"></p>
           <p class="mb-4" x-text="services[selected] ? services[selected].duration + ' &middot; ' + services[selected].price : ''"></p>
 
-          <a class="button is-primary is-fullwidth mb-2" href="{{ .Site.Params.protonBookingURL }}" target="_blank" rel="noopener noreferrer">
-            Schedule via Proton Calendar
-          </a>
+          {{ if ne .Site.Params.protonBookingURL "#" }}
+            <a class="button is-primary is-fullwidth mb-2" href="{{ .Site.Params.protonBookingURL }}" target="_blank" rel="noopener noreferrer">
+              Schedule via Proton Calendar
+            </a>
+          {{ end }}
 
           {{/* Stripe Payment Links (test mode), configured in data/payments.yaml.
                Going live = replace the URLs there; no template change. */}}
@@ -66,7 +68,11 @@
             </div>
           </template>
 
-          <p class="is-size-7">You'll pick a time on the scheduling page, then land back here to confirm.</p>
+          {{ if ne .Site.Params.protonBookingURL "#" }}
+            <p class="is-size-7">You'll pick a time on the scheduling page, then land back here to confirm.</p>
+          {{ else }}
+            <p class="is-size-7">Online scheduling isn't open yet. Join the list below and I'll reach out to set up a time.</p>
+          {{ end }}
         </div>
 
         <div class="box mt-4">
