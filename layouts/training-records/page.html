@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+    {{ with .Params.link }}
+      <a class="button is-primary" href="{{ . }}" target="_blank" rel="noopener">Visit {{ . | replaceRE "^https?://" "" }} &rarr;</a>
+    {{ end }}
+    <a class="button is-text" href="{{ "/training-records" | relURL }}">&larr; All training records</a>
+  </div>
+</section>
+{{ end }}

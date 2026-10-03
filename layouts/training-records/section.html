@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+
+    <div class="columns is-multiline">
+      {{ range .Pages.ByParam "weight" }}
+        <div class="column is-one-third">
+          <div class="card" style="height: 100%;">
+            <div class="card-content">
+              <p class="title is-5"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+              <p class="content">{{ .Params.summary }}</p>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -14,6 +14,14 @@
       {{ block "main" . }}{{ end }}
     </main>
 
+    {{ if not .IsHome }}
+    <section class="section">
+      <div class="container">
+        {{ partial "chatWidget.html" . }}
+      </div>
+    </section>
+    {{ end }}
+
     <footer>
       {{ partial "/footer.html" . }}
     </footer>

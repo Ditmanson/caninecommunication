@@ -70,3 +70,8 @@ menu:
       name: "Book a Session"
       url: "/book"
       weight: 60
+
+    - identifier: "TrainingRecords"
+      name: "Training Records"
+      url: "/training-records"
+      weight: 70
