@@ -499,11 +499,10 @@ def _true_up_monthly_spend(actual_cost_microdollars, reserved_microdollars):
 # htmx-ext-client-side-templates (Mustache) to unwrap it; this Lambda
 # skips that entirely since a direct HTML response needs none of it.
 
-CORS_HEADERS = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-}
+# CORS is handled entirely by the Function URL's CORS config (deploy.sh:
+# k9-communication.com + localhost:1313, htmx's hx-* headers). The function
+# must not add its own Access-Control-* headers: the URL appends its own, and
+# browsers reject a response with two Access-Control-Allow-Origin values.
 
 
 def _error_html(message):
@@ -511,7 +510,7 @@ def _error_html(message):
 
 
 def _response(status, body_html, cors_only=False):
-    headers = dict(CORS_HEADERS)
+    headers = {}
     if not cors_only:
         headers["Content-Type"] = "text/html"
     return {"statusCode": status, "headers": headers, "body": body_html}
