@@ -1,8 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation" x-data="{ open: false }">
   <div class="navbar-brand">
-    <a class="navbar-item" href="{{ "/" | relURL }}">
-      <img src="{{ "/images/logo.png" | relURL }}" alt="" style="max-height: 3rem; mix-blend-mode: multiply;" class="mr-2">
-      <strong>{{ .Site.Title }}</strong>
+    <a class="navbar-item k9-brand" href="{{ "/" | relURL }}">
+      <img src="{{ "/images/logo.png" | relURL }}" alt="" class="mr-2">
+      {{ .Site.Title }}
     </a>
 
     <a role="button"

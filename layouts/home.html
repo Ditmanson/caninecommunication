@@ -1,193 +1,162 @@
 {{ define "main" }}
-<section class="hero is-medium">
-  <div class="hero-body" style="padding-bottom: 1.5rem;">
-    <div class="container">
-     <div class="columns is-vcentered">
-      <div class="column is-8">
-      <h1 class="title is-1">A Complete Training System.</h1>
-      <p class="subtitle is-5">
-        All dog training &mdash; force free, traditional, balanced, or accidental &mdash;
-        traces back to <a href="https://en.wikipedia.org/wiki/Classical_conditioning" target="_blank" rel="noopener"><strong>classical</strong></a> or <a href="https://en.wikipedia.org/wiki/Operant_conditioning" target="_blank" rel="noopener"><strong>operant</strong></a> conditioning.
-        Through the bootcamp you&rsquo;ll master both, and be able to create or
-        extinguish any behavior your dog is (or isn&rsquo;t) offering.
-      </p>
-      <div class="columns">
-        <div class="column">
-          <a class="box" style="display: block; height: 100%;" href="https://en.wikipedia.org/wiki/Classical_conditioning" target="_blank" rel="noopener">
-            <p class="has-text-weight-semibold mb-2">Classical conditioning</p>
-            <p>Creates an involuntary response to a neutral stimulus &mdash; the control of emotional responses through verbal markers.</p>
+{{ $fundamentals := .Site.GetPage "/services/fundamentals" }}
+
+<section class="k9-hero">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-7">
+        <h1 class="k9-display">A complete training system.</h1>
+        <p class="k9-lead">
+          All dog training &mdash; force free, traditional, balanced, or accidental &mdash;
+          traces back to two kinds of conditioning. Master both, and you can create or
+          extinguish any behavior your dog is (or isn&rsquo;t) offering.
+        </p>
+        <div class="k9-terms">
+          <a class="k9-term" href="https://en.wikipedia.org/wiki/Classical_conditioning" target="_blank" rel="noopener">
+            <span class="k9-term-name">Classical conditioning</span>
+            <span>Creates an involuntary response to a neutral stimulus &mdash; the control of emotional responses through verbal markers.</span>
+          </a>
+          <a class="k9-term" href="https://en.wikipedia.org/wiki/Operant_conditioning" target="_blank" rel="noopener">
+            <span class="k9-term-name">Operant conditioning</span>
+            <span>Shapes behavior through consequences.</span>
           </a>
         </div>
-        <div class="column">
-          <a class="box" style="display: block; height: 100%;" href="https://en.wikipedia.org/wiki/Operant_conditioning" target="_blank" rel="noopener">
-            <p class="has-text-weight-semibold mb-2">Operant conditioning</p>
-            <p>Shapes behavior through consequences.</p>
-          </a>
+        <div class="k9-actions">
+          <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a session</a>
+          {{ with $fundamentals }}{{ with .Params.download }}
+            <a class="k9-textlink" href="{{ . | relURL }}" download>Download the log book (PDF)</a>
+          {{ end }}{{ end }}
         </div>
       </div>
-      <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a Session</a>
-      </div>
-      <div class="column is-4 has-text-centered">
-        <img src="{{ "/images/logo.png" | relURL }}" alt="K9-Communication logo" style="max-width: 100%; mix-blend-mode: multiply;">
-      </div>
-     </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top: 1.5rem;">
-  <div class="container">
-    <h2 class="title is-3">Every client starts in the bootcamp</h2>
-    <p class="subtitle is-5">
-      You&rsquo;ll learn both kinds of conditioning in three training styles.
-      After that, the rest of K9-Communication&rsquo;s services open up to you.
-    </p>
-    <div class="columns">
-      <div class="column">
-        <div class="card" style="height: 100%;">
-          <div class="card-content">
-            <p class="title is-5">Force Free</p>
-            <p class="content">Training without aversives.</p>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card" style="height: 100%;">
-          <div class="card-content">
-            <p class="title is-5">Traditional</p>
-            <p class="content">Training with a focus on aversives.</p>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card" style="height: 100%;">
-          <div class="card-content">
-            <p class="title is-5">Balanced</p>
-            <p class="content">A blend of force free and traditional training.</p>
-          </div>
-        </div>
+      <div class="column is-5">
+        <img class="k9-hero-logo" src="{{ "/images/logo.png" | relURL }}" alt="K9-Communication logo: a handler kneeling beside his dog">
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="k9-band">
   <div class="container">
-    <h2 class="title is-3">The Fundamentals Bootcamp</h2>
-    <div class="columns is-multiline">
-      <div class="column is-one-third">
-        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-1-classical-conditioning-and-reinforcer-markers">
-          <div class="card-content">
-            <p class="has-text-weight-semibold has-text-link mb-1">Session 1</p>
-            <p class="title is-5">Reward Markers</p>
-            <p class="content">We start with classical conditioning and reward markers, plus impulse control.</p>
-          </div>
-        </a>
+    <div class="columns is-variable is-8">
+      <div class="column is-5">
+        <h2 class="k9-h2">Every client starts in the bootcamp</h2>
+        <p class="k9-body">
+          Every training style lives somewhere on this grid. In the bootcamp you learn
+          all four corners, in three styles. After that, the rest of
+          K9-Communication&rsquo;s services open up to you.
+        </p>
+        <dl class="k9-legend">
+          <div><dt><span class="k9-swatch is-ff"></span>Force free</dt><dd>Training without aversives.</dd></div>
+          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd>Training with a focus on aversives.</dd></div>
+          <div><dt><span class="k9-swatch is-ff"></span><span class="k9-swatch is-trad"></span>Balanced</dt><dd>A blend of force free and traditional training.</dd></div>
+        </dl>
       </div>
-      <div class="column is-one-third">
-        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-2-operant-conditioning-and-punisher-markers-through-leash-pressure">
-          <div class="card-content">
-            <p class="has-text-weight-semibold has-text-link mb-1">Session 2</p>
-            <p class="title is-5">Leash Pressure</p>
-            <p class="content">More operant conditioning, and learning to communicate through the leash. <em>Traditional and balanced training.</em></p>
+      <div class="column is-7">
+        <div class="k9-quadrant" role="table" aria-label="The four corners of operant conditioning">
+          <div role="row" class="k9-q-head">
+            <span role="columnheader"></span>
+            <span role="columnheader">Positive<small>add something</small></span>
+            <span role="columnheader">Negative<small>take something away</small></span>
           </div>
-        </a>
-      </div>
-      <div class="column is-one-third">
-        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-3-higher-order-conditioning-aka-verbal-commands">
-          <div class="card-content">
-            <p class="has-text-weight-semibold has-text-link mb-1">Session 3</p>
-            <p class="title is-5">Higher Order Conditioning</p>
-            <p class="content">We combine the first two lessons and start building commands through higher order conditioning. <em>All styles shown, with focus on the one you prefer.</em></p>
+          <div role="row">
+            <span role="rowheader" class="k9-q-row">Reinforcement<small>behavior goes up</small></span>
+            <span role="cell" class="k9-q-cell is-ff"><strong>Give a reward</strong>Force free</span>
+            <span role="cell" class="k9-q-cell is-trad"><strong>Release pressure</strong>Traditional</span>
           </div>
-        </a>
-      </div>
-      <div class="column is-one-third">
-        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-4-chill-training">
-          <div class="card-content">
-            <p class="has-text-weight-semibold has-text-link mb-1">Session 4</p>
-            <p class="title is-5">Chill Training</p>
-            <p class="content">Teach your dog to chill out, stay put, and hold a down or sit for extended periods. <em>We encourage with force free methods and enforce with traditional ones, bulletproofing the behavior.</em></p>
+          <div role="row">
+            <span role="rowheader" class="k9-q-row">Punishment<small>behavior goes down</small></span>
+            <span role="cell" class="k9-q-cell is-trad"><strong>Apply a correction</strong>Traditional</span>
+            <span role="cell" class="k9-q-cell is-ff"><strong>Remove food, fun, or freedom</strong>Force free</span>
           </div>
-        </a>
-      </div>
-      <div class="column is-one-third">
-        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-5-heeling-training">
-          <div class="card-content">
-            <p class="has-text-weight-semibold has-text-link mb-1">Session 5</p>
-            <p class="title is-5">Heeling</p>
-            <p class="content">Heeling is dynamic and can be frustrating until you understand it. Together we&rsquo;ll make it fun with force free methods, or precise and bulletproof with traditional ones.</p>
-          </div>
-        </a>
-      </div>
-      <div class="column is-one-third">
-        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-6-recall-training">
-          <div class="card-content">
-            <p class="has-text-weight-semibold has-text-link mb-1">Session 6</p>
-            <p class="title is-5">Recall Training</p>
-            <p class="content">The most fun and most important lesson. We teach both force free and traditional methods, and strongly encourage both. After so much purposeful engagement, you&rsquo;ll be surprised how easy it is.</p>
-          </div>
-        </a>
-      </div>
-      <div class="column is-full">
-        <a class="box" style="display: block; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-7-capstone">
-          <p class="has-text-weight-semibold has-text-link mb-1">Session 7</p>
-          <p class="title is-5">Capstone</p>
-          <p class="content">We video record a capstone showing everything you&rsquo;ve learned. Your training record can be shared publicly here, provided privately to you, or both &mdash; whatever you prefer.</p>
-        </a>
+        </div>
+        <p class="k9-caption">The four corners of <a href="https://en.wikipedia.org/wiki/Operant_conditioning" target="_blank" rel="noopener">operant conditioning</a>, from the log book.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="k9-section">
   <div class="container">
-    <h2 class="title is-3">Services</h2>
-    <div class="columns">
+    <h2 class="k9-h2">The Fundamentals Bootcamp</h2>
+    <p class="k9-body">Seven sessions plus an in-home consult. Each one builds on the last.</p>
+    {{ $fu := "/services/fundamentals/" | relURL }}
+    <ol class="k9-sessions">
+      <li><a href="{{ $fu }}#day-1-classical-conditioning-and-reinforcer-markers">
+        <span class="k9-num">1</span>
+        <span><strong>Reward markers</strong>We start with classical conditioning and reward markers, plus impulse control.</span>
+      </a></li>
+      <li><a href="{{ $fu }}#day-2-operant-conditioning-and-punisher-markers-through-leash-pressure">
+        <span class="k9-num">2</span>
+        <span><strong>Leash pressure</strong>More operant conditioning, and learning to communicate through the leash. <em>Traditional and balanced training.</em></span>
+      </a></li>
+      <li><a href="{{ $fu }}#day-3-higher-order-conditioning-aka-verbal-commands">
+        <span class="k9-num">3</span>
+        <span><strong>Higher order conditioning</strong>We combine the first two lessons and start building commands. <em>All styles shown, with focus on the one you prefer.</em></span>
+      </a></li>
+      <li><a href="{{ $fu }}#day-4-chill-training">
+        <span class="k9-num">4</span>
+        <span><strong>Chill training</strong>Teach your dog to chill out, stay put, and hold a down or sit for extended periods.</span>
+      </a></li>
+      <li><a href="{{ $fu }}#day-5-heeling-training">
+        <span class="k9-num">5</span>
+        <span><strong>Heeling</strong>Fun with force free methods, or precise and bulletproof with traditional ones.</span>
+      </a></li>
+      <li><a href="{{ $fu }}#day-6-recall-training">
+        <span class="k9-num">6</span>
+        <span><strong>Recall</strong>The most fun and most important lesson. After so much purposeful engagement, you&rsquo;ll be surprised how easy it is.</span>
+      </a></li>
+      <li class="is-capstone"><a href="{{ $fu }}#day-7-capstone">
+        <span class="k9-num">7</span>
+        <span><strong>Capstone</strong>We video record everything you&rsquo;ve learned. Your training record can be shared publicly here, kept privately, or both.</span>
+      </a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="k9-section pt-0">
+  <div class="container">
+    <h2 class="k9-h2">Services</h2>
+    <ul class="k9-ratecard">
       {{ with .Site.GetPage "services" }}
-        {{ range first 3 (.Pages.ByParam "weight") }}
-          <div class="column">
-            <div class="card">
-              <div class="card-content">
-                <p class="title is-5"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-                <p class="content">{{ .Params.summary }}</p>
-                <p class="has-text-weight-semibold">{{ .Params.price }} / {{ .Params.duration }}</p>
-              </div>
-            </div>
-          </div>
+        {{ range .Pages.ByParam "weight" }}
+          <li>
+            <a href="{{ .RelPermalink }}">
+              <span class="k9-rc-main"><strong>{{ .Title }}</strong>{{ .Params.summary }}</span>
+              <span class="k9-rc-price">{{ .Params.price }}<small>{{ .Params.duration }}</small></span>
+            </a>
+          </li>
         {{ end }}
       {{ end }}
-    </div>
-    <a class="button is-primary is-outlined" href="{{ "/services" | relURL }}">See all services</a>
+    </ul>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    {{ with .Site.GetPage "testimonials" }}
-      {{ with index (.Pages.ByParam "weight") 0 }}
-        <div class="box">
+{{ with .Site.GetPage "testimonials" }}
+  {{ with index (.Pages.ByParam "weight") 0 }}
+    <section class="k9-section pt-0">
+      <div class="container">
+        <figure class="k9-quote">
           {{ if .Params.placeholder }}
-            <p class="is-size-7 has-text-weight-semibold mb-2">PLACEHOLDER &mdash; not a real client quote</p>
+            <p class="k9-caption">Placeholder &mdash; not a real client quote</p>
           {{ end }}
-          <div class="content is-italic">{{ .Content }}</div>
-          <p class="has-text-weight-semibold mt-2">&mdash; {{ .Params.client }}, {{ .Params.dog }}</p>
-        </div>
-        <a class="button is-primary is-outlined mt-4" href="{{ "/testimonials" | relURL }}">See all testimonials</a>
-      {{ end }}
-    {{ end }}
-  </div>
-</section>
+          <blockquote>{{ .Content }}</blockquote>
+          <figcaption>{{ .Params.client }}, with {{ .Params.dog }}</figcaption>
+          <p class="mt-4"><a class="k9-textlink" href="{{ "/testimonials" | relURL }}">Read all testimonials</a></p>
+        </figure>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
 
-<section class="section has-background-primary has-text-white">
+<section class="k9-cta">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column">
-        <h2 class="title is-3 has-text-white">Ready to start?</h2>
-        <p class="has-text-white">Sessions are limited each week &mdash; book while a slot is open.</p>
+        <h2 class="k9-h2">Ready to start?</h2>
+        <p>Sessions are limited each week. Book while a slot is open.</p>
       </div>
       <div class="column is-narrow">
-        <a class="button is-light is-medium" href="{{ "/book" | relURL }}">Book a Session</a>
+        <a class="button is-warning is-medium" href="{{ "/book" | relURL }}">Book a session</a>
       </div>
     </div>
     <div class="mt-5">
