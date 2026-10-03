@@ -1,7 +1,9 @@
 {{ define "main" }}
 <section class="hero is-medium">
   <div class="hero-body" style="padding-bottom: 1.5rem;">
-    <div class="container" style="max-width: 52rem;">
+    <div class="container">
+     <div class="columns is-vcentered">
+      <div class="column is-8">
       <h1 class="title is-1">A Complete Training System.</h1>
       <p class="subtitle is-5">
         All dog training &mdash; force free, traditional, balanced, or accidental &mdash;
@@ -24,6 +26,11 @@
         </div>
       </div>
       <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a Session</a>
+      </div>
+      <div class="column is-4 has-text-centered">
+        <img src="{{ "/images/logo.png" | relURL }}" alt="K9-Communication logo" style="max-width: 100%; mix-blend-mode: multiply;">
+      </div>
+     </div>
     </div>
   </div>
 </section>
@@ -69,65 +76,65 @@
     <h2 class="title is-3">The Fundamentals Bootcamp</h2>
     <div class="columns is-multiline">
       <div class="column is-one-third">
-        <div class="card" style="height: 100%;">
+        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-1-classical-conditioning-and-reinforcer-markers">
           <div class="card-content">
             <p class="has-text-weight-semibold has-text-link mb-1">Session 1</p>
             <p class="title is-5">Reward Markers</p>
             <p class="content">We start with classical conditioning and reward markers, plus impulse control.</p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-one-third">
-        <div class="card" style="height: 100%;">
+        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-2-operant-conditioning-and-punisher-markers-through-leash-pressure">
           <div class="card-content">
             <p class="has-text-weight-semibold has-text-link mb-1">Session 2</p>
             <p class="title is-5">Leash Pressure</p>
             <p class="content">More operant conditioning, and learning to communicate through the leash. <em>Traditional and balanced training.</em></p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-one-third">
-        <div class="card" style="height: 100%;">
+        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-3-higher-order-conditioning-aka-verbal-commands">
           <div class="card-content">
             <p class="has-text-weight-semibold has-text-link mb-1">Session 3</p>
             <p class="title is-5">Higher Order Conditioning</p>
             <p class="content">We combine the first two lessons and start building commands through higher order conditioning. <em>All styles shown, with focus on the one you prefer.</em></p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-one-third">
-        <div class="card" style="height: 100%;">
+        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-4-chill-training">
           <div class="card-content">
             <p class="has-text-weight-semibold has-text-link mb-1">Session 4</p>
             <p class="title is-5">Chill Training</p>
             <p class="content">Teach your dog to chill out, stay put, and hold a down or sit for extended periods. <em>We encourage with force free methods and enforce with traditional ones, bulletproofing the behavior.</em></p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-one-third">
-        <div class="card" style="height: 100%;">
+        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-5-heeling-training">
           <div class="card-content">
             <p class="has-text-weight-semibold has-text-link mb-1">Session 5</p>
             <p class="title is-5">Heeling</p>
             <p class="content">Heeling is dynamic and can be frustrating until you understand it. Together we&rsquo;ll make it fun with force free methods, or precise and bulletproof with traditional ones.</p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-one-third">
-        <div class="card" style="height: 100%;">
+        <a class="card" style="display: block; height: 100%; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-6-recall-training">
           <div class="card-content">
             <p class="has-text-weight-semibold has-text-link mb-1">Session 6</p>
             <p class="title is-5">Recall Training</p>
             <p class="content">The most fun and most important lesson. We teach both force free and traditional methods, and strongly encourage both. After so much purposeful engagement, you&rsquo;ll be surprised how easy it is.</p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="column is-full">
-        <div class="box">
+        <a class="box" style="display: block; color: inherit;" href="{{ "/services/fundamentals/" | relURL }}#day-7-capstone">
           <p class="has-text-weight-semibold has-text-link mb-1">Session 7</p>
           <p class="title is-5">Capstone</p>
           <p class="content">We video record a capstone showing everything you&rsquo;ve learned. Your training record can be shared publicly here, provided privately to you, or both &mdash; whatever you prefer.</p>
-        </div>
+        </a>
       </div>
     </div>
   </div>

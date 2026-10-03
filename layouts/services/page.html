@@ -4,6 +4,12 @@
     <h1 class="title is-2">{{ .Title }}</h1>
     <p class="subtitle">{{ .Params.duration }} &middot; {{ .Params.price }}</p>
 
+    {{ with .Params.download }}
+      <p class="mb-5">
+        <a class="button is-link" href="{{ . | relURL }}" download>Download the {{ $.Title }} Log Book (PDF)</a>
+      </p>
+    {{ end }}
+
     <div class="content">
       {{ .Content }}
     </div>
