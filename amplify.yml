@@ -1,0 +1,27 @@
+# Amplify build spec. public/ is gitignored in this repo, so Amplify builds the
+# site itself (unlike griz, which commits public/). Tool versions are pinned;
+# keep HUGO_VERSION in step with the version used locally (`hugo version`).
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - export HUGO_VERSION=0.164.0
+        - export DART_SASS_VERSION=1.104.0
+        - curl -sSLf "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" | tar -xz -C /tmp hugo
+        - curl -sSLf "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" | tar -xz -C /tmp
+        - export PATH="/tmp:/tmp/dart-sass:$PATH"
+        - hugo version
+        - sass --version
+        - npm ci
+    build:
+      commands:
+        - export PATH="/tmp:/tmp/dart-sass:$PATH"
+        - hugo --minify
+  artifacts:
+    baseDirectory: public
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
