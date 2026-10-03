@@ -71,7 +71,7 @@ RATE_LIMIT_TABLE = "caninecommunication-chatbot-limits"
 # This site's own index, once deployed. Placeholder domain - the real site
 # isn't live yet (AWS/domain/hosting setup is deliberately sequenced after
 # this ticket, see CLAUDE.md).
-SITE_CONTENT_INDEX_URL = "https://caninecommunication.com/index.json"
+SITE_CONTENT_INDEX_URL = "https://k9-communication.com/index.json"
 # griz.sh is already live - this one is real today.
 GRIZ_CONTENT_INDEX_URL = "https://griz.sh/index.json"
 
