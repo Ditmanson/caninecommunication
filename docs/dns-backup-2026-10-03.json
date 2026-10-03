@@ -1,0 +1,117 @@
+{
+  "status": "SUCCESS",
+  "records": [
+    {
+      "id": "587965226",
+      "name": "k9-communication.com",
+      "type": "ALIAS",
+      "content": "uixie.porkbun.com",
+      "ttl": "600",
+      "prio": null
+    },
+    {
+      "id": "587965229",
+      "name": "*.k9-communication.com",
+      "type": "CNAME",
+      "content": "uixie.porkbun.com",
+      "ttl": "600",
+      "prio": null
+    },
+    {
+      "id": "587983341",
+      "name": "protonmail._domainkey.k9-communication.com",
+      "type": "CNAME",
+      "content": "protonmail.domainkey.d76cbgq7pbavm7kkdbwemezpn4kqk4dwijg2hwqdrzhv4gshgslqa.domains.proton.ch.",
+      "ttl": "600",
+      "prio": "0"
+    },
+    {
+      "id": "587983351",
+      "name": "protonmail2._domainkey.k9-communication.com",
+      "type": "CNAME",
+      "content": "protonmail2.domainkey.d76cbgq7pbavm7kkdbwemezpn4kqk4dwijg2hwqdrzhv4gshgslqa.domains.proton.ch.",
+      "ttl": "600",
+      "prio": "0"
+    },
+    {
+      "id": "587983359",
+      "name": "protonmail3._domainkey.k9-communication.com",
+      "type": "CNAME",
+      "content": "protonmail3.domainkey.d76cbgq7pbavm7kkdbwemezpn4kqk4dwijg2hwqdrzhv4gshgslqa.domains.proton.ch.",
+      "ttl": "600",
+      "prio": "0"
+    },
+    {
+      "id": "587983324",
+      "name": "k9-communication.com",
+      "type": "MX",
+      "content": "mail.protonmail.ch",
+      "ttl": "600",
+      "prio": "10"
+    },
+    {
+      "id": "587983332",
+      "name": "k9-communication.com",
+      "type": "MX",
+      "content": "mailsec.protonmail.ch",
+      "ttl": "600",
+      "prio": "20"
+    },
+    {
+      "id": "587965213",
+      "name": "k9-communication.com",
+      "type": "NS",
+      "content": "curitiba.porkbun.com",
+      "ttl": "86400",
+      "prio": null
+    },
+    {
+      "id": "587965212",
+      "name": "k9-communication.com",
+      "type": "NS",
+      "content": "fortaleza.porkbun.com",
+      "ttl": "86400",
+      "prio": null
+    },
+    {
+      "id": "587965210",
+      "name": "k9-communication.com",
+      "type": "NS",
+      "content": "maceio.porkbun.com",
+      "ttl": "86400",
+      "prio": null
+    },
+    {
+      "id": "587965211",
+      "name": "k9-communication.com",
+      "type": "NS",
+      "content": "salvador.porkbun.com",
+      "ttl": "86400",
+      "prio": null
+    },
+    {
+      "id": "587969532",
+      "name": "k9-communication.com",
+      "type": "TXT",
+      "content": "protonmail-verification=666db3bf5f5a24588e0a8c92bb2d5616206f5139",
+      "ttl": "600",
+      "prio": "0"
+    },
+    {
+      "id": "587983334",
+      "name": "k9-communication.com",
+      "type": "TXT",
+      "content": "v=spf1 include:_spf.protonmail.ch ~all",
+      "ttl": "600",
+      "prio": "0"
+    },
+    {
+      "id": "587983363",
+      "name": "_dmarc.k9-communication.com",
+      "type": "TXT",
+      "content": "v=DMARC1; p=quarantine",
+      "ttl": "600",
+      "prio": "0"
+    }
+  ]
+}
