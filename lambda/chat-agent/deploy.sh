@@ -49,7 +49,7 @@ if ! aws iam get-role --role-name "$ROLE_NAME" >/dev/null 2>&1; then
       \"Version\": \"2012-10-17\",
       \"Statement\": [
         {\"Effect\":\"Allow\",\"Action\":\"dynamodb:UpdateItem\",\"Resource\":\"arn:aws:dynamodb:${REGION}:${ACCOUNT_ID}:table/${TABLE_NAME}\"},
-        {\"Effect\":\"Allow\",\"Action\":\"bedrock:InvokeModel\",\"Resource\":\"arn:aws:bedrock:${REGION}::foundation-model/*\"},
+        {\"Effect\":\"Allow\",\"Action\":\"bedrock:InvokeModel\",\"Resource\":[\"arn:aws:bedrock:${REGION}:${ACCOUNT_ID}:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0\",\"arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0\"]},
         {\"Effect\":\"Allow\",\"Action\":\"cloudwatch:PutMetricData\",\"Resource\":\"*\",\"Condition\":{\"StringEquals\":{\"cloudwatch:namespace\":\"CanineCommunicationChatbot\"}}}
       ]
     }"
@@ -60,7 +60,14 @@ else
 fi
 
 rm -f function.zip
-zip -q -r function.zip handler.py capabilities.json responses/ -x "responses/README.md"
+python3 - <<'PY'
+import pathlib, zipfile
+with zipfile.ZipFile("function.zip", "w", zipfile.ZIP_DEFLATED) as z:
+    for f in ["handler.py", "capabilities.json", *sorted(pathlib.Path("responses").rglob("*"))]:
+        f = pathlib.Path(f)
+        if f.is_file() and f.name != "README.md":
+            z.write(f)
+PY
 
 if aws lambda get-function --function-name "$FUNCTION_NAME" --region "$REGION" >/dev/null 2>&1; then
   echo "Updating function code for $FUNCTION_NAME..."
@@ -87,7 +94,7 @@ if ! aws lambda get-function-url-config --function-name "$FUNCTION_NAME" --regio
   aws lambda create-function-url-config \
     --function-name "$FUNCTION_NAME" \
     --auth-type NONE \
-    --cors '{"AllowOrigins":["*"],"AllowMethods":["POST"],"AllowHeaders":["content-type"]}' \
+    --cors '{"AllowOrigins":["https://k9-communication.com","http://localhost:1313"],"AllowMethods":["POST"],"AllowHeaders":["content-type","hx-request","hx-trigger","hx-trigger-name","hx-target","hx-current-url"]}' \
     --region "$REGION" >/dev/null
   aws lambda add-permission \
     --function-name "$FUNCTION_NAME" \
@@ -95,6 +102,13 @@ if ! aws lambda get-function-url-config --function-name "$FUNCTION_NAME" --regio
     --principal "*" \
     --function-url-auth-type NONE \
     --statement-id "public-invoke" \
+    --region "$REGION" >/dev/null
+  aws lambda add-permission \
+    --function-name "$FUNCTION_NAME" \
+    --action lambda:InvokeFunction \
+    --principal "*" \
+    --invoked-via-function-url \
+    --statement-id "public-invoke-via-url" \
     --region "$REGION" >/dev/null
 fi
 

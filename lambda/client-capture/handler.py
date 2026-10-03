@@ -1,3 +1,4 @@
+import base64
 import re
 from datetime import datetime, timezone
 from urllib.parse import parse_qsl
@@ -37,7 +38,7 @@ def handler(event, context):
     # (the browser's native form encoding), not JSON - parsed the same way
     # regardless of Content-Type since this endpoint only ever expects form
     # fields, never a JSON body.
-    body = dict(parse_qsl(event.get("body") or ""))
+    body = dict(parse_qsl(_raw_body(event)))
 
     name = (body.get("name") or "").strip()
     email = (body.get("email") or "").strip().lower()
@@ -88,6 +89,14 @@ def _escape(text):
         .replace(">", "&gt;")
         .replace('"', "&quot;")
     )
+
+
+def _raw_body(event):
+    """Function URLs base64-encode form-encoded bodies (isBase64Encoded)."""
+    raw = event.get("body") or ""
+    if event.get("isBase64Encoded"):
+        raw = base64.b64decode(raw).decode("utf-8")
+    return raw
 
 
 def _response(status, body_html, cors_only=False):

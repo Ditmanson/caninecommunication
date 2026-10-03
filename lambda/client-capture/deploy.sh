@@ -51,7 +51,7 @@ else
 fi
 
 rm -f function.zip
-zip -q function.zip handler.py
+python3 -m zipfile -c function.zip handler.py
 
 if aws lambda get-function --function-name "$FUNCTION_NAME" --region "$REGION" >/dev/null 2>&1; then
   echo "Updating function code for $FUNCTION_NAME..."
@@ -78,7 +78,7 @@ if ! aws lambda get-function-url-config --function-name "$FUNCTION_NAME" --regio
   aws lambda create-function-url-config \
     --function-name "$FUNCTION_NAME" \
     --auth-type NONE \
-    --cors '{"AllowOrigins":["*"],"AllowMethods":["POST"],"AllowHeaders":["content-type"]}' \
+    --cors '{"AllowOrigins":["https://k9-communication.com","http://localhost:1313"],"AllowMethods":["POST"],"AllowHeaders":["content-type","hx-request","hx-trigger","hx-trigger-name","hx-target","hx-current-url"]}' \
     --region "$REGION" >/dev/null
   aws lambda add-permission \
     --function-name "$FUNCTION_NAME" \
@@ -86,6 +86,13 @@ if ! aws lambda get-function-url-config --function-name "$FUNCTION_NAME" --regio
     --principal "*" \
     --function-url-auth-type NONE \
     --statement-id "public-invoke" \
+    --region "$REGION" >/dev/null
+  aws lambda add-permission \
+    --function-name "$FUNCTION_NAME" \
+    --action lambda:InvokeFunction \
+    --principal "*" \
+    --invoked-via-function-url \
+    --statement-id "public-invoke-via-url" \
     --region "$REGION" >/dev/null
 fi
 

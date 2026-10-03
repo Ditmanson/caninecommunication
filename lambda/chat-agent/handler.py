@@ -142,7 +142,13 @@ def handler(event, context):
             ),
         )
 
-    body = dict(_parse_qsl_or_json(event.get("body") or ""))
+    raw_body = event.get("body") or ""
+    if event.get("isBase64Encoded"):
+        # Function URLs base64-encode form-encoded bodies.
+        import base64
+
+        raw_body = base64.b64decode(raw_body).decode("utf-8")
+    body = dict(_parse_qsl_or_json(raw_body))
     question = (body.get("question") or "").strip()
     if not question:
         return _response(400, _error_html("Please enter a question."))
