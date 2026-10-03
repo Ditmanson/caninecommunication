@@ -7,7 +7,7 @@
     {{ $services := slice }}
     {{ with .Site.GetPage "services" }}
       {{ range .Pages.ByParam "weight" }}
-        {{ $services = $services | append (dict "title" .Title "price" .Params.price "duration" .Params.duration "options" (index $.Site.Data.payments .File.ContentBaseName | default slice)) }}
+        {{ $services = $services | append (dict "title" .Title "price" .Params.price "duration" .Params.duration "options" (cond $.Site.Params.paymentsLive (index $.Site.Data.payments .File.ContentBaseName | default slice) slice)) }}
       {{ end }}
     {{ end }}
 
@@ -43,8 +43,9 @@
             </a>
           {{ end }}
 
+          {{ if .Site.Params.paymentsLive }}
           {{/* Stripe Payment Links (test mode), configured in data/payments.yaml.
-               Going live = replace the URLs there; no template change. */}}
+               Going live = replace the URLs there and set params.paymentsLive: true. */}}
           <template x-if="services[selected] && services[selected].options.length > 1">
             <div class="field">
               <label class="label is-small">Option</label>
@@ -67,6 +68,9 @@
                  x-text="'Pay ' + (services[selected].options[option] ? services[selected].options[option].fullAmount : '') + ' in full'"></a>
             </div>
           </template>
+          {{ else }}
+            <p class="is-size-7 mb-2">Online payment isn&rsquo;t open yet.</p>
+          {{ end }}
 
           {{ if ne .Site.Params.protonBookingURL "#" }}
             <p class="is-size-7">You'll pick a time on the scheduling page, then land back here to confirm.</p>

@@ -39,6 +39,10 @@ params:
   # is actually deployed - same AWS-goes-last deferral as above.
   chatAgentURL: "#"
 
+  # Stripe payment buttons on the Book page. Off until data/payments.yaml
+  # holds live-mode Payment Links; the current links are test mode.
+  paymentsLive: false
+
 menu:
   main:
     - identifier: "Services"
