@@ -7,18 +7,18 @@
     {{ $services := slice }}
     {{ with .Site.GetPage "services" }}
       {{ range .Pages.ByParam "weight" }}
-        {{ $services = $services | append (dict "title" .Title "price" .Params.price "duration" .Params.duration) }}
+        {{ $services = $services | append (dict "title" .Title "price" .Params.price "duration" .Params.duration "options" (index $.Site.Data.payments .File.ContentBaseName | default slice)) }}
       {{ end }}
     {{ end }}
 
-    <div x-data='{ selected: 0, services: {{ $services | jsonify }} }' class="columns">
+    <div x-data='{ selected: 0, option: 0, services: {{ $services | jsonify }} }' class="columns">
       <div class="column">
         <template x-for="(service, index) in services" :key="index">
           <div
             class="box mb-3"
             :class="{ 'has-background-white-ter': selected === index }"
             style="cursor: pointer;"
-            @click="selected = index"
+            @click="selected = index; option = 0"
           >
             <div class="is-flex is-justify-content-space-between">
               <div>
@@ -41,10 +41,30 @@
             Schedule via Proton Calendar
           </a>
 
-          {{/* Real Stripe Checkout session wired in #7 - markup only for now. */}}
-          <a class="button is-fullwidth mb-2" href="#" @click.prevent>
-            Pay deposit &mdash; Stripe
-          </a>
+          {{/* Stripe Payment Links (test mode), configured in data/payments.yaml.
+               Going live = replace the URLs there; no template change. */}}
+          <template x-if="services[selected] && services[selected].options.length > 1">
+            <div class="field">
+              <label class="label is-small">Option</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select x-model.number="option">
+                    <template x-for="(o, i) in services[selected].options" :key="i">
+                      <option :value="i" x-text="o.label"></option>
+                    </template>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </template>
+          <template x-if="services[selected] && services[selected].options.length">
+            <div>
+              <a class="button is-fullwidth mb-2" :href="services[selected].options[option] && services[selected].options[option].deposit" rel="noopener noreferrer"
+                 x-text="'Pay ' + (services[selected].options[option] ? services[selected].options[option].depositAmount : '') + ' deposit'"></a>
+              <a class="button is-fullwidth mb-2" :href="services[selected].options[option] && services[selected].options[option].full" rel="noopener noreferrer"
+                 x-text="'Pay ' + (services[selected].options[option] ? services[selected].options[option].fullAmount : '') + ' in full'"></a>
+            </div>
+          </template>
 
           <p class="is-size-7">You'll pick a time on the scheduling page, then land back here to confirm.</p>
         </div>

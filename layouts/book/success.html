@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="k9-hero">
+  <div class="container" style="max-width: 44rem;">
+    <h1 class="k9-display">Payment received.</h1>
+    <p class="k9-lead">Thank you. Stripe has emailed you a receipt.</p>
+    <p class="k9-body">Next, pick a time that works for you on the scheduling page. I&rsquo;ll confirm by email.</p>
+    <div class="k9-actions mt-5">
+      <a class="button is-primary is-medium" href="{{ .Site.Params.protonBookingURL }}" target="_blank" rel="noopener noreferrer">Schedule a time</a>
+      <a class="k9-textlink" href="{{ "/" | relURL }}">Back to the home page</a>
+    </div>
+  </div>
+</section>
+{{ end }}

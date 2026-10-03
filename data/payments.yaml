@@ -1,0 +1,38 @@
+# Stripe Payment Links, TEST MODE (sandbox "k9 communication sandbox").
+# Keyed by the service's content filename (content/services/<key>.md).
+# Each option has a deposit link (half) and a full-payment link.
+# Going live = recreate these links in live mode (their success redirect must
+# point at the real domain's /book/success/) and replace the URLs here.
+# Nothing else in the site needs to change.
+#
+# Amounts are shown to visitors, so keep them in sync with the Stripe link.
+# E-Collar Bootcamp is advertised as $300-500; $400 (midpoint) is a test value.
+behavior-consult:
+  - label: "Per session"
+    depositAmount: "$50"
+    fullAmount: "$100"
+    deposit: "https://book.stripe.com/test_bJebJ1aRJ3dg57k0Am93y04"
+    full: "https://book.stripe.com/test_00weVd6Bt29c1V8dn893y05"
+e-collar-bootcamp:
+  - label: "Includes collar"
+    depositAmount: "$200"
+    fullAmount: "$400"
+    deposit: "https://book.stripe.com/test_6oU7sLaRJeVY9nA4QC93y02"
+    full: "https://book.stripe.com/test_dRmcN57Fx9BE8jw0Am93y03"
+fundamentals:
+  - label: "Bootcamp"
+    depositAmount: "$500"
+    fullAmount: "$1,000"
+    deposit: "https://book.stripe.com/test_5kQdR9gc3dRU7fserc93y00"
+    full: "https://book.stripe.com/test_8x2eVd2ld1589nA2Iu93y01"
+premack-princpal-pack:
+  - label: "Per dog"
+    depositAmount: "$15"
+    fullAmount: "$30"
+    deposit: "https://book.stripe.com/test_eVq00j3phbJMeHUdn893y06"
+    full: "https://book.stripe.com/test_cNi9AT3ph8xA1V8gzk93y07"
+  - label: "Per person, yearly"
+    depositAmount: "$300"
+    fullAmount: "$600"
+    deposit: "https://book.stripe.com/test_00wcN5f7Z9BE0R45UG93y08"
+    full: "https://book.stripe.com/test_fZueVd1h93dg7fscj493y09"
