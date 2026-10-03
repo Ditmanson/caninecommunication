@@ -1,25 +1,27 @@
 {{ define "main" }}
-<section class="section">
+<section class="k9-hero">
   <div class="container">
-    <h1 class="title is-2">{{ .Title }}</h1>
-    {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
+    <h1 class="k9-display">{{ .Title }}</h1>
+    {{ with .Content }}<div class="k9-lead">{{ . }}</div>{{ end }}
+    <p class="k9-lead">Everyone starts with the Fundamentals Bootcamp. After that, the rest open up to you.</p>
 
-    <div class="columns">
+    <ul class="k9-ratecard">
       {{ range .Pages.ByParam "weight" }}
-        <div class="column">
-          <div class="card">
-            <div class="card-content">
-              <p class="title is-5"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-              <p class="content">{{ .Params.summary }}</p>
-              <p class="has-text-weight-semibold">{{ .Params.price }} / {{ .Params.duration }}</p>
-            </div>
-            <footer class="card-footer">
-              <a href="{{ .RelPermalink }}" class="card-footer-item">Details</a>
-              <a href="{{ "/book" | relURL }}" class="card-footer-item">Book</a>
-            </footer>
-          </div>
-        </div>
+        <li{{ if .Params.prerequisite }} class="is-first"{{ end }}>
+          <a href="{{ .RelPermalink }}">
+            <span class="k9-rc-main">
+              <strong>{{ .Title }}</strong>
+              {{ if .Params.prerequisite }}<span class="k9-start">Start here</span>{{ end }}
+              {{ .Params.summary }}
+            </span>
+            <span class="k9-rc-price">{{ .Params.price }}<small>{{ .Params.duration }}</small></span>
+          </a>
+        </li>
       {{ end }}
+    </ul>
+
+    <div class="k9-actions mt-6">
+      <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a session</a>
     </div>
   </div>
 </section>

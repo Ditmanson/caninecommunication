@@ -1,21 +1,34 @@
 {{ define "main" }}
-<section class="section">
+<section class="k9-hero">
   <div class="container">
-    <h1 class="title is-2">{{ .Title }}</h1>
-    <p class="subtitle">{{ .Params.duration }} &middot; {{ .Params.price }}</p>
+    <p class="mb-4"><a class="k9-textlink" href="{{ "/services" | relURL }}">All services</a></p>
+    <h1 class="k9-display">{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="k9-lead">{{ . }}</p>{{ end }}
 
-    {{ with .Params.download }}
-      <p class="mb-5">
-        <a class="button is-link" href="{{ . | relURL }}" download>Download the {{ $.Title }} Log Book (PDF)</a>
-      </p>
-    {{ end }}
+    <div class="columns is-variable is-8 mt-5 k9-detail">
+      <div class="column is-8">
+        <div class="content k9-prose">
+          {{ .Content }}
+        </div>
+      </div>
 
-    <div class="content">
-      {{ .Content }}
+      <aside class="column is-4 k9-aside-col">
+        <div class="k9-aside">
+          <p class="k9-aside-price">{{ .Params.price }}</p>
+          <p class="k9-caption mt-0 mb-4">{{ .Params.duration }}</p>
+          <a class="button is-primary is-fullwidth" href="{{ "/book" | relURL }}">Book a session</a>
+          {{ with .Params.download }}
+            <p class="mt-4"><a class="k9-textlink" href="{{ . | relURL }}" download>Download the {{ $.Title }} Log Book (PDF)</a></p>
+          {{ end }}
+          {{ if and (gt (len .Fragments.Headings) 0) (gt .WordCount 600) }}
+            <nav class="k9-toc" aria-label="On this page">
+              <p class="k9-toc-title">On this page</p>
+              {{ .TableOfContents }}
+            </nav>
+          {{ end }}
+        </div>
+      </aside>
     </div>
-
-    <a class="button is-primary" href="{{ "/book" | relURL }}">Book a Session</a>
-    <a class="button is-text" href="{{ "/services" | relURL }}">&larr; All services</a>
   </div>
 </section>
 {{ end }}

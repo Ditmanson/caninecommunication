@@ -1,6 +1,7 @@
 ---
 title: "Fundamentals Bootcamp"
-weight: 10
+weight: 5
+prerequisite: true
 download: "/downloads/Fundamentals.pdf"
 duration: "7 Sessions plus consult"
 price: "Approximately $1,000"
