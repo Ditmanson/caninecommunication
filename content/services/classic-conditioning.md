@@ -1,34 +1,13 @@
 ---
-title: "Fundamentals Bootcamp"
-weight: 5
+title: "Verbal Marker Training"
 prerequisite: true
-download: "/downloads/Fundamentals.pdf"
-duration: "7 Sessions plus consult"
-price: "Approximately $1,000"
-summary: "Covers the basic needs of training a dog from the bottom up. Customizable to fit each dog/handler"
+duration: "1-2 sessions"
+price: "$100-200"
+summary: "Dogs don't know english; but it seems like it when we create association that predictives consequence or reward after hearing a word or sound"
 ---
 
-## Price: you say "approximately $1,000." What does that mean?
-
-We will sit down on day zero and discuss what tools you need and don't currently have. Some tools you might have, but they might be the wrong size.
-
-Equipment list:
-
-- **Treat pouch** - I used to use pockets, but a dedicated treat pouch is a game changer that you have to try.
-- **6"-3' leash** - Must be light, and the dog needs to be able to wear it with their pinch collar without accidentally causing discomfort.
-- **8'-30' leash** - We need something long enough to give the dog some room for recalls, as well as freedom on any sort of enrichment walk.
-- **Herm Sprenger pinch collar** - These might look mean, but this tool is a game changer. It's safer for the dog than a flat collar, as it has significantly less chance of actually injuring the dog (*I'll explain on day 0*), and it allows us to provide aversive stimulation in a safe, low-intensity manner while still being able to extinguish behaviors.
-- **Harness or agitation collar** - Depending on the dog, we might be able to get away with a flat collar, but we need something to create frustration with: a collar the dog can pull against that won't cause harm to the throat.
-- **Muzzle** - Even if your dog isn't a danger, I require muzzle training. For one, it gives us a controlled situation to practice habituation through rewards or corrections. It also means that when you complete the bootcamp, if you choose to join our club, the [Premack Principle Pack](/services/premack-princpal-pack/), you can be confident that every dog there that needs a muzzle will be wearing one.
-    - For some select small-breed dogs, such as pugs, a muzzle can be overkill for our intentions. In these cases I'm OK with substituting an [Elizabethan collar](https://en.wikipedia.org/wiki/Elizabethan_collar). It still allows us a controlled situation in which we can practice habituation with rewards and corrections, but on equipment you are more likely to use.
-
-At the end of the bootcamp, I'll buy back any equipment you don't want to keep at 90% of its value. This equipment is then used for future clients who need to save a little money. If you do the math, if I buy back the same piece of gear 10 times, then some lucky handler gets it for free.
-
-## Day 0
-
-In-home consult. We go over what to expect in the Fundamentals Bootcamp and how it will bring new life to your relationship with your dog.
-
-For dangerously reactive dogs, we will discuss how many desensitization sessions will be needed before we can start. I need to be able to work safely around you and your dog. If you have an overly reactive dog, we will need to focus on relationship building first. I will break this down for you during the consult.
+# Continuation Marker
+I also call this
 
 ## Day 1: Classical Conditioning and Reinforcer Markers
 

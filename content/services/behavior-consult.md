@@ -6,20 +6,19 @@ price: "$100/session"
 summary: "The path through fear and/or aggression can be long and hard, and sometimes we need help. I pick up your dog and bring them out for a desensitization session, and we'll work toward habituation."
 ---
 
-## Why do I need the Fundamentals Bootcamp to hire you?
+## Overview
 
-There are many cases where a handler goes to a trainer to fix a problem, the trainer fixes it, the handler brings their dog home, and the problem reemerges. This happens when the handler is the source of the problem, and I find that is usually the case. Through [classical](https://en.wikipedia.org/wiki/Classical_conditioning) and/or [operant](https://en.wikipedia.org/wiki/Operant_conditioning) conditioning applied accidentally, owners often unintentionally train their dogs to be reactive. Start with me in the [Fundamentals Bootcamp](/services/fundamentals/) and we can rule this out.
+Together we'll agree on the cause of your dog's reactivity, and together we agree with a plan to start. This plan will depend on why the dog is reactive. 
+With reactive dogs we typically need to establish the cause of the drive, if it's fear based reactivity our training methods differ greatly than if it's predatory reactivity.
 
-## What
+## Fear Based Reactivity
 
-By now you and I have a bit of a relationship. You know my methods and standard training procedures, so the plan you and I make together should make perfect sense. Together we'll agree on the cause of your dog's reactivity, and I'll come up with a plan to start [desensitizing](https://en.wikipedia.org/wiki/Systematic_desensitization).
+For fear based reactivity we need to work through [desensitizing](https://en.wikipedia.org/wiki/Systematic_desensitization) the dog to their fears. We do this by bringing them close to their trigger and using classical conditioning to change the association from danger to fun, food, or at a minimum no fear.
 
-## How
+## Predatory Reactivity
 
-I'll pick your dog up and bring them into an environment that's as close to their triggers as I think I can get without crossing the dog's threshold. I'll train the dog just inside that threshold. Every time we get close to the threshold without unwanted behaviors, I'll reward. If we cross the threshold and reactivity shows, I'll use leash corrections to bring the dog back under control and shape the behavior with [positive punishment](https://en.wikipedia.org/wiki/Punishment_(psychology)).
-
-## Why
-
-[Operant conditioning](https://en.wikipedia.org/wiki/Operant_conditioning). When the dog behaves correctly closer and closer to their triggers, we reward, reinforcing the behavior. When the dog crosses the threshold, we punish the behavior, reducing the intensity and frequency at which it will occur again.
-
-When possible, I prefer to deal with these situations in a force-free manner. Usually the dog is just afraid and needs to learn through [habituation](https://en.wikipedia.org/wiki/Habituation) that nothing bad is going to happen if they are with you or me. I want dogs to look to us for safety and not feel the need to defend themselves or us.
+For predatory aggression, the only way we can solve it is with escape and avoidance training. We will need to: 
+- Muzzle train the dog
+- Condition a **no** marker
+- condition the dog with leash pressure through escape and avoidance training
+- Hold the dog accountable with predictable consequences to the dogs choices

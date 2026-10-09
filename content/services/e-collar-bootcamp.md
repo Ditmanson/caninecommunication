@@ -1,14 +1,14 @@
 ---
-title: "E-Collar Bootcamp"
+title: "E-Collar Training"
 weight: 10
 duration: "1-3 Sessions"
 price: "Approximately $300-500 / includes collar"
-summary: "The only safe way to ditch the leash"
+summary: "The safe way to ditch the leash"
 ---
 
 ## Why the E-collar?
 
-We want to maintain the ability to provide pressure and/or corrections to our dog, but we don't want to carry a leash. An [electronic collar](https://en.wikipedia.org/wiki/Electronic_collar) lets us do that.
+We use e-collars provide us an invisible leash to our dogs. This allows us to use escape and avoidance training at a distance with a single tool. An [electronic collar](https://en.wikipedia.org/wiki/Electronic_collar) lets us do that.
 
 ## Two methods
 
