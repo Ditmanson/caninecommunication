@@ -1,6 +1,6 @@
 ---
 title: "Heeling"
-weight: 6
+weight: 8
 requires: ["verbal-commands"]
 duration: "1 session"
 summary: "A fun, endlessly improvable skill that builds your bond and keeps your dog safe."

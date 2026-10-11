@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{ $fundamentals := .Site.GetPage "/services/fundamentals" }}
 
 <section class="k9-hero">
   <div class="container">
@@ -43,9 +42,6 @@
         </div>
         <div class="k9-actions">
           <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a session</a>
-          {{ with $fundamentals }}{{ with .Params.download }}
-            <a class="k9-textlink" href="{{ . | relURL }}" download>Download the log book (PDF)</a>
-          {{ end }}{{ end }}
         </div>
       </div>
       <div class="column is-5">

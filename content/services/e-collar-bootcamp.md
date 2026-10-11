@@ -1,7 +1,7 @@
 ---
 title: "E-Collar Training"
 requires: ["verbal-markers"]
-weight: 10
+weight: 11
 duration: "1-3 sessions"
 summary: "The safe way to ditch the leash."
 ---

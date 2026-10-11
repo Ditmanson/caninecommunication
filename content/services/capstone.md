@@ -1,6 +1,6 @@
 ---
 title: "Capstone"
-weight: 8
+weight: 10
 requires: ["verbal-markers"]
 duration: "Set together"
 summary: "A custom goal we design together, recorded as a training record of where you and your dog are today."

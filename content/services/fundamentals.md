@@ -1,6 +1,6 @@
 ---
 title: "Fundamentals Bootcamp"
-weight: 3
+weight: 4
 requires: ["verbal-markers"]
 download: "/downloads/Fundamentals.pdf"
 duration: "About 7 sessions"

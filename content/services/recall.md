@@ -1,6 +1,6 @@
 ---
 title: "Recall"
-weight: 7
+weight: 9
 requires: ["verbal-commands"]
 duration: "1 session"
 summary: "Bulletproof your dog's recall in real-world distractions."

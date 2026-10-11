@@ -1,6 +1,6 @@
 ---
 title: "Chill Training"
-weight: 5
+weight: 7
 requires: ["verbal-commands"]
 duration: "1 session"
 summary: "Teach your dog to settle, even when excited, by adding distance and duration to their commands."

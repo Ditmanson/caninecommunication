@@ -1,7 +1,7 @@
 ---
 title: "Group Lessons"
 requires: ["verbal-markers"]
-weight: 20
+weight: 2
 duration: "Until every dog has a turn"
 summary: "Pack walk, nosework, obedience, and ball work. Check the schedule for what we're doing that day."
 ---
