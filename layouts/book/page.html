@@ -1,115 +1,44 @@
 {{ define "main" }}
-<section class="section">
-  <div class="container">
-    <h1 class="title is-2">{{ .Title }}</h1>
-    <p class="mb-5">Choose a service below. Scheduling and payment happen through secure, trusted providers.</p>
+{{- $email := site.Params.bookingEmail -}}
+{{- $proton := site.Params.protonBookingURL -}}
+{{- $online := ne $proton "#" -}}
+{{- $template := "Hi! I'd like to book a session.\n\nService:\nAddress and county:\nDog's name, breed, and age:\nWhat we want to work on:\nPreferred Friday/Saturday times:\n" -}}
+{{- $consultMail := printf "mailto:%s?%s" $email (replace (querify "subject" "In-Home Consult request" "body" (replace $template "Service:\n" "Service: In-Home Consult\n")) "+" "%20") -}}
+{{- $sessionMail := printf "mailto:%s?%s" $email (replace (querify "subject" "Training session request" "body" $template) "+" "%20") -}}
 
-    {{ $services := slice }}
-    {{ with .Site.GetPage "services" }}
-      {{ range .Pages.ByParam "weight" }}
-        {{ $services = $services | append (dict "title" .Title "price" .Params.price "duration" .Params.duration "options" (cond $.Site.Params.paymentsLive (index $.Site.Data.payments .File.ContentBaseName | default slice) slice)) }}
-      {{ end }}
+<section class="k9-hero">
+  <div class="container">
+    <h1 class="k9-display">{{ .Title }}</h1>
+    <p class="k9-lead">I train Fridays and Saturdays. New clients start with an In-Home Consult.</p>
+
+    {{ with site.GetPage "/services/in-home-consult" }}
+    <div class="box mt-5 k9-book-main">
+      <div class="is-flex is-justify-content-space-between is-flex-wrap-wrap">
+        <div>
+          <h2 class="k9-h2 mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="k9-body">{{ .Params.summary }}</p>
+        </div>
+        <p class="k9-aside-price">$30 deposit<small class="k9-caption is-block">Paid at the consult, credited toward training</small></p>
+      </div>
+      {{ partial "book-paths.html" (dict "online" $online "proton" $proton "email" $email "mailto" $consultMail) }}
+    </div>
     {{ end }}
 
-    <div x-data='{ selected: 0, option: 0, services: {{ $services | jsonify }} }' class="columns">
-      <div class="column">
-        <template x-for="(service, index) in services" :key="index">
-          <div
-            class="box mb-3"
-            :class="{ 'has-background-white-ter': selected === index }"
-            style="cursor: pointer;"
-            @click="selected = index; option = 0"
-          >
-            <div class="is-flex is-justify-content-space-between">
-              <div>
-                <p class="has-text-weight-semibold" x-text="service.title"></p>
-                <p class="is-size-7" x-text="service.duration"></p>
-              </div>
-              <p class="has-text-weight-semibold" x-text="service.price"></p>
-            </div>
-          </div>
-        </template>
-      </div>
-
-      <div class="column is-one-third">
-        <div class="box">
-          <p class="is-size-7 has-text-weight-semibold mb-2">SELECTED</p>
-          <p class="title is-5" x-text="services[selected] ? services[selected].title : ''"></p>
-          <p class="mb-4" x-text="services[selected] ? services[selected].duration + ' &middot; ' + services[selected].price : ''"></p>
-
-          {{ if ne .Site.Params.protonBookingURL "#" }}
-            <a class="button is-primary is-fullwidth mb-2" href="{{ .Site.Params.protonBookingURL }}" target="_blank" rel="noopener noreferrer">
-              Schedule via Proton Calendar
-            </a>
-          {{ end }}
-
-          {{ if .Site.Params.paymentsLive }}
-          {{/* Stripe Payment Links (test mode), configured in data/payments.yaml.
-               Going live = replace the URLs there and set params.paymentsLive: true. */}}
-          <template x-if="services[selected] && services[selected].options.length > 1">
-            <div class="field">
-              <label class="label is-small">Option</label>
-              <div class="control">
-                <div class="select is-fullwidth">
-                  <select x-model.number="option">
-                    <template x-for="(o, i) in services[selected].options" :key="i">
-                      <option :value="i" x-text="o.label"></option>
-                    </template>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </template>
-          <template x-if="services[selected] && services[selected].options.length">
-            <div>
-              <a class="button is-fullwidth mb-2" :href="services[selected].options[option] && services[selected].options[option].deposit" rel="noopener noreferrer"
-                 x-text="'Pay ' + (services[selected].options[option] ? services[selected].options[option].depositAmount : '') + ' deposit'"></a>
-              <a class="button is-fullwidth mb-2" :href="services[selected].options[option] && services[selected].options[option].full" rel="noopener noreferrer"
-                 x-text="'Pay ' + (services[selected].options[option] ? services[selected].options[option].fullAmount : '') + ' in full'"></a>
-            </div>
-          </template>
-          {{ else }}
-            <p class="is-size-7 mb-2">Online payment isn&rsquo;t open yet.</p>
-          {{ end }}
-
-          {{ if ne .Site.Params.protonBookingURL "#" }}
-            <p class="is-size-7">You'll pick a time on the scheduling page, then land back here to confirm.</p>
-          {{ else }}
-            <p class="is-size-7">Online scheduling isn't open yet. Join the list below and I'll reach out to set up a time.</p>
-          {{ end }}
-        </div>
-
-        <div class="box mt-4">
-          <p class="has-text-weight-semibold mb-3">Stay in touch</p>
-          {{/* Endpoint is a placeholder (site.Params.clientCaptureURL) until
-               #5's Lambda/DynamoDB backend is actually deployed - AWS
-               deployment is deliberately deferred until domain/Proton/Stripe
-               setup is done, per the owner's sequencing decision. Swapping
-               in the real Function URL is the only change needed then. */}}
-          <form
-            hx-post="{{ .Site.Params.clientCaptureURL }}"
-            hx-target="find .capture-response"
-            hx-swap="innerHTML"
-            hx-disabled-elt="find button"
-          >
-            <div class="field">
-              <label class="label is-small">Name</label>
-              <div class="control">
-                <input class="input" type="text" name="name" required>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label is-small">Email</label>
-              <div class="control">
-                <input class="input" type="email" name="email" required>
-              </div>
-            </div>
-            <button class="button is-primary is-outlined" type="submit">Join the list</button>
-            <div class="capture-response mt-2"></div>
-          </form>
-        </div>
-      </div>
-    </div>
+    <h2 class="k9-h2 mt-6">Returning client?</h2>
+    <p class="k9-body">Book any service you&rsquo;re ready for, using the same options. Tell me which service in your booking notes or email. Sessions are about 60 minutes. See <a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">pricing</a> for details.</p>
+    <ul class="k9-ratecard">
+      {{ range (site.GetPage "services").Pages.ByParam "weight" }}
+        {{ if not .Params.start }}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            <span class="k9-rc-main"><strong>{{ .Title }}</strong>{{ partial "requires.html" (dict "page" . "link" false) }}</span>
+            <span class="k9-rc-price">{{ .Params.rate | default "$100/session" }}<small>{{ .Params.duration }}</small></span>
+          </a>
+        </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ partial "book-paths.html" (dict "online" $online "proton" $proton "email" $email "mailto" $sessionMail) }}
   </div>
 </section>
 {{ end }}

@@ -1,0 +1,17 @@
+{{- /* The two ways to book: Proton booking page (home area) and email (travel area). Pass dict online, proton, email, mailto. */ -}}
+<div class="columns mt-4">
+  {{ if .online }}
+  <div class="column">
+    <p class="has-text-weight-semibold">In El Paso County?</p>
+    <p class="k9-caption mt-0 mb-3">Pick a Friday or Saturday time, 6am&ndash;6pm.</p>
+    <a class="button is-primary" href="{{ .proton }}" target="_blank" rel="noopener noreferrer">Book online</a>
+  </div>
+  {{ end }}
+  <div class="column">
+    <p class="has-text-weight-semibold">{{ if .online }}Outside El Paso County?{{ else }}Email me to book{{ end }}</p>
+    <p class="k9-caption mt-0 mb-3">
+      {{ if .online }}Email me so I can plan drive time. A <a class="k9-textlink" href="{{ "/faq/pricing/#mileage" | relURL }}">mileage fee</a> applies.{{ else }}Online booking is coming soon. Outside El Paso County, a <a class="k9-textlink" href="{{ "/faq/pricing/#mileage" | relURL }}">mileage fee</a> applies.{{ end }}
+    </p>
+    <a class="button {{ if not .online }}is-primary{{ end }}" href="{{ .mailto | safeURL }}">Email {{ .email }}</a>
+  </div>
+</div>

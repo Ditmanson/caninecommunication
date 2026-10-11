@@ -6,7 +6,7 @@ outputs: ["html", "fragment"]
 
 ## Sessions
 
-Training sessions are **$100 each**. Because every plan is built around your dog, the total depends on which services you need. For example, [Verbal Markers](/services/verbal-markers/) takes one or two sessions, and a full [Fundamentals](/services/fundamentals/) build is about seven.
+Training sessions are **$100 each**. Sessions are designed to run about 60 minutes, sometimes a little longer or shorter. Because every plan is built around your dog, the total depends on which services you need. For example, [Verbal Markers](/services/verbal-markers/) takes one or two sessions, and a full [Fundamentals](/services/fundamentals/) build is about seven.
 
 [Group Lessons](/services/group-lessons/) are $30 per dog. [E-Collar Training](/services/e-collar-bootcamp/) is billed per session, plus the cost of the collar.
 
@@ -14,9 +14,14 @@ Training sessions are **$100 each**. Because every plan is built around your dog
 
 Every client starts with an [In-Home Consult](/services/in-home-consult/), booked with a **$30 deposit**. The deposit:
 
+- is paid at the consult
 - is credited toward your first training session if you book within 60 days
 - is non-refundable
 - is waived if I decide at the consult that I can't help your dog
+
+## Mileage
+
+I train in El Paso County at no extra cost. In the travel area (Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln counties), there's a **mileage fee of $0.70 per mile**, round trip from the El Paso County line, per visit. Travel-area clients [book by email](/book/) so I can plan drive time.
 
 ## Equipment
 
