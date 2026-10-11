@@ -14,8 +14,9 @@
 
       <aside class="column is-4 k9-aside-col">
         <div class="k9-aside">
-          <p class="k9-aside-price">{{ .Params.price }}</p>
+          <p class="k9-aside-price">{{ with .Params.deposit }}{{ . }}{{ else }}<a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">Pricing &rarr;</a>{{ end }}</p>
           <p class="k9-caption mt-0 mb-4">{{ .Params.duration }}</p>
+          {{ with partial "requires.html" (dict "page" . "link" true) }}<p class="mb-4">{{ . }}</p>{{ end }}
           <a class="button is-primary is-fullwidth" href="{{ "/book" | relURL }}">Book a session</a>
           {{ with .Params.download }}
             <p class="mt-4"><a class="k9-textlink" href="{{ . | relURL }}" download>Download the {{ $.Title }} Log Book (PDF)</a></p>

@@ -1,8 +1,8 @@
 ---
 title: "E-Collar Training"
+requires: ["verbal-markers"]
 weight: 10
 duration: "1-3 Sessions"
-price: "Approximately $300-500 / includes collar"
 summary: "The safe way to ditch the leash"
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Group Lessons"
-weight: 30
+requires: ["verbal-markers"]
+weight: 20
 duration: "Till every dog has a turn"
-price: "$30/dog"
 summary: "Check the schedule for what we're doing that day"
 ---
 # How do group classes go

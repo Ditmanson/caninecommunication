@@ -1,8 +1,8 @@
 ---
 title: "Behavior Modification"
-weight: 20
+requires: ["in-home-consult"]
+weight: 30
 duration: "30-120 min"
-price: "$100/session"
 summary: "The path through fear and/or aggression can be long and hard, and sometimes we need help. I pick up your dog and bring them out for a desensitization session, and we'll work toward habituation."
 ---
 

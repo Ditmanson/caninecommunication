@@ -1,10 +1,9 @@
 ---
 title: "Fundamentals Bootcamp"
-weight: 5
-prerequisite: true
+requires: ["verbal-markers"]
+weight: 3
 download: "/downloads/Fundamentals.pdf"
 duration: "7 Sessions plus consult"
-price: "Approximately $1,000"
 summary: "Covers the basic needs of training a dog from the bottom up. Customizable to fit each dog/handler"
 ---
 

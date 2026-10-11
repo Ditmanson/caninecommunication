@@ -3,18 +3,19 @@
   <div class="container">
     <h1 class="k9-display">{{ .Title }}</h1>
     {{ with .Content }}<div class="k9-lead">{{ . }}</div>{{ end }}
-    <p class="k9-lead">Everyone starts with the Fundamentals Bootcamp. After that, the rest open up to you.</p>
+    <p class="k9-lead">Every client starts with an in-home consult. Each service builds on the ones it requires, so your plan fits your dog.</p>
 
     <ul class="k9-ratecard">
       {{ range .Pages.ByParam "weight" }}
-        <li{{ if .Params.prerequisite }} class="is-first"{{ end }}>
+        <li{{ if .Params.start }} class="is-first"{{ end }}>
           <a href="{{ .RelPermalink }}">
             <span class="k9-rc-main">
               <strong>{{ .Title }}</strong>
-              {{ if .Params.prerequisite }}<span class="k9-start">Start here</span>{{ end }}
+              {{ if .Params.start }}<span class="k9-start">Start here</span>{{ end }}
               {{ .Params.summary }}
+              {{ partial "requires.html" (dict "page" . "link" false) }}
             </span>
-            <span class="k9-rc-price">{{ .Params.price }}<small>{{ .Params.duration }}</small></span>
+            <span class="k9-rc-price">{{ .Params.deposit }}<small>{{ .Params.duration }}</small></span>
           </a>
         </li>
       {{ end }}

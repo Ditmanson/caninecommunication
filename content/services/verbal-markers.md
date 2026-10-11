@@ -1,8 +1,8 @@
 ---
 title: "Verbal Marker Training"
-prerequisite: true
+requires: ["in-home-consult"]
 duration: "1-2 sessions"
-price: "$100-200"
+weight: 2
 summary: "Dogs don't know english; but it seems like it when we create association that predictives consequence or reward after hearing a word or sound"
 ---
 

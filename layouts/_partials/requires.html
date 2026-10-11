@@ -1,0 +1,16 @@
+{{- /* "Requires: X, Y" line for a service. Pass (dict "page" . "link" true) to link each prerequisite; cards pass link=false since the whole card is already a link. */ -}}
+{{- $names := slice -}}
+{{- range .page.Params.requires -}}
+  {{- with site.GetPage (printf "/services/%s" .) -}}
+    {{- if $.link -}}
+      {{- $names = $names | append (printf `<a class="k9-textlink" href="%s">%s</a>` .RelPermalink .Title) -}}
+    {{- else -}}
+      {{- $names = $names | append .Title -}}
+    {{- end -}}
+  {{- else -}}
+    {{- errorf "service %q requires unknown service %q" $.page.Path . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $names -}}
+  <span class="k9-requires">Requires: {{ delimit . ", " | safeHTML }}</span>
+{{- end -}}
