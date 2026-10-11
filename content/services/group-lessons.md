@@ -2,25 +2,27 @@
 title: "Group Lessons"
 requires: ["verbal-markers"]
 weight: 20
-duration: "Till every dog has a turn"
-summary: "Check the schedule for what we're doing that day"
+duration: "Until every dog has a turn"
+summary: "Pack walk, nosework, obedience, and ball work. Check the schedule for what we're doing that day."
 ---
-# How do group classes go
-Group classes typically run in multiple parts. For handler/dog teams who have a safe dog we can start with a pack walk. This gets some of the energy out and allows dogs to socialize. Dogs need to be ready for this to join this part. After the walk we meet at a field for training. Depending on the day we might do some form of nose work training, followed by obedience training. Followed by ball training. The amount of tasks we go through will vary depending on the class size. The order we choose is designed to bring fulfillment to both dogs and handlers for activities that may not be as enjoyable initially. We do this by designing our workshops around the premack principal, _aka Granny's Rule_
-## What is the Premack Principle?
 
-Read the full explanation on [Wikipedia](https://en.wikipedia.org/wiki/Premack%27s_principle).
+## How group classes work
 
-We can ignore all that, though. Premack's principle is basically an extension of [classical conditioning](https://en.wikipedia.org/wiki/Classical_conditioning); except instead of an association between two stimuli, we create an association between two behaviors. We increase the drive for each activity by associating it with another.
+Classes run in parts. Teams with a safe dog start with a pack walk. It burns energy and lets dogs socialize, but your dog needs to be ready for it. Then we meet at a field for training: usually nosework, then obedience, then ball work. How much we cover depends on class size.
 
-We use this as a giant positive reinforcement session. We start with a pack walk. The pack walk might be stressful for some dogs; however, we give them something to look forward to. This helps release positive hormones such as [dopamine](https://en.wikipedia.org/wiki/Dopamine) to battle all the [cortisol](https://en.wikipedia.org/wiki/Cortisol) flooding the system, which helps move the dog from desensitization to [habituation](https://en.wikipedia.org/wiki/Habituation) to the activity.
+The order is deliberate. Each activity makes the less enjoyable one before it worth doing, for dogs and handlers alike. This is the [Premack principle](https://en.wikipedia.org/wiki/Premack%27s_principle), *aka Granny's Rule*.
 
-After the pack walk we'll get together for some nosework training. Nosework is naturally a secondary reinforcer, meaning that after dogs learn the game, it is self-rewarding. After that we'll hit obedience training, which can always improve. We'll find that corrections and negative reinforcement aren't as aversive here as they have been in other places, because a giant reward event is coming next. At the end we'll continue to improve skills with the dog, except we'll be rewarding with the ball or disc. Eventually, I have some games to teach that can be played with just a handler and their dog, or we can keep score and compete with each other.
+## The Premack principle
 
+Premack's principle is a cousin of classical conditioning: instead of linking two stimuli, we link two behaviors. Each activity raises the drive for the one before it.
 
-## A typical group class might look like:
+The whole class is one big positive reinforcement session. The pack walk may be stressful for some dogs, but they have something to look forward to. That releases feel-good hormones like [dopamine](https://en.wikipedia.org/wiki/Dopamine) to counter the [cortisol](https://en.wikipedia.org/wiki/Cortisol), helping your dog move from desensitization to [habituation](https://en.wikipedia.org/wiki/Habituation).
 
-- **0830** - Meet at Palmer Park for a pack walk
-- **0930** - Start some sort of nosework training. *This might be detection, tracking, trailing, or article indication.*
-- **1030** - Work on competitive obedience. We'll base this on [IGP](https://www.germanshepherddog.com/about/trial-rule-book/) obedience ([Schutzhund](https://en.wikipedia.org/wiki/Schutzhund)), with a focus on the [BH test](https://www.germanshepherddog.com/wp-content/uploads/2025/08/USCA-IGP-Rulebook-4.1-eff-1.2025.-final.pdf) for most members.
-- **1230** - Ball and disc work
+Nosework comes next. Once dogs learn the game, it becomes a [secondary reinforcer](/faq/secondary-reinforcers/) and rewards itself. Then obedience, which can always improve. Corrections and negative reinforcement feel less aversive here, because a big reward is coming next. We finish by building skills with the ball or disc as the reward. I also have games you can play with just your dog, or we can keep score and compete.
+
+## A typical class
+
+- **0830:** Meet at Palmer Park for a pack walk
+- **0930:** Nosework. *Detection, tracking, trailing, or article indication.*
+- **1030:** Competitive obedience, based on [IGP](https://www.germanshepherddog.com/about/trial-rule-book/) obedience ([Schutzhund](https://en.wikipedia.org/wiki/Schutzhund)), with a focus on the [BH test](https://www.germanshepherddog.com/wp-content/uploads/2025/08/USCA-IGP-Rulebook-4.1-eff-1.2025.-final.pdf) for most members
+- **1230:** Ball and disc work
