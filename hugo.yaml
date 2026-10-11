@@ -27,7 +27,7 @@ params:
   # Placeholder until Proton Pro is purchased - Proton Calendar's booking
   # pages are standalone hosted links (calendar.proton.me/bookings/...),
   # not embeddable, so swapping this one value is the entire migration.
-  protonBookingURL: "#"
+  protonBookingURL: "https://calendar.proton.me/bookings#RaA1nfdGmAgrmQS2LC3O5z3LQnh5XVBL9T0nsn_Cy1w="
 
   # Where booking emails go (Book page email path; travel-area clients).
   bookingEmail: "training@k9-communication.com"
