@@ -1,6 +1,6 @@
 ---
 title: "Verbal Marker Training"
-weight: 5
+weight: 6
 requires: ["in-home-consult"]
 duration: "1-2 sessions"
 summary: "Dogs don't understand English, but they can seem to when a word reliably predicts a reward or a consequence. Every other service builds on this foundation."

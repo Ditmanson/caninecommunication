@@ -1,6 +1,6 @@
 ---
 title: "Verbal Commands"
-weight: 6
+weight: 7
 requires: ["verbal-markers"]
 duration: "1 session"
 summary: "Commands are markers too. We teach sit, down, place, and here, and build engagement through distractions."

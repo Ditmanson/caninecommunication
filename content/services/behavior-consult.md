@@ -1,7 +1,7 @@
 ---
 title: "Behavior Modification"
 requires: ["in-home-consult"]
-weight: 3
+weight: 2
 duration: "30-120 min"
 summary: "The path through fear or aggression can be long and hard, and sometimes you need help. I pick up your dog for desensitization sessions, and we work toward habituation."
 ---
