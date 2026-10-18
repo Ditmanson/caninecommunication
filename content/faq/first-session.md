@@ -4,7 +4,4 @@ weight: 10
 outputs: ["html", "fragment"]
 ---
 
-We'll start by talking through what's going on with your dog and what
-you want to get out of training, then move into hands-on work so I can
-see how your dog actually responds in the moment. You'll leave with
-specific things to practice before the next session.
+Every new client starts with an [In-Home Consult](/services/in-home-consult/). We talk through what's going on with your dog and what you want out of training, and I see how your dog responds in their own home. You'll leave with a plan, usually starting with [Verbal Marker Training](/services/verbal-markers/), and a list of any [equipment](/faq/pricing/#equipment) you'll need.

@@ -4,6 +4,6 @@ weight: 30
 outputs: ["html", "fragment"]
 ---
 
-Most sessions are held [LOCATION] — some behavior work is more
-effective at your home, which we can discuss when booking. Group
-classes meet at [LOCATION].
+Consults and most private sessions are at your home. As your dog progresses, we head out to busier places like parks and stores to train around real distractions.
+
+I cover El Paso County at no extra cost. Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln counties are covered with a [mileage fee](/faq/pricing/#mileage). [Group Lessons](/services/group-lessons/) meet at Palmer Park.

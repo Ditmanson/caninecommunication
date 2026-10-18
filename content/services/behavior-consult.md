@@ -16,9 +16,9 @@ For fear, we work on [desensitization](https://en.wikipedia.org/wiki/Systematic_
 
 ## Predatory reactivity
 
-Predatory aggression can only be solved with Traditional training, also called escape and avoidance ([training styles](/faq/training-styles/)). We will:
+Predatory aggression can only be solved with Traditional training, also called escape and avoidance training ([training styles](/faq/training-styles/)). We will:
 
 - [Muzzle](https://en.wikipedia.org/wiki/Muzzle_(mouth_guard)) train your dog
 - Condition a **no** marker
-- Condition [leash pressure](/faq/leash-pressure/)
+- Condition [leash pressure](/faq/escape-and-avoidance/)
 - Hold your dog accountable with predictable consequences for their choices

@@ -19,7 +19,7 @@ Premack's principle is a cousin of classical conditioning: instead of linking tw
 
 The whole class is one big positive reinforcement session. The pack walk may be stressful for some dogs, but they have something to look forward to. That releases feel-good hormones like [dopamine](https://en.wikipedia.org/wiki/Dopamine) to counter the [cortisol](https://en.wikipedia.org/wiki/Cortisol), helping your dog move from desensitization to [habituation](https://en.wikipedia.org/wiki/Habituation).
 
-Nosework comes next. Once dogs learn the game, it becomes a [secondary reinforcer](/faq/secondary-reinforcers/) and rewards itself. Then obedience, which can always improve. Corrections and negative reinforcement feel less aversive here, because a big reward is coming next. We finish by building skills with the ball or disc as the reward. I also have games you can play with just your dog, or we can keep score and compete.
+Nosework comes next. Once dogs learn the game, it becomes a [secondary reinforcer](/faq/reinforcers/) and rewards itself. Then obedience, which can always improve. Corrections and negative reinforcement feel less aversive here, because a big reward is coming next. We finish by building skills with the ball or disc as the reward. I also have games you can play with just your dog, or we can keep score and compete.
 
 ## A typical class
 

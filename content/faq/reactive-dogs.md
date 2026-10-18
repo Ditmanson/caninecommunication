@@ -4,7 +4,4 @@ weight: 20
 outputs: ["html", "fragment"]
 ---
 
-Yes — this is a large part of what the Behavior Consult service exists
-for. Reactivity, resource guarding, and aggression all need a real
-evaluation before a training plan makes sense, so these cases start
-with a consult rather than jumping straight into a private session.
+Yes. Reactivity, resource guarding, and aggression need a real evaluation before a training plan makes sense, so these cases start with an [In-Home Consult](/services/in-home-consult/). From there, most go to [Behavior Modification](/services/behavior-consult/), where I work on desensitization and counterconditioning before regular training begins.

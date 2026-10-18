@@ -8,7 +8,7 @@ summary: "The safe way to ditch the leash."
 
 ## Why an e-collar?
 
-An e-collar is an invisible leash. It lets us use Traditional training, also called escape and avoidance ([training styles](/faq/training-styles/)), at a distance with a single tool.
+An e-collar is an invisible leash. It lets us use Traditional training, also called escape and avoidance training ([training styles](/faq/training-styles/)), at a distance with a single tool.
 
 ## Two methods
 
