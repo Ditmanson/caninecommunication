@@ -21,7 +21,7 @@
     hx-swap="innerHTML"
     hx-disabled-elt="find button"
     @htmx:before-request="asking = true; failed = false"
-    @htmx:after-request="asking = false"
+    @htmx:after-request="asking = false; window.turnstile && turnstile.reset($refs.captcha)"
     @htmx:send-error="failed = true"
   >
     <div class="field has-addons">
@@ -39,6 +39,13 @@
         <button class="button is-primary" type="submit" :class="{ 'is-loading': asking }">Ask</button>
       </div>
     </div>
+    {{- with site.Params.turnstileSiteKey }}
+    {{/* Cloudflare Turnstile: adds a cf-turnstile-response field the Lambda
+         verifies. interaction-only = invisible unless Cloudflare wants a
+         challenge. Off while turnstileSiteKey is empty. */}}
+    <div class="cf-turnstile mt-2" x-ref="captcha" data-sitekey="{{ . }}" data-appearance="interaction-only" data-size="flexible"></div>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    {{- end }}
   </form>
   {{- with $suggestions }}
   <div class="buttons are-small mt-3">

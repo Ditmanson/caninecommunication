@@ -35,6 +35,10 @@ params:
   # Function URL printed by lambda/client-capture/deploy.sh (ticket #5).
   clientCaptureURL: "https://izq2sccngplmgh3ivhrppgtzmq0yhaoc.lambda-url.us-east-2.on.aws/"
 
+  # Cloudflare Turnstile site key (public) for the chat widget. Empty = no
+  # CAPTCHA. Pair with the TURNSTILE_SECRET env var on the chat Lambda.
+  turnstileSiteKey: ""
+
   # Function URL printed by lambda/chat-agent/deploy.sh (ticket #6).
   chatAgentURL: "https://oa76rvb2je37eueepkamcibxgq0pwucn.lambda-url.us-east-2.on.aws/"
 

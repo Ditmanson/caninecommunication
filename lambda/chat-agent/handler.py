@@ -20,7 +20,7 @@ REGION = "us-east-2"
 # that repo) - no site-specific reason yet to diverge. Edit these to
 # constrict/expand the cost/abuse envelope; no other code changes needed.
 
-MAX_REQUESTS_PER_IP_PER_HOUR = 10
+MAX_REQUESTS_PER_IP_PER_HOUR = 50
 MAX_INPUT_CHARS = 1000
 MAX_OUTPUT_TOKENS = 300
 MONTHLY_SPEND_CEILING_USD = 10.00
@@ -168,6 +168,21 @@ def handler(event, context):
 
     ip = _get_source_ip(event)
 
+    raw_body = event.get("body") or ""
+    if event.get("isBase64Encoded"):
+        # Function URLs base64-encode form-encoded bodies.
+        import base64
+
+        raw_body = base64.b64decode(raw_body).decode("utf-8")
+    body = dict(_parse_qsl_or_json(raw_body))
+
+    # Checked before the rate limit so bots can't burn a shared IP's quota.
+    if not _verify_turnstile(body.get("cf-turnstile-response") or "", ip):
+        _record_limit_metric("CaptchaRejection")
+        return _response(
+            403, _error_html("Please complete the verification and try again.")
+        )
+
     if not _check_and_increment_ip_limit(ip):
         _record_limit_metric("RateLimitRejection")
         return _response(
@@ -177,13 +192,6 @@ def handler(event, context):
             ),
         )
 
-    raw_body = event.get("body") or ""
-    if event.get("isBase64Encoded"):
-        # Function URLs base64-encode form-encoded bodies.
-        import base64
-
-        raw_body = base64.b64decode(raw_body).decode("utf-8")
-    body = dict(_parse_qsl_or_json(raw_body))
     question = (body.get("question") or "").strip()
     if not question:
         return _response(400, _error_html("Please enter a question."))
@@ -224,6 +232,30 @@ def handler(event, context):
         print("Bedrock invoke failed:", str(e))
         _true_up_monthly_spend(0, reserved_microdollars)
         return _response(502, _error_html("Something went wrong answering your question."))
+
+
+# Cloudflare Turnstile. Off until TURNSTILE_SECRET is set on the function
+# (the site renders the widget once params.turnstileSiteKey is set), so the
+# code can ship before the Cloudflare keys exist.
+TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+
+
+def _verify_turnstile(token, ip):
+    secret = os.environ.get("TURNSTILE_SECRET")
+    if not secret:
+        return True
+    if not token:
+        return False
+    from urllib.parse import urlencode
+
+    data = urlencode({"secret": secret, "response": token, "remoteip": ip}).encode()
+    try:
+        with urllib.request.urlopen(TURNSTILE_VERIFY_URL, data=data, timeout=5) as resp:
+            return bool(json.load(resp).get("success"))
+    except Exception as e:
+        # Fail closed: an unverifiable request is treated like a bot.
+        print("Turnstile verify failed:", str(e))
+        return False
 
 
 def _parse_qsl_or_json(raw_body):
