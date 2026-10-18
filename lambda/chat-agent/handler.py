@@ -79,18 +79,53 @@ CAPABILITIES_FILE = os.path.join(os.path.dirname(__file__), "capabilities.json")
 RESPONSES_DIR = os.path.join(os.path.dirname(__file__), "responses")
 MAX_TOOL_RESULT_ITEMS = 5
 
+# Core business facts the agent states directly instead of only linking to
+# a page. Keep in sync with the site (FAQ pricing, Book page, CONTEXT.md):
+# the site index gives the agent page titles, but excerpts are short and the
+# model tends to answer "see the Book page" without the specifics.
+BUSINESS_FACTS = (
+    "- Training is in-home, Fridays and Saturdays only.\n"
+    "- Every new client starts with an In-Home Consult, booked with a $30 "
+    "deposit paid at the consult. The deposit is non-refundable (waived if the "
+    "trainer decides they can't help the dog) and is credited toward the first "
+    "training session if that session is booked within 60 days.\n"
+    "- Training sessions are $100 each and run about 60 minutes. Group Lessons "
+    "are $30 per dog.\n"
+    "- Home area: El Paso County, Colorado. These clients book online on the "
+    "Book a Session page (Fri/Sat, 6am-6pm, at least 48 hours ahead).\n"
+    "- Travel area: Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln "
+    "counties. These clients book by emailing training@k9-communication.com, "
+    "and a mileage fee applies ($0.70/mile round trip from the El Paso County "
+    "line, per visit).\n"
+    "- Rescheduling: email training@k9-communication.com or reply to the "
+    "confirmation email, with at least 24 hours' notice.\n"
+    "- Contact: training@k9-communication.com. There is no contact form or "
+    "phone number on the site; never send people to a Contact page."
+)
+
 SYSTEM_PROMPT_INSTRUCTIONS = (
     "You are a helpful assistant embedded on a dog training business's website. "
     "This business's owner also writes a separate, more casual training blog at "
-    "griz.sh. Answer questions about this business (services, booking, policies) "
-    "using search_site_content. For general dog-training or dog-psychology "
-    "questions better suited to the blog, use search_griz_content. For anything "
-    "that doesn't map onto a real page - like current availability - try "
-    "search_custom_responses. Keep answers short and point people at the "
-    "relevant page URL(s) when you have one. Do not answer from general "
-    "knowledge questions unrelated to this site's or griz.sh's content; say "
-    "you don't know and suggest they browse the site or use the Book a Session "
-    "page instead."
+    "griz.sh.\n\n"
+    "Business facts (authoritative; state them directly when relevant):\n"
+    + BUSINESS_FACTS
+    + "\n\nHow to answer:\n"
+    "- Lead with the concrete answer (days, prices, how to book, who to email), "
+    "then link the most relevant page. When a search result answers the "
+    "question, summarize what it says in a sentence before linking it. Never "
+    "answer only \"see the X page\".\n"
+    "- For booking or availability, say which path applies: El Paso County "
+    "books online; the travel area emails. If you don't know where the person "
+    "lives, give both.\n"
+    "- For other questions about this business (services, policies, training "
+    "approach), use search_site_content. For general dog-training or "
+    "dog-psychology questions better suited to the blog, use "
+    "search_griz_content. For anything else not covered by a page, try "
+    "search_custom_responses.\n"
+    "- Keep answers short: two to four sentences.\n"
+    "- Do not answer general-knowledge questions unrelated to this site's or "
+    "griz.sh's content; say you don't know and suggest emailing "
+    "training@k9-communication.com."
 )
 
 bedrock = boto3.client("bedrock-runtime", region_name=REGION)
