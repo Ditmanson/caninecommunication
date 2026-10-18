@@ -61,10 +61,12 @@ class HomePage(unittest.TestCase):
                        re.findall(r'<button\b[^>]*class="[^"]*k9-suggest[^"]*"[^>]*>(.*?)</button>', self.html, re.S)]
         self.assertEqual(suggestions, [
             "How much does training cost?",
-            "Do you work with reactive dogs?",
-            "Where do you train?",
             "How do I book?",
         ])
+
+    def test_no_logo_in_hero(self):
+        hero = self.html[self.html.find('id="hero"'):self.html.find('id="how-it-works"')]
+        self.assertNotIn("<img", hero)
 
     def test_book_a_consult_in_hero(self):
         hero = self.html[self.html.find('id="hero"'):self.html.find('id="how-it-works"')]

@@ -7,7 +7,11 @@
      one-click suggested questions under the box. */}}
 {{- $suggestions := slice -}}
 {{- if reflect.IsMap . }}{{ $suggestions = .suggestions | default slice }}{{ end -}}
-<div class="box" x-data="{ asking: false }">
+{{- /* before-swap fires on the answer element (the swap target), not the
+     form, so it's handled here: show the Lambda's error HTML (rate limit,
+     bad input) instead of htmx's default of dropping 4xx/5xx responses. */ -}}
+<div class="box" x-data="{ asking: false, failed: false }"
+     @htmx:before-swap="if ($event.detail.xhr.status >= 400) { $event.detail.shouldSwap = true; $event.detail.isError = false }">
   <p class="has-text-weight-semibold mb-3">Ask a question</p>
   <form
     class="k9-chat"
@@ -16,8 +20,9 @@
     hx-target="next .chat-answer"
     hx-swap="innerHTML"
     hx-disabled-elt="find button"
-    @htmx:before-request="asking = true"
+    @htmx:before-request="asking = true; failed = false"
     @htmx:after-request="asking = false"
+    @htmx:send-error="failed = true"
   >
     <div class="field has-addons">
       <div class="control is-expanded">
@@ -31,10 +36,7 @@
         >
       </div>
       <div class="control">
-        <button class="button is-primary" type="submit">
-          <span x-show="!asking">Ask</span>
-          <span x-show="asking">Asking&hellip;</span>
-        </button>
+        <button class="button is-primary" type="submit" :class="{ 'is-loading': asking }">Ask</button>
       </div>
     </div>
   </form>
@@ -46,5 +48,7 @@
     {{- end }}
   </div>
   {{- end }}
-  <div class="chat-answer content mt-3"></div>
+  <p class="k9-caption mt-3" x-show="asking" x-cloak>Thinking&hellip;</p>
+  <p class="has-text-danger mt-3" x-show="failed" x-cloak>Couldn&rsquo;t reach the assistant. Check your connection and try again.</p>
+  <div class="chat-answer content mt-3" x-show="!asking"></div>
 </div>

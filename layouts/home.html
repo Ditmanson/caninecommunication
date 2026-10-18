@@ -2,24 +2,19 @@
 
 <section class="k9-hero" id="hero">
   <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-7">
+    <div class="columns">
+      <div class="column is-8">
         <h1 class="k9-display">In-home dog training through classical and operant conditioning</h1>
         <p class="k9-lead">El Paso County, Colorado, and <a class="k9-textlink" href="{{ "/faq/location/" | relURL }}">surrounding areas</a></p>
         <div class="mt-5">
           {{ partial "chatWidget.html" (dict "suggestions" (slice
             "How much does training cost?"
-            "Do you work with reactive dogs?"
-            "Where do you train?"
             "How do I book?"
           )) }}
         </div>
         <div class="k9-actions">
           <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a consult</a>
         </div>
-      </div>
-      <div class="column is-5">
-        <img class="k9-hero-logo" src="{{ "/images/logo.png" | relURL }}" alt="K9-Communication logo: a handler kneeling beside his dog">
       </div>
     </div>
   </div>
