@@ -2,11 +2,17 @@
      application/x-www-form-urlencoded, no JSON needed) and swaps the
      Lambda's raw HTML answer straight in - same pattern as the FAQ
      accordion and the client-capture form, not griz.sh's older
-     JSON+Mustache approach. See ADR 0003 for why. */}}
+     JSON+Mustache approach. See ADR 0003 for why.
+     Takes the page, or (dict "suggestions" (slice "...")) to show
+     one-click suggested questions under the box. */}}
+{{- $suggestions := slice -}}
+{{- if reflect.IsMap . }}{{ $suggestions = .suggestions | default slice }}{{ end -}}
 <div class="box" x-data="{ asking: false }">
   <p class="has-text-weight-semibold mb-3">Ask a question</p>
   <form
-    hx-post="{{ .Site.Params.chatAgentURL }}"
+    class="k9-chat"
+    x-ref="form"
+    hx-post="{{ site.Params.chatAgentURL }}"
     hx-target="next .chat-answer"
     hx-swap="innerHTML"
     hx-disabled-elt="find button"
@@ -19,6 +25,7 @@
           class="input"
           type="text"
           name="question"
+          x-ref="question"
           placeholder="Ask about training, services, or booking..."
           required
         >
@@ -31,5 +38,13 @@
       </div>
     </div>
   </form>
+  {{- with $suggestions }}
+  <div class="buttons are-small mt-3">
+    {{- range . }}
+    <button type="button" class="button is-light k9-suggest" :disabled="asking"
+            @click="$refs.question.value = {{ . | jsonify }}; $refs.form.requestSubmit()">{{ . }}</button>
+    {{- end }}
+  </div>
+  {{- end }}
   <div class="chat-answer content mt-3"></div>
 </div>

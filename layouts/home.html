@@ -1,47 +1,21 @@
 {{ define "main" }}
 
-<section class="k9-hero">
+<section class="k9-hero" id="hero">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-7">
-        <h1 class="k9-display">A complete training system.</h1>
-        <p class="k9-lead">
-          Dogs don&rsquo;t understand English. They learn that certain words predict what happens next.
-          &ldquo;Good&rdquo; means something only if it predicts praise or play; &ldquo;no,&rdquo; only if it
-          predicts leash pressure or losing a toy. Teaching this isn&rsquo;t intuitive, and small mistakes
-          can teach a word to predict an outcome we never intended.
-        </p>
-        <p class="k9-lead">
-          Half of this communication system pairs words and sounds with what we do next. This is
-          <strong>classical conditioning</strong>.
-        </p>
-        <p class="k9-lead">
-          Dogs can&rsquo;t speak English to us either. They learn that their own actions have predictable
-          outcomes: hanging out in the kitchen at dinner means snacks, and coming when called means play.
-          They also learn that cats run when chased and that barking changes their surroundings, so they
-          chase and bark more.
-        </p>
-        <p class="k9-lead">
-          The other half gives behaviors clear consequences, to encourage the ones we want and extinguish
-          the ones we don&rsquo;t. This is <strong>operant conditioning</strong>.
-        </p>
-        <p class="k9-lead">
-          All dog training &mdash; force free, Traditional (also called escape and avoidance training), balanced, or accidental
-          &mdash; traces back to these two kinds of conditioning. Master both, and you can create or
-          extinguish any behavior your dog is (or isn&rsquo;t) offering.
-        </p>
-        <div class="k9-terms">
-          <a class="k9-term" href="https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses" target="_blank" rel="noopener">
-            <span class="k9-term-name">Classical conditioning</span>
-            <span>Creates an involuntary response to a neutral stimulus &mdash; the control of emotional responses through verbal markers.</span>
-          </a>
-          <a class="k9-term" href="https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment" target="_blank" rel="noopener">
-            <span class="k9-term-name">Operant conditioning</span>
-            <span>Shapes behavior through consequences.</span>
-          </a>
+        <h1 class="k9-display">In-home dog training through classical and operant conditioning</h1>
+        <p class="k9-lead">El Paso County, Colorado, and <a class="k9-textlink" href="{{ "/faq/location/" | relURL }}">surrounding areas</a></p>
+        <div class="mt-5">
+          {{ partial "chatWidget.html" (dict "suggestions" (slice
+            "How much does training cost?"
+            "Do you work with reactive dogs?"
+            "Where do you train?"
+            "How do I book?"
+          )) }}
         </div>
         <div class="k9-actions">
-          <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a session</a>
+          <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a consult</a>
         </div>
       </div>
       <div class="column is-5">
@@ -51,23 +25,79 @@
   </div>
 </section>
 
-<section class="k9-band">
+<section class="k9-section" id="how-it-works">
+  <div class="container">
+    <h2 class="k9-h2">How it works</h2>
+    <ol class="k9-sessions">
+      <li><a href="{{ "/services/in-home-consult/" | relURL }}">
+        <span class="k9-num">1</span>
+        <span><strong>In-Home Consult</strong>I meet you and your dog at home. $30 deposit, credited toward training.</span>
+      </a></li>
+      <li><a href="{{ "/services/verbal-markers/" | relURL }}">
+        <span class="k9-num">2</span>
+        <span><strong>Verbal Markers</strong>The foundation: your dog learns what your words predict.</span>
+      </a></li>
+      <li><a href="{{ "/services/" | relURL }}">
+        <span class="k9-num">3</span>
+        <span><strong>Your plan</strong>We pick the services your dog needs, each one building on the last.</span>
+      </a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="k9-section pt-0" id="services">
+  <div class="container">
+    <h2 class="k9-h2">Services</h2>
+    <ul class="k9-ratecard">
+      {{ with .Site.GetPage "services" }}
+        {{ range .Pages.ByParam "weight" }}
+          <li>
+            <a href="{{ .RelPermalink }}">
+              <span class="k9-rc-main"><strong>{{ .Title }}</strong>{{ .Params.summary }}{{ partial "requires.html" (dict "page" . "link" false) }}</span>
+              <span class="k9-rc-price">{{ .Params.deposit }}<small>{{ .Params.duration }}</small></span>
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</section>
+
+<section class="k9-band" id="pricing">
+  <div class="container">
+    <h2 class="k9-h2">Pricing &amp; area</h2>
+    <div class="columns is-variable is-8">
+      <div class="column">
+        <p class="k9-body"><strong>$30 deposit</strong> for the In-Home Consult, paid at the consult and credited toward training.</p>
+        <p class="k9-body"><strong>$100 per session.</strong> Sessions run about 60 minutes.</p>
+      </div>
+      <div class="column">
+        <p class="k9-body">I train <strong>Fridays and Saturdays</strong>, in your home and out in the world.</p>
+        <p class="k9-body">El Paso County at no extra cost. Surrounding counties have a mileage fee.</p>
+      </div>
+    </div>
+    <p><a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">Full pricing and equipment</a></p>
+  </div>
+</section>
+
+<section class="k9-section" id="how-i-train">
   <div class="container">
     <div class="columns is-variable is-8">
       <div class="column is-5">
-        <h2 class="k9-h2">Every behavior lives on this grid</h2>
+        <h2 class="k9-h2">How I train</h2>
         <p class="k9-body">
-          Every bad habit I extinguish and every good habit I build lives on this grid. This isn&rsquo;t
-          just dog training; it&rsquo;s psychology, laid out by B.F. Skinner in
-          <a href="https://en.wikipedia.org/wiki/The_Behavior_of_Organisms" target="_blank" rel="noopener"><i>The Behavior of Organisms</i></a>
-          (1938). Decades of sports and marine wildlife training have refined techniques for creating and
-          extinguishing behaviors efficiently, and my communication system puts them to work.
+          Dogs don&rsquo;t understand English. They learn what our words predict
+          (<strong>classical conditioning</strong>) and what their actions earn
+          (<strong>operant conditioning</strong>). All dog training &mdash; force free,
+          Traditional (also called escape and avoidance training), balanced, or accidental &mdash;
+          traces back to these two. Master both, and you can create or extinguish any behavior.
         </p>
         <dl class="k9-legend">
           <div><dt><span class="k9-swatch is-ff"></span>Force free</dt><dd>Training without aversives.</dd></div>
-          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd>Escape and avoidance: training with a focus on aversives.</dd></div>
+          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd>Training with a focus on aversives.</dd></div>
           <div><dt><span class="k9-swatch is-ff"></span><span class="k9-swatch is-trad"></span>Balanced</dt><dd>A blend of force free and traditional training.</dd></div>
         </dl>
+        <p class="mt-4"><a class="k9-textlink" href="{{ "/faq/how-dogs-learn/" | relURL }}">How do dogs learn? Read more</a></p>
       </div>
       <div class="column is-7">
         <div class="k9-quadrant" role="table" aria-label="The four corners of operant conditioning">
@@ -93,43 +123,23 @@
   </div>
 </section>
 
-
-<section class="k9-section pt-0">
-  <div class="container">
-    <h2 class="k9-h2">Services</h2>
-    <ul class="k9-ratecard">
-      {{ with .Site.GetPage "services" }}
-        {{ range .Pages.ByParam "weight" }}
-          <li>
-            <a href="{{ .RelPermalink }}">
-              <span class="k9-rc-main"><strong>{{ .Title }}</strong>{{ .Params.summary }}{{ partial "requires.html" (dict "page" . "link" false) }}</span>
-              <span class="k9-rc-price">{{ .Params.deposit }}<small>{{ .Params.duration }}</small></span>
-            </a>
-          </li>
-        {{ end }}
-      {{ end }}
-    </ul>
-  </div>
-</section>
-
 {{ with .Site.GetPage "testimonials" }}
-  {{ with index (.Pages.ByParam "weight") 0 }}
-    <section class="k9-section pt-0">
+  {{ with where (.Pages.ByParam "weight") "Params.placeholder" "!=" true }}
+    {{ with index . 0 }}
+    <section class="k9-section pt-0" id="testimonial">
       <div class="container">
         <figure class="k9-quote">
-          {{ if .Params.placeholder }}
-            <p class="k9-caption">Placeholder &mdash; not a real client quote</p>
-          {{ end }}
           <blockquote>{{ .Content }}</blockquote>
           <figcaption>{{ .Params.client }}, with {{ .Params.dog }}</figcaption>
           <p class="mt-4"><a class="k9-textlink" href="{{ "/testimonials" | relURL }}">Read all testimonials</a></p>
         </figure>
       </div>
     </section>
+    {{ end }}
   {{ end }}
 {{ end }}
 
-<section class="k9-cta">
+<section class="k9-cta" id="book">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column">
@@ -137,11 +147,8 @@
         <p>Sessions are limited each week. Book while a slot is open.</p>
       </div>
       <div class="column is-narrow">
-        <a class="button is-warning is-medium" href="{{ "/book" | relURL }}">Book a session</a>
+        <a class="button is-warning is-medium" href="{{ "/book" | relURL }}">Book a consult</a>
       </div>
-    </div>
-    <div class="mt-5">
-      {{ partial "chatWidget.html" . }}
     </div>
   </div>
 </section>
