@@ -8,12 +8,21 @@ A verbal marker is a word that tells your dog exactly what's coming next. On its
 
 ## The markers I use
 
-| Marker | Type | What it means |
-|---|---|---|
-| *Yessss* | Termination | Behavior is done; the reward is coming |
-| *Goooood* | Continuation | Keep doing that; a reward may come |
-| *Uh-uhhh* | Correction | Wrong choice; you're about to lose the reward |
-| *No* | Punisher | Stop; a correction is coming |
+| Name | Type | Sensory | Intensity | Operant quadrant |
+|---|---|---|---|---|
+| *Yessss* | Termination marker | Verbal marker | High | Positive reinforcement |
+| *Goooood* | Continuation marker | Verbal marker | Medium to low | Positive reinforcement |
+| *Uh-uhhh* | Correction marker | Verbal marker | Low | Negative punishment |
+| *No* | Punisher | Verbal marker | Medium to high | Positive punishment |
+| *Bang* | Termination marker; reward in front | Verbal marker | High | Positive reinforcement |
+| *Release* | Termination marker; reward in the direction I'm pointing | Verbal marker | High | Positive reinforcement |
+| Eyebrow raise | Continuation marker | Visual marker | Usually low | Positive reinforcement |
+| Palm touch | Termination marker | Physical marker | High | Positive reinforcement |
+| *Spin* | Termination command; reward corrects too far in | Command | High | Positive reinforcement |
+| *Through* | Termination command; reward corrects too far out | Command | High | Positive reinforcement |
+| *Break* | Termination without reward | Verbal marker | Low | Positive reinforcement, but just for freedom |
+
+I use this many markers for precision in movement. Classical conditioning can push a dog out of position through anticipation, so different markers let me correct position by changing where the reward lands.
 
 ## Why a calm *no* works
 
