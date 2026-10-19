@@ -99,8 +99,8 @@ BUSINESS_FACTS = (
     "line, per visit).\n"
     "- Rescheduling: email training@k9-communication.com or reply to the "
     "confirmation email, with at least 24 hours' notice.\n"
-    "- Contact: training@k9-communication.com. There is no contact form or "
-    "phone number on the site; never send people to a Contact page."
+    "- Contact: call or text 406-533-5127, or email "
+    "training@k9-communication.com (also on the Contact page)."
 )
 
 SYSTEM_PROMPT_INSTRUCTIONS = (
@@ -124,8 +124,8 @@ SYSTEM_PROMPT_INSTRUCTIONS = (
     "search_custom_responses.\n"
     "- Keep answers short: two to four sentences.\n"
     "- Do not answer general-knowledge questions unrelated to this site's or "
-    "griz.sh's content; say you don't know and suggest emailing "
-    "training@k9-communication.com."
+    "griz.sh's content; say you don't know and suggest calling or texting "
+    "406-533-5127 or emailing training@k9-communication.com."
 )
 
 bedrock = boto3.client("bedrock-runtime", region_name=REGION)

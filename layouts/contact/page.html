@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="k9-hero">
+  <div class="container" style="max-width: 44rem;">
+    <h1 class="k9-display">{{ .Title }}</h1>
+    <p class="k9-lead">Questions about training, or not sure where to start? Reach out.</p>
+
+    <div class="content k9-prose mt-5">
+      <p><strong>Call or text:</strong> <a href="tel:{{ site.Params.phoneTel }}">{{ site.Params.phone }}</a></p>
+      <p><strong>Email:</strong> <a href="mailto:{{ site.Params.bookingEmail }}">{{ site.Params.bookingEmail }}</a></p>
+      <p>
+        I train Fridays and Saturdays in El Paso County, Colorado, and
+        <a href="{{ "/faq/location/" | relURL }}">surrounding areas</a>.
+        New clients start with an <a href="{{ "/services/in-home-consult/" | relURL }}">In-Home Consult</a>.
+      </p>
+    </div>
+
+    <div class="k9-actions mt-5">
+      <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a consult</a>
+    </div>
+  </div>
+</section>
+{{ end }}

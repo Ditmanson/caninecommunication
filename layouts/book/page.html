@@ -10,6 +10,7 @@
   <div class="container">
     <h1 class="k9-display">{{ .Title }}</h1>
     <p class="k9-lead">I train Fridays and Saturdays. New clients start with an In-Home Consult.</p>
+    <p class="k9-body">Questions first? Call or text <a class="k9-textlink" href="tel:{{ site.Params.phoneTel }}">{{ site.Params.phone }}</a>.</p>
 
     {{ with site.GetPage "/services/in-home-consult" }}
     <div class="box mt-5 k9-book-main">

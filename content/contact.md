@@ -1,4 +1,4 @@
 ---
 title: "Contact"
-type: "placeholder"
+type: "contact"
 ---

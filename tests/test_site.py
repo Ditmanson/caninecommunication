@@ -91,6 +91,19 @@ class HomePage(unittest.TestCase):
         self.assertIn('href="/faq/how-dogs-learn/"', self.html)
 
 
+class Phone(unittest.TestCase):
+    def test_phone_on_book_contact_and_home(self):
+        for path in ["/book/", "/contact/", "/"]:
+            html = page(path)
+            self.assertIn('href="tel:+14065335127"', unescape(html), path)
+            self.assertIn("406-533-5127", text(html), path)
+
+    def test_contact_page_is_not_placeholder(self):
+        t = text(page("/contact/"))
+        self.assertNotIn("aren’t live yet", t)
+        self.assertIn("training@k9-communication.com", t)
+
+
 class HowDogsLearn(unittest.TestCase):
     def test_page_exists_with_conditioning_copy(self):
         t = text(page("/faq/how-dogs-learn/"))
