@@ -1,6 +1,6 @@
 ---
 title: "Where are sessions held?"
-weight: 30
+weight: 8
 outputs: ["html", "fragment"]
 ---
 

@@ -37,4 +37,8 @@ At the consult, we'll go over what you have and what you need. Some gear you own
 
 ## Equipment buyback
 
-When training ends, I'll buy back any equipment you don't want at 90% of its value. That gear goes to future clients who need to save money. Do the math: if I buy back the same piece of gear 10 times, some lucky handler gets it free.
+Equipment I buy for you can be sold back to me at 90% of its value when training ends. That gear goes to future clients who need to save money. Do the math: if I buy back the same piece of gear 10 times, some lucky handler gets it free.
+
+## Payment
+
+Cash, check, Venmo, or Zelle, paid at the consult and at each session. See [How do I pay, and what if I cancel late?](/faq/payment/)
