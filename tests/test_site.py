@@ -61,7 +61,7 @@ class HomePage(unittest.TestCase):
                        re.findall(r'<button\b[^>]*class="[^"]*k9-suggest[^"]*"[^>]*>(.*?)</button>', self.html, re.S)]
         self.assertEqual(suggestions, [
             "How much does training cost?",
-            "How do I book?",
+            "What does a training plan look like?",
         ])
 
     def test_no_logo_in_hero(self):
@@ -82,10 +82,10 @@ class HomePage(unittest.TestCase):
         self.assertNotIn("Placeholder", text(self.html))
 
     def test_traditional_defined_at_first_mention(self):
-        t = text(self.html)
-        first = t.find("Traditional")
+        t = text(self.html).lower()
+        first = t.find("traditional")
         self.assertNotEqual(first, -1)
-        self.assertIn("also called escape and avoidance training", t[first:first + 80])
+        self.assertIn("escape and avoidance training", t[max(0, first - 80):first + 80])
 
     def test_links_to_how_dogs_learn(self):
         self.assertIn('href="/faq/how-dogs-learn/"', self.html)

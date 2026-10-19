@@ -9,7 +9,7 @@
         <div class="mt-5">
           {{ partial "chatWidget.html" (dict "suggestions" (slice
             "How much does training cost?"
-            "How do I book?"
+            "What does a training plan look like?"
           )) }}
         </div>
         <div class="k9-actions">
@@ -77,20 +77,55 @@
 
 <section class="k9-section" id="how-i-train">
   <div class="container">
-    <div class="columns is-variable is-8">
+    <h2 class="k9-h2">How I train</h2>
+    <div class="content k9-prose">
+      <p>
+        Every day you see well-trained, well-behaved dogs out with their humans, and you&rsquo;ve wondered:
+        why doesn&rsquo;t my dog look like that? You turned to the internet and ChatGPT for help, and so far
+        it hasn&rsquo;t produced the results you&rsquo;re looking for. Now you&rsquo;re here, wondering if I can help.
+      </p>
+      <p>
+        Dog training is mostly simple. However, the way we communicate with our dogs isn&rsquo;t always as
+        intuitive as it looks when you compare yourself to others. I invite you to sit down and talk with me,
+        and together we can solve the challenges that have made life with your dog harder than it needs to be.
+      </p>
+      <p>
+        I&rsquo;ll show you modern techniques from all four corners of dog training. We&rsquo;ll learn food and
+        play training, also known as <a href="{{ "/faq/training-styles/" | relURL }}">force free</a> dog training,
+        and pair it with modern <a href="{{ "/faq/escape-and-avoidance/" | relURL }}">escape and avoidance training</a>,
+        also known as Traditional dog training, to create a clear channel of communication between you and your dog.
+        At each step, you&rsquo;ll be 100% confident in what your dog knows and how to apply what you learn with me
+        to any situation, in any environment.
+      </p>
+      <p>
+        The most important thing to understand about our dogs is that our verbal language is unintuitive to them.
+        They don&rsquo;t learn English the way we do. To give them a vocabulary, we start slow and build associations
+        with the important words, sounds, and phrases we want them to react to. This is called
+        <a href="https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses" target="_blank" rel="noopener"><strong>classical conditioning</strong></a>. Once we&rsquo;re sure that foundation is
+        clear, we use it to show the dog which behaviors we expect. This is
+        <a href="https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment" target="_blank" rel="noopener"><strong>operant conditioning</strong></a>: learning through consequences.
+      </p>
+      <p>
+        For each behavior, you&rsquo;ll learn how to use the cornerstones of modern dog training to shape it however
+        you see fit. In each session, you&rsquo;ll understand which cornerstones are available for that behavior and
+        the drawbacks of relying on only one, and you&rsquo;ll have complete confidence in the result we can expect.
+      </p>
+      <p>
+        Below is a grid of the four cornerstones of modern dog training. For more information:
+      </p>
+      <ul>
+        <li>Ask the chat assistant at the top of the page. It finds answers across my websites, so what it tells you comes from me.</li>
+        <li>Check out the <a href="{{ "/faq/" | relURL }}">FAQ</a>. I answer as many questions there as I can, which also gives the chat assistant more to draw on.</li>
+        <li>Still stuck? Email me at <a href="mailto:training@k9-communication.com">training@k9-communication.com</a>. It&rsquo;s the real first step toward the life you picture with your dog.</li>
+      </ul>
+    </div>
+
+    <div class="columns is-variable is-8 mt-5">
       <div class="column is-5">
-        <h2 class="k9-h2">How I train</h2>
-        <p class="k9-body">
-          Dogs don&rsquo;t understand English. They learn what our words predict
-          (<strong>classical conditioning</strong>) and what their actions earn
-          (<strong>operant conditioning</strong>). All dog training &mdash; force free,
-          Traditional (also called escape and avoidance training), balanced, or accidental &mdash;
-          traces back to these two. Master both, and you can create or extinguish any behavior.
-        </p>
         <dl class="k9-legend">
-          <div><dt><span class="k9-swatch is-ff"></span>Force free</dt><dd>Training without aversives.</dd></div>
-          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd>Training with a focus on aversives.</dd></div>
-          <div><dt><span class="k9-swatch is-ff"></span><span class="k9-swatch is-trad"></span>Balanced</dt><dd>A blend of force free and traditional training.</dd></div>
+          <div><dt><span class="k9-swatch is-ff"></span>Force free</dt><dd>Training with food and/or play.</dd></div>
+          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd>Escape and avoidance training.</dd></div>
+          <div><dt><span class="k9-swatch is-ff"></span><span class="k9-swatch is-trad"></span>Balanced</dt><dd>A blend of force free and Traditional training.</dd></div>
         </dl>
         <p class="mt-4"><a class="k9-textlink" href="{{ "/faq/how-dogs-learn/" | relURL }}">How do dogs learn? Read more</a></p>
       </div>
