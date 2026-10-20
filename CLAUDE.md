@@ -19,3 +19,13 @@ Business/booking site for griz.sh's owner — the professional, conversion-focus
 - AWS-native — reuse the same AWS account/credentials already set up for griz.sh.
 - Stack decided (ticket #3/#4, ADR 0001): Hugo + Bulma (npm/Hugo Pipes) + htmx + Alpine.js.
 - **AWS goes last.** Write and commit Lambda/backend code, deploy scripts, and IaC freely — but do not run any `aws` command that actually creates or modifies a real resource (`create-table`, `create-function`, `create-function-url-config`, etc.) until the owner has purchased the domain, set up Proton Pro, and set up Stripe. This is a deliberate sequencing decision, not a cost concern — confirm explicitly before crossing from "code is ready" to "resource is live," even for reversible/cheap resources.
+
+## Versioning
+
+Annotated git tags, `vMAJOR.MINOR.PATCH`, starting at `v1.0.0` (first complete live site). Tag only when the owner asks.
+
+- **MAJOR**: a redesign or a change in how the business works (e.g. new booking or payment model).
+- **MINOR**: new pages, services, FAQ batches, or features.
+- **PATCH**: fixes and copy edits.
+
+`git tag -a vX.Y.Z -m "summary"` then `git push origin vX.Y.Z`.
