@@ -420,3 +420,20 @@ h1, h2, h3, h4, h5, h6,
 }
 
 [x-cloak] { display: none !important; }
+
+// FAQ accordion: long questions wrap instead of pushing the page wide on phones.
+.k9-faq-toggle {
+  height: auto;
+  white-space: normal;
+  text-align: left;
+  gap: 1rem;
+}
+.k9-faq-toggle span:last-child { flex-shrink: 0; }
+
+// Wide tables (e.g. the marker table) scroll inside themselves on phones
+// instead of widening the page. Applies to page and FAQ-fragment content.
+.content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
