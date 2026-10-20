@@ -15,10 +15,12 @@ Business/booking site for griz.sh's owner — the professional, conversion-focus
 ## Workflow
 
 - Solo dev (owner + Claude). Iterative design, test-driven development.
-- Test on localhost only. Never deploy or go live without an explicit ask from the owner via a GitHub issue.
-- AWS-native — reuse the same AWS account/credentials already set up for griz.sh.
-- Stack decided (ticket #3/#4, ADR 0001): Hugo + Bulma (npm/Hugo Pipes) + htmx + Alpine.js.
-- **AWS goes last.** Write and commit Lambda/backend code, deploy scripts, and IaC freely — but do not run any `aws` command that actually creates or modifies a real resource (`create-table`, `create-function`, `create-function-url-config`, etc.) until the owner has purchased the domain, set up Proton Pro, and set up Stripe. This is a deliberate sequencing decision, not a cost concern — confirm explicitly before crossing from "code is ready" to "resource is live," even for reversible/cheap resources.
+- Stack (ADR 0001): Hugo + Bulma (npm/Hugo Pipes) + htmx + Alpine.js. AWS-native, same AWS account as griz.sh.
+- **The site is live** at k9-communication.com on Amplify, which auto-builds `main`. A push is a deploy: commit freely, but push only when the owner says so.
+- **Test before committing:** `python3 -m unittest discover tests` (builds the site; checks home page structure and every internal link/anchor), plus `hugo server` on localhost for visual checks, including phone width (~390px).
+- **Lambdas are live:** `chat-agent` (the Cross-site agent) and `client-capture` (deployed, currently unused). Updating code with `lambda/<name>/deploy.sh` is reversible and fine once the owner has approved the change. Creating new AWS resources still needs explicit owner confirmation first.
+- **Keep the chat agent in sync:** `BUSINESS_FACTS` in `lambda/chat-agent/handler.py` repeats prices, policies, booking paths, and contact info. When those change on the site, update it and redeploy.
+- **Still off:** Stripe (`paymentsLive: false`, see #7) and the Turnstile CAPTCHA (needs owner-created Cloudflare keys). Don't enable either without the owner.
 
 ## Versioning
 
