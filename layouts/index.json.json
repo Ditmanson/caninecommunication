@@ -11,7 +11,7 @@
        after truncate undoes it. */ -}}
 {{- $pages := slice -}}
 {{- range .Site.RegularPages -}}
-  {{- if not .Params.placeholder -}}
+  {{- if not (or .Params.placeholder .Params.unlisted) -}}
     {{- $pages = $pages | append (dict
         "title" .Title
         "url" .Permalink

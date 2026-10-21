@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{- /* Unlisted Client community invite page: not in the menu, sitemap,
+       search engines (noindex), or the chat agent's index. The owner shares
+       the URL or the QR code directly. */ -}}
+{{- $invite := site.Params.discordInvite -}}
+<section class="k9-hero">
+  <div class="container" style="max-width: 48rem;">
+    <h1 class="k9-display">{{ .Title }}</h1>
+    <p class="k9-lead">You&rsquo;re invited to the K9-Communication Discord: a place to ask questions between sessions, share progress, and train with other handlers.</p>
+
+    <div class="columns is-8-tablet mt-5 is-vcentered">
+      <div class="column">
+        <a class="button is-primary is-medium" href="{{ $invite }}" target="_blank" rel="noopener">Join the Discord</a>
+        <p class="k9-caption mt-3">Or scan the code with your phone&rsquo;s camera.</p>
+      </div>
+      <div class="column is-narrow">
+        <img src="{{ "/images/discord-invite-qr.png" | relURL }}" alt="QR code linking to the K9-Communication Discord invite" width="220" height="220">
+      </div>
+    </div>
+
+    <div class="content k9-prose mt-6">
+      <h2>Get the app</h2>
+      <p>Discord is free. Download it for your <a href="https://discord.com/download" target="_blank" rel="noopener">phone or computer</a>, or use it in your <a href="https://discord.com/app" target="_blank" rel="noopener">browser</a>. Create an account, then tap the invite above.</p>
+
+      <h2>Channels</h2>
+      <ul>
+        <li><strong>#rules</strong>: read these first.</li>
+        <li><strong>#announcements</strong>: group class schedule and closures.</li>
+        <li><strong>#obedience</strong>: sit, down, place, heel, recall, and everything in between.</li>
+        <li><strong>#nose-work</strong>: detection, tracking, trailing, and scent games.</li>
+        <li><strong>#sports</strong>: disc, agility, IGP obedience, and other dog sports.</li>
+        <li><strong>#just-for-fun</strong>: tricks, games, and dog life.</li>
+        <li><strong>#general-questions</strong>: ask anything about training.</li>
+        <li><strong>#showing-off</strong>: progress photos and videos. Brag away.</li>
+        <li><strong>#rehoming</strong>: helping dogs find new homes (see the rules).</li>
+      </ul>
+
+      <h2>Rules</h2>
+      <ol>
+        <li>Be kind. Everyone is here to help their dog.</li>
+        <li>No cursing, no sexual content, no harassment. Automatic filters remove violations.</li>
+        <li>No bots, advertising, or spam.</li>
+        <li>Training advice here supports your sessions; it doesn&rsquo;t replace them. For safety concerns, contact me directly.</li>
+        <li><strong>#rehoming:</strong> rehoming only, no sales or breeding ads. Include the dog&rsquo;s age, temperament, training history, and reason for rehoming. Only post a dog with the owner&rsquo;s permission. No money beyond a reasonable rehoming fee.</li>
+      </ol>
+
+      <p>Questions? Call or text <a href="tel:{{ site.Params.phoneTel }}">{{ site.Params.phone }}</a>, or email <a href="mailto:{{ site.Params.bookingEmail }}">{{ site.Params.bookingEmail }}</a>.</p>
+    </div>
+  </div>
+</section>
+{{ end }}

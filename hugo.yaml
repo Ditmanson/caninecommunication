@@ -32,6 +32,10 @@ params:
   # Where booking emails go (Book page email path; travel-area clients).
   bookingEmail: "training@k9-communication.com"
 
+  # Client community (Discord) invite. Only rendered on the unlisted
+  # /join-the-pack/ page; never link it elsewhere on the site.
+  discordInvite: "https://discord.gg/AvS8RRSgJ"
+
   # Owner's phone (call or text): shown on Book, Contact, and the home page.
   phone: "406-533-5127"
   phoneTel: "+14065335127"

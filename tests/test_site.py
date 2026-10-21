@@ -104,6 +104,41 @@ class Phone(unittest.TestCase):
         self.assertIn("training@k9-communication.com", t)
 
 
+INVITE = "https://discord.gg/AvS8RRSgJ"
+
+
+class ClientCommunity(unittest.TestCase):
+    def test_invite_page_has_link_and_qr(self):
+        html = page("/join-the-pack/")
+        self.assertIn(f'href="{INVITE}"', html)
+        self.assertRegex(html, r'<img [^>]*src="/images/discord-invite-qr\.png"')
+        self.assertTrue(os.path.exists(os.path.join(PUBLIC, "images", "discord-invite-qr.png")))
+        self.assertIn('<meta name="robots" content="noindex', html)
+
+    def test_invite_page_is_unlisted(self):
+        with open(os.path.join(PUBLIC, "sitemap.xml"), encoding="utf-8") as f:
+            self.assertNotIn("join-the-pack", f.read())
+        with open(os.path.join(PUBLIC, "index.json"), encoding="utf-8") as f:
+            index = f.read()
+        self.assertNotIn("join-the-pack", index)
+        self.assertNotIn(INVITE, index)
+        self.assertNotIn("join-the-pack", page("/"))
+
+    def test_invite_link_only_on_invite_page(self):
+        for root, _, files in os.walk(PUBLIC):
+            for name in files:
+                if name.endswith((".html", ".json", ".xml")):
+                    rel = os.path.relpath(os.path.join(root, name), PUBLIC)
+                    if rel.startswith("join-the-pack"):
+                        continue
+                    with open(os.path.join(root, name), encoding="utf-8") as f:
+                        self.assertNotIn(INVITE, f.read(), rel)
+
+    def test_book_page_mentions_community_without_link(self):
+        t = text(page("/book/"))
+        self.assertIn("Discord community", t)
+
+
 class HowDogsLearn(unittest.TestCase):
     def test_page_exists_with_conditioning_copy(self):
         t = text(page("/faq/how-dogs-learn/"))

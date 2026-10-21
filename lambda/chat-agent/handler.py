@@ -109,6 +109,9 @@ BUSINESS_FACTS = (
     "training does not.\n"
     "- No protection or bite work. No board-and-train: owners attend most "
     "sessions.\n"
+    "- Clients get an invite to the owner's Discord community (questions, "
+    "progress, other handlers). It's invite-only: the owner sends the link "
+    "directly. Never give out or guess an invite link.\n"
     "- Contact: call or text 406-533-5127, or email "
     "training@k9-communication.com (also on the Contact page)."
 )

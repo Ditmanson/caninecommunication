@@ -38,6 +38,9 @@ _Avoid_: Surrounding counties, service radius
 **Mileage fee** — $0.70 per mile, round trip, measured from the El Paso County line, charged per visit in the travel area.
 _Avoid_: Travel fee, trip charge
 
+**Client community** — The owner's Discord server, for clients and people the owner chooses to invite. Joined through an unlisted invite page, not linked publicly.
+_Avoid_: Club, chat, Discord channel
+
 ## Status
 
 Frontend framework not yet chosen. See the ADR in `docs/adr/` once it exists (Hugo vs. Next.js/Amplify, informed by a look-and-feel PoC) before assuming either.
