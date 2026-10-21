@@ -437,3 +437,16 @@ h1, h2, h3, h4, h5, h6,
   max-width: 100%;
   overflow-x: auto;
 }
+
+// Certificate gallery (About page)
+.k9-certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+.content .k9-certs figure,
+.content .k9-certs figure:not(:first-child) { margin: 0; text-align: left; }
+.k9-certs { align-items: start; }
+.k9-certs img { display: block; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.k9-certs figcaption { margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8; }

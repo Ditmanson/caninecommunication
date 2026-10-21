@@ -27,12 +27,16 @@ type: "about"
         - Learned about managing aggression and the safety precautions needed for aggressive dogs trained for violence
         - Learned my first lessons on frustration and drive building
     - **Official coursework through the Michael Ellis School for Dog Trainers**
-        - 40-hour obedience intensive certification
-        - 40-hour behavior modification certification
+        - 60-hour Obedience Intensive (July 2020)
+        - 30-hour Behavior Modification (November 2020)
         - 16-hour e-collar certification
         - Current member of the Michael Ellis School for Dog Trainers club
             - This is my main avenue of self study
             - If I come across a complex issue, I can forward it to Michael, who is arguably the best in the business
+## Certificates
+
+{{< certs >}}
+
 ## My dogs
 - 2026-Present **Griz**
     - High-drive working line German Shepherd

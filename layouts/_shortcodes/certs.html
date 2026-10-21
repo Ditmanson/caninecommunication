@@ -1,0 +1,16 @@
+{{- /* Certificate gallery: thumbnails that open the full image.
+       Each image is in static/images/certs/; captions come from the list below. */ -}}
+{{- $certs := slice
+  (dict "file" "michael-ellis-obedience-intensive-2020.jpg" "caption" "Michael Ellis School: Obedience Intensive, 60 hours (July 2020)")
+  (dict "file" "michael-ellis-behavior-modification-2020.jpg" "caption" "Michael Ellis School: Behavior Modification, 30 hours (November 2020)")
+  (dict "file" "akc-cgc-everest-2020.jpg" "caption" "AKC Canine Good Citizen: Everest (July 2020)")
+-}}
+<div class="k9-certs">
+  {{- range $certs }}
+  {{- $src := printf "/images/certs/%s" .file | relURL }}
+  <figure>
+    <a href="{{ $src }}" target="_blank" rel="noopener"><img src="{{ $src }}" alt="Certificate: {{ .caption }}" loading="lazy"></a>
+    <figcaption>{{ .caption }}</figcaption>
+  </figure>
+  {{- end }}
+</div>
