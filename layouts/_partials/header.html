@@ -24,6 +24,9 @@
           {{ .Name }}
         </a>
       {{ end }}
+      {{ if .Site.Params.paymentsLive }}
+        <a href="{{ "/pay/" | relURL }}" class="navbar-item">Pay</a>
+      {{ end }}
     </div>
   </div>
 </nav>

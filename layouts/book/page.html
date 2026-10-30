@@ -51,14 +51,7 @@
     {{ partial "book-paths.html" (dict "online" $online "proton" $proton "email" $email "mailto" $sessionMail) }}
 
     {{ if site.Params.paymentsLive }}
-    <h2 class="k9-h2 mt-6" id="pay">Pay online</h2>
-    <p class="k9-body">Pay after your session, or pay ahead for several. Cash, check, Venmo, and Zelle still work too.</p>
-    <div class="buttons mt-4">
-      <a class="button" href="{{ $pay.remainder.url }}">{{ $pay.remainder.label }}</a>
-      <a class="button" href="{{ $pay.sessions.url }}">{{ $pay.sessions.label }}</a>
-      <a class="button" href="{{ $pay.packAfterDeposit.url }}">{{ $pay.packAfterDeposit.label }}</a>
-    </div>
-    <p class="k9-caption">Sessions: {{ $pay.sessions.note }}. Pack after a deposit: {{ $pay.packAfterDeposit.note }}.</p>
+    <p class="k9-body mt-5">Already booked? <a class="k9-textlink" href="{{ "/pay/" | relURL }}">Make a payment</a>.</p>
     {{ end }}
   </div>
 </section>

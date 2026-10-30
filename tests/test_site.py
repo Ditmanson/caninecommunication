@@ -148,25 +148,34 @@ class HowDogsLearn(unittest.TestCase):
 
 
 class Payments(unittest.TestCase):
-    LABELS = ["Pay $30 deposit", "Pay $70 session remainder",
-              "Pay for 1-10 sessions", "Buy a pack after your deposit"]
+    PAY_LABELS = ["Pay $30 deposit", "Pay $70 session remainder",
+                  "Pay for 1-10 sessions", "Buy a pack after your deposit"]
 
-    def test_hidden_while_payments_are_off(self):
-        html = page("/book/")
-        self.assertNotIn("stripe.com", html)
-        for label in self.LABELS:
-            self.assertNotIn(label, text(html))
-
-    def test_shown_when_payments_are_on(self):
+    def live_page(self, path):
         out = tempfile.mkdtemp(prefix="k9-site-live-")
         self.addCleanup(shutil.rmtree, out, ignore_errors=True)
         subprocess.run(["hugo", "--quiet", "-d", out], cwd=ROOT, check=True,
                        env={**os.environ, "HUGO_PARAMS_PAYMENTSLIVE": "true"})
-        with open(os.path.join(out, "book", "index.html"), encoding="utf-8") as f:
-            html = f.read()
-        for label in self.LABELS:
+        with open(os.path.join(out, path.strip("/"), "index.html"), encoding="utf-8") as f:
+            return f.read()
+
+    def test_hidden_while_payments_are_off(self):
+        for path in ["/book/", "/pay/", "/"]:
+            self.assertNotIn("stripe.com", page(path), path)
+        self.assertNotIn('href="/pay/"', page("/"))
+        self.assertIn("isn’t open yet", text(page("/pay/")))
+
+    def test_pay_page_when_payments_are_on(self):
+        html = self.live_page("/pay/")
+        for label in self.PAY_LABELS:
             self.assertIn(label, text(html))
         self.assertEqual(len(set(re.findall(r'href="(https://buy\.stripe\.com/[^"]+)"', html))), 4)
+        self.assertIn('href="/pay/"', html)
+
+    def test_book_page_when_payments_are_on(self):
+        html = self.live_page("/book/")
+        self.assertIn("Pay $30 deposit", text(html))
+        self.assertIn('href="/pay/"', html)
         consult = html[html.find("k9-book-main"):html.find("Returning client?")]
         self.assertNotIn("calendar.proton.me", consult)
 

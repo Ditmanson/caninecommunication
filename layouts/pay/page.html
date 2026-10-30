@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{- $pay := site.Data.payments -}}
+<section class="k9-hero">
+  <div class="container" style="max-width: 44rem;">
+    <h1 class="k9-display">{{ .Title }}</h1>
+    {{ if site.Params.paymentsLive }}
+      <p class="k9-lead">Pay securely through Stripe. Cash, check, Venmo, and Zelle still work too.</p>
+      <ul class="k9-ratecard mt-5">
+        {{ range slice $pay.deposit $pay.remainder $pay.sessions $pay.packAfterDeposit }}
+        <li>
+          <a href="{{ .url }}">
+            <span class="k9-rc-main"><strong>{{ .label }}</strong>{{ .note }}</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      <p class="k9-body mt-5">New client? <a class="k9-textlink" href="{{ "/book/" | relURL }}">Start on the Book page</a>.</p>
+    {{ else }}
+      <p class="k9-lead">Online payment isn&rsquo;t open yet. Cash, check, Venmo, and Zelle work in the meantime.</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
