@@ -2,6 +2,7 @@
 {{- $email := site.Params.bookingEmail -}}
 {{- $proton := site.Params.protonBookingURL -}}
 {{- $online := ne $proton "#" -}}
+{{- $pay := site.Data.payments -}}
 {{- $template := "Hi! I'd like to book a session.\n\nService:\nAddress and county:\nDog's name, breed, and age:\nWhat we want to work on:\nPreferred Friday/Saturday times:\n" -}}
 {{- $consultMail := printf "mailto:%s?%s" $email (replace (querify "subject" "In-Home Consult request" "body" (replace $template "Service:\n" "Service: In-Home Consult\n")) "+" "%20") -}}
 {{- $sessionMail := printf "mailto:%s?%s" $email (replace (querify "subject" "Training session request" "body" $template) "+" "%20") -}}
@@ -22,7 +23,14 @@
         </div>
         <p class="k9-aside-price">$30 deposit<small class="k9-caption is-block">Paid at the consult, credited toward training</small></p>
       </div>
-      {{ partial "book-paths.html" (dict "online" $online "proton" $proton "email" $email "mailto" $consultMail) }}
+      {{ if site.Params.paymentsLive }}
+        <div class="mt-4">
+          <a class="button is-primary" href="{{ $pay.deposit.url }}">{{ $pay.deposit.label }}</a>
+          <p class="k9-caption mt-3">You&rsquo;ll pick a time after paying. Prefer Venmo or Zelle, or outside El Paso County? <a class="k9-textlink" href="{{ $consultMail | safeURL }}">Email me</a>.</p>
+        </div>
+      {{ else }}
+        {{ partial "book-paths.html" (dict "online" $online "proton" $proton "email" $email "mailto" $consultMail) }}
+      {{ end }}
     </div>
     {{ end }}
 
@@ -41,6 +49,17 @@
       {{ end }}
     </ul>
     {{ partial "book-paths.html" (dict "online" $online "proton" $proton "email" $email "mailto" $sessionMail) }}
+
+    {{ if site.Params.paymentsLive }}
+    <h2 class="k9-h2 mt-6" id="pay">Pay online</h2>
+    <p class="k9-body">Pay after your session, or pay ahead for several. Cash, check, Venmo, and Zelle still work too.</p>
+    <div class="buttons mt-4">
+      <a class="button" href="{{ $pay.remainder.url }}">{{ $pay.remainder.label }}</a>
+      <a class="button" href="{{ $pay.sessions.url }}">{{ $pay.sessions.label }}</a>
+      <a class="button" href="{{ $pay.packAfterDeposit.url }}">{{ $pay.packAfterDeposit.label }}</a>
+    </div>
+    <p class="k9-caption">Sessions: {{ $pay.sessions.note }}. Pack after a deposit: {{ $pay.packAfterDeposit.note }}.</p>
+    {{ end }}
   </div>
 </section>
 {{ end }}

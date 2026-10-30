@@ -147,6 +147,29 @@ class HowDogsLearn(unittest.TestCase):
         self.assertIn("Operant conditioning", t)
 
 
+class Payments(unittest.TestCase):
+    LABELS = ["Pay $30 deposit", "Pay $70 session remainder",
+              "Pay for 1-10 sessions", "Buy a pack after your deposit"]
+
+    def test_hidden_while_payments_are_off(self):
+        html = page("/book/")
+        self.assertNotIn("book.stripe.com", html)
+        for label in self.LABELS:
+            self.assertNotIn(label, text(html))
+
+    def test_shown_when_payments_are_on(self):
+        out = tempfile.mkdtemp(prefix="k9-site-live-")
+        self.addCleanup(shutil.rmtree, out, ignore_errors=True)
+        subprocess.run(["hugo", "--quiet", "-d", out], cwd=ROOT, check=True,
+                       env={**os.environ, "HUGO_PARAMS_PAYMENTSLIVE": "true"})
+        with open(os.path.join(out, "book", "index.html"), encoding="utf-8") as f:
+            html = f.read()
+        for label in self.LABELS:
+            self.assertIn(label, text(html))
+        consult = html[html.find("k9-book-main"):html.find("Returning client?")]
+        self.assertNotIn("calendar.proton.me", consult)
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()

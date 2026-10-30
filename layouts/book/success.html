@@ -4,7 +4,7 @@
     <h1 class="k9-display">Payment received.</h1>
     <p class="k9-lead">Thank you. Stripe has emailed you a receipt.</p>
     {{ if ne .Site.Params.protonBookingURL "#" }}
-      <p class="k9-body">Next, pick a time that works for you on the scheduling page. I&rsquo;ll confirm by email.</p>
+      <p class="k9-body">Still need a time? In El Paso County, pick one on the scheduling page and I&rsquo;ll confirm by email. Outside El Paso County, <a class="k9-textlink" href="mailto:{{ .Site.Params.bookingEmail }}">email me</a> so I can plan drive time.</p>
     {{ else }}
       <p class="k9-body">I&rsquo;ll email you to set up a time.</p>
     {{ end }}
