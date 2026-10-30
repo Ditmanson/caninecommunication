@@ -153,7 +153,7 @@ class Payments(unittest.TestCase):
 
     def test_hidden_while_payments_are_off(self):
         html = page("/book/")
-        self.assertNotIn("book.stripe.com", html)
+        self.assertNotIn("stripe.com", html)
         for label in self.LABELS:
             self.assertNotIn(label, text(html))
 
@@ -166,6 +166,7 @@ class Payments(unittest.TestCase):
             html = f.read()
         for label in self.LABELS:
             self.assertIn(label, text(html))
+        self.assertEqual(len(set(re.findall(r'href="(https://buy\.stripe\.com/[^"]+)"', html))), 4)
         consult = html[html.find("k9-book-main"):html.find("Returning client?")]
         self.assertNotIn("calendar.proton.me", consult)
 

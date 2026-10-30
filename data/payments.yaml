@@ -1,6 +1,5 @@
 # Stripe Payment Links, TEST MODE (sandbox "k9 communication sandbox").
 # The four things a client can pay for online, all shown on the Book page.
-# URLs are blank until the links are created in the sandbox.
 # Going live = recreate these links in live mode (their success redirect must
 # point at the real domain's /book/success/), replace the URLs here, and set
 # params.paymentsLive: true. Nothing else in the site needs to change.
@@ -12,15 +11,15 @@
 #   packAfterDeposit: $70 x 1 plus $100, adjustable quantity 1-9
 deposit:
   label: "Pay $30 deposit"
-  url: ""
+  url: "https://buy.stripe.com/test_aFafZhbVNcNQ57kfvg93y0a"
 remainder:
   label: "Pay $70 session remainder"
-  url: ""
+  url: "https://buy.stripe.com/test_cNi9AT7Fx3dgdDQ2Iu93y0b"
 sessions:
   label: "Pay for 1-10 sessions"
   note: "$100 per session"
-  url: ""
+  url: "https://buy.stripe.com/test_8x2bJ19NFdRU57k2Iu93y0c"
 packAfterDeposit:
   label: "Buy a pack after your deposit"
   note: "$70 remainder plus $100 per additional session"
-  url: ""
+  url: "https://buy.stripe.com/test_9B6bJ14tlbJM6bofvg93y0d"
