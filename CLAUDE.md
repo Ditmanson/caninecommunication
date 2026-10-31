@@ -22,6 +22,17 @@ Business/booking site for griz.sh's owner — the professional, conversion-focus
 - **Keep the chat agent in sync:** `BUSINESS_FACTS` in `lambda/chat-agent/handler.py` repeats prices, policies, booking paths, and contact info. When those change on the site, update it and redeploy.
 - **Still off:** Stripe (`paymentsLive: false`, see #7) and the Turnstile CAPTCHA (needs owner-created Cloudflare keys). Don't enable either without the owner.
 
+## New content inbox
+
+`newcontent.md` (repo root, untracked) is the owner's scratch inbox for new material (notes, video links, rough copy). When told to "review the new content":
+
+1. Read `newcontent.md`; if unclear, ask (grill) before building.
+2. Make the edits: new/updated pages, training records, FAQ, `BUSINESS_FACTS` sync if facts changed, etc.
+3. Run the tests and check the build.
+4. When the owner says we're done, reset the inbox with `echo > newcontent.md`. Never reset before then.
+
+Commit/push/tag still follow the usual rules (only when the owner says so).
+
 ## Versioning
 
 Annotated git tags, `vMAJOR.MINOR.PATCH`, starting at `v1.0.0` (first complete live site). Tag only when the owner asks.
