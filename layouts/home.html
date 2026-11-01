@@ -1,20 +1,23 @@
 {{ define "main" }}
 
-<section class="k9-hero" id="hero">
+<section class="k9-hero k9-hero-ripple" id="hero">
+  <svg class="k9-ripple" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
+    <circle class="k9-ripple-drop" cx="400" cy="400" r="9"/>
+    <circle cx="400" cy="400" r="60"/><circle cx="400" cy="400" r="130"/><circle cx="400" cy="400" r="210"/><circle cx="400" cy="400" r="300"/><circle cx="400" cy="400" r="395"/>
+  </svg>
   <div class="container">
-    <div class="columns">
-      <div class="column is-8">
-        <h1 class="k9-display">In-home dog training through classical and operant conditioning</h1>
-        <p class="k9-lead">El Paso County, Colorado, and <a class="k9-textlink" href="{{ "/faq/location/" | relURL }}">surrounding areas</a></p>
-        <div class="mt-5">
-          {{ partial "chatWidget.html" (dict "suggestions" (slice
-            "How much does training cost?"
-            "What does a training plan look like?"
-          )) }}
-        </div>
-        <div class="k9-actions">
-          <a class="button is-primary is-medium" href="{{ "/book" | relURL }}">Book a consult</a>
-        </div>
+    <h1 class="k9-display k9-display-xl">Dog. Man&rsquo;s Best Friend.</h1>
+    <div class="columns is-variable is-8">
+      <div class="column is-7">
+        <div class="k9-pitch">{{ partial "pitch.html" . }}</div>
+        <p class="k9-area">El Paso County, Colorado, and <a href="{{ "/faq/location/" | relURL }}">surrounding areas</a></p>
+      </div>
+      <div class="column is-5">
+        {{ partial "chatWidget.html" (dict "suggestions" (slice
+          "How much does training cost?"
+          "What does a training plan look like?"
+        )) }}
+        <a class="button is-warning is-medium is-fullwidth" href="{{ "/book" | relURL }}">Book a consult</a>
       </div>
     </div>
   </div>

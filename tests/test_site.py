@@ -41,7 +41,7 @@ class HomePage(unittest.TestCase):
         h1 = re.search(r"<h1\b[^>]*>(.*?)</h1>", self.html, re.S)
         self.assertIsNotNone(h1)
         self.assertEqual(text(h1.group(1)).strip(),
-                         "In-home dog training through classical and operant conditioning")
+                         "Dog. Man’s Best Friend.")
         self.assertIn("El Paso County, Colorado, and surrounding areas", text(self.html))
         self.assertRegex(self.html, r'<a [^>]*href="/faq/location/"[^>]*>surrounding areas</a>')
 

@@ -145,6 +145,70 @@ h1, h2, h3, h4, h5, h6,
   text-underline-offset: 0.2em;
 }
 
+// Home hero: the elevator pitch
+.k9-display-xl { font-size: clamp(3.25rem, 10vw, 8rem); margin-bottom: 2rem; }
+.k9-pitch {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 38em;
+}
+.k9-pitch p + p { margin-top: 1em; }
+.k9-pitch a, .k9-area a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.k9-pitch-open {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  line-height: 1.35;
+  font-weight: 600;
+}
+.k9-area { margin-top: 1.5rem; font-size: 0.95rem; }
+
+// Pine hero, the ripple from the pitch drawn behind it
+.k9-hero-ripple {
+  position: relative;
+  overflow: hidden;
+  background: var(--k9-pine);
+  color: hsl(95, 12%, 90%);
+}
+.k9-hero-ripple > .container { position: relative; }
+.k9-hero-ripple .k9-display { color: #fff; }
+.k9-hero-ripple .k9-pitch-open { color: #fff; }
+.k9-hero-ripple .k9-pitch a, .k9-hero-ripple .k9-area a { color: var(--k9-gold); }
+.k9-ripple {
+  position: absolute;
+  top: -22rem;
+  right: -16rem;
+  width: 52rem;
+  height: 52rem;
+  pointer-events: none;
+}
+.k9-ripple circle {
+  fill: none;
+  stroke: var(--k9-gold);
+  stroke-width: 1.5;
+  opacity: 0.45;
+}
+.k9-ripple .k9-ripple-drop { fill: var(--k9-gold); stroke: none; opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .k9-ripple circle:not(.k9-ripple-drop) {
+    transform-origin: center;
+    animation: k9-ripple-out 1.4s ease-out both;
+  }
+  .k9-ripple circle:nth-of-type(3) { animation-delay: 0.12s; }
+  .k9-ripple circle:nth-of-type(4) { animation-delay: 0.24s; }
+  .k9-ripple circle:nth-of-type(5) { animation-delay: 0.36s; }
+  .k9-ripple circle:nth-of-type(6) { animation-delay: 0.48s; }
+}
+@media screen and (max-width: 768px) {
+  .k9-ripple { top: -9rem; right: -9rem; width: 24rem; height: 24rem; }
+  .k9-ripple circle { opacity: 0.25; stroke-width: 3; }
+}
+@keyframes k9-ripple-out {
+  from { transform: scale(0.2); opacity: 0; }
+}
+
 // Sections
 .k9-hero { padding: 4rem 1.5rem 3rem; }
 .k9-section { padding: 4.5rem 1.5rem; }
