@@ -3,14 +3,15 @@
 {{- $proton := site.Params.protonBookingURL -}}
 {{- $online := ne $proton "#" -}}
 {{- $pay := site.Data.payments -}}
-{{- $template := "Hi! I'd like to book a session.\n\nService:\nAddress and county:\nDog's name, breed, and age:\nWhat we want to work on:\nPreferred Friday/Saturday times:\n" -}}
+{{- $template := "Hi! I'd like to book a session.\n\nService:\nAddress and county:\nDog's name, breed, and age:\nWhat we want to work on:\nPreferred times:\n" -}}
 {{- $consultMail := printf "mailto:%s?%s" $email (replace (querify "subject" "In-Home Consult request" "body" (replace $template "Service:\n" "Service: In-Home Consult\n")) "+" "%20") -}}
 {{- $sessionMail := printf "mailto:%s?%s" $email (replace (querify "subject" "Training session request" "body" $template) "+" "%20") -}}
 
 <section class="k9-hero">
   <div class="container">
     <h1 class="k9-display">{{ .Title }}</h1>
-    <p class="k9-lead">I train Fridays and Saturdays. New clients start with an In-Home Consult.</p>
+    <p class="k9-lead">I train {{ site.Params.hours | safeHTML }}. New clients start with an In-Home Consult.</p>
+    <p class="k9-body">Want to talk first? A video or phone consult is free: book any time online and write &ldquo;video consult&rdquo; in your notes, or call or text.</p>
     <p class="k9-body">Every client also gets access to my Discord community for questions between sessions.</p>
     <p class="k9-body">Questions first? Call or text <a class="k9-textlink" href="tel:{{ site.Params.phoneTel }}">{{ site.Params.phone }}</a>.</p>
 
@@ -21,7 +22,7 @@
           <h2 class="k9-h2 mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           <p class="k9-body">{{ .Params.summary }}</p>
         </div>
-        <p class="k9-aside-price">$30 deposit<small class="k9-caption is-block">Paid at the consult, credited toward training</small></p>
+        <p class="k9-aside-price">$30 deposit<small class="k9-caption is-block">In-home, credited toward training. Video is free.</small></p>
       </div>
       {{ if site.Params.paymentsLive }}
         <div class="mt-4">
@@ -35,7 +36,7 @@
     {{ end }}
 
     <h2 class="k9-h2 mt-6">Returning client?</h2>
-    <p class="k9-body">Book any service you&rsquo;re ready for, using the same options. Tell me which service in your booking notes or email. Sessions are about 60 minutes. See <a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">pricing</a> for details.</p>
+    <p class="k9-body">Book any service you&rsquo;re ready for, using the same options. Tell me which service in your booking notes or email. Sessions are designed to run about an hour. If one runs over or under, you&rsquo;re charged by the session, not by the hour. In-Home Consults run about 30 minutes. See <a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">pricing</a> for details.</p>
     <ul class="k9-ratecard">
       {{ range (site.GetPage "services").Pages.ByParam "weight" }}
         {{ if not .Params.start }}

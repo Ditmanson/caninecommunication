@@ -22,7 +22,9 @@ _Avoid_: Class, package, day
 **Fundamentals Bootcamp** — An example full build that chains the core services in order. A guideline that gets customized per client, not a requirement.
 _Avoid_: Bootcamp (alone), program
 
-**In-Home Consult** — The entry service every new client starts with, held at the client's home. Booked with a consult deposit.
+**In-Home Consult** — The entry service every new client starts with, held at the client's home. Booked with a consult deposit; about 30 minutes.
+
+**Video/Phone Consult** — Optional, free call before the In-Home Consult to check fit and give general advice. Booked online (noted "video consult") or by call/text. Doesn't replace the In-Home Consult.
 _Avoid_: Day 0, Behavior Consult, evaluation
 
 **Consult deposit** — The $30 paid for the In-Home Consult, credited toward the first training session if booked within 60 days; non-refundable unless the owner declines the dog. Paid at the consult until online payment exists.
@@ -30,7 +32,7 @@ _Avoid_: Day 0, Behavior Consult, evaluation
 **Returning client** — Someone who has completed an In-Home Consult and can book any service whose requirements they meet.
 _Avoid_: Member, existing customer
 
-**Home area** — El Paso County. Clients here can book online, Fridays and Saturdays, 6am–6pm.
+**Home area** — El Paso County. Clients here can book online: weekdays 7–8am and 4:30–6:30pm, Fridays and Saturdays 7am–6:30pm, Sundays 2–4pm (1-hour slots).
 
 **Travel area** — Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln counties. Clients here book by email so drive time can be planned, and pay a mileage fee.
 _Avoid_: Surrounding counties, service radius

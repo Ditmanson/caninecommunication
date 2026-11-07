@@ -3,7 +3,7 @@
   {{ if .online }}
   <div class="column">
     <p class="has-text-weight-semibold">In El Paso County?</p>
-    <p class="k9-caption mt-0 mb-3">Pick a Friday or Saturday time, 6am&ndash;6pm.</p>
+    <p class="k9-caption mt-0 mb-3">Pick a time: {{ site.Params.hours | safeHTML }}.</p>
     <a class="button is-primary" href="{{ .proton }}" target="_blank" rel="noopener noreferrer">Book online</a>
   </div>
   {{ end }}

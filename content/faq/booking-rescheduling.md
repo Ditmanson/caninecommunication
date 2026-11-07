@@ -4,7 +4,7 @@ weight: 7
 outputs: ["html", "fragment"]
 ---
 
-Book from the [Book a Session](/book/) page. In El Paso County, pick a Friday or Saturday time online. Outside the county, email me so I can plan drive time.
+Book from the [Book a Session](/book/) page. In El Paso County, pick a time online: weekdays 7&ndash;8am and 4:30&ndash;6:30pm, Fridays and Saturdays 7am&ndash;6:30pm, and Sundays 2&ndash;4pm. Free video/phone consults book the same way; note &ldquo;video consult&rdquo; when you book. Outside the county, email me so I can plan drive time.
 
 Need to reschedule? Email training@k9-communication.com or reply to your confirmation email. Please give at least **24 hours' notice**.
 

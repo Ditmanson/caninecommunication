@@ -29,6 +29,10 @@ params:
   # not embeddable, so swapping this one value is the entire migration.
   protonBookingURL: "https://calendar.proton.me/bookings#RaA1nfdGmAgrmQS2LC3O5z3LQnh5XVBL9T0nsn_Cy1w="
 
+  # Booking hours, shown on Book, Home, and Contact. Must match the Proton
+  # booking page and BUSINESS_FACTS in lambda/chat-agent/handler.py.
+  hours: "weekdays 7&ndash;8am and 4:30&ndash;6:30pm, Fridays and Saturdays 7am&ndash;6:30pm, and Sundays 2&ndash;4pm"
+
   # Where booking emails go (Book page email path; travel-area clients).
   bookingEmail: "training@k9-communication.com"
 

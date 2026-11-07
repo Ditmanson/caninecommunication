@@ -84,15 +84,19 @@ MAX_TOOL_RESULT_ITEMS = 5
 # the site index gives the agent page titles, but excerpts are short and the
 # model tends to answer "see the Book page" without the specifics.
 BUSINESS_FACTS = (
-    "- Training is in-home, Fridays and Saturdays only.\n"
+    "- Training is in-home. Hours: weekdays 7-8am and 4:30-6:30pm, Fridays "
+    "and Saturdays 7am-6:30pm, Sundays 2-4pm.\n"
+    "- Optional free video/phone consult before the In-Home Consult, to check "
+    "fit and get general advice. Book it online with \"video consult\" in the "
+    "notes, or call or text.\n"
     "- Every new client starts with an In-Home Consult, booked with a $30 "
-    "deposit paid at the consult. The deposit is non-refundable (waived if the "
+    "deposit paid at the consult. It runs about 30 minutes. The deposit is non-refundable (waived if the "
     "trainer decides they can't help the dog) and is credited toward the first "
     "training session if that session is booked within 60 days.\n"
-    "- Training sessions are $100 each and run about 60 minutes. Group Lessons "
+    "- Training sessions are $100 each and run about an hour, charged per session, not per hour. Group Lessons "
     "are $30 per dog.\n"
     "- Home area: El Paso County, Colorado. These clients book online on the "
-    "Book a Session page (Fri/Sat, 6am-6pm, at least 48 hours ahead).\n"
+    "Book a Session page (1-hour slots in the hours above, at least 48 hours ahead).\n"
     "- Travel area: Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln "
     "counties. These clients book by emailing training@k9-communication.com, "
     "and a mileage fee applies ($0.70/mile round trip from the El Paso County "

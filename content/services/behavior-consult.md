@@ -3,7 +3,7 @@ title: "Behavior Modification"
 requires: ["in-home-consult"]
 weight: 2
 duration: "30-120 min"
-summary: "Fear and reactivity are habits we can break. We start with your dog's response, then work back through the reaction, so you can walk your dog anywhere."
+summary: "Break a bad habit and replace it with a good habit."
 ---
 
 ## Let's look at a model of the decision-making process
