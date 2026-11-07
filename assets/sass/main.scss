@@ -514,3 +514,140 @@ h1, h2, h3, h4, h5, h6,
 .k9-certs { align-items: start; }
 .k9-certs img { display: block; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
 .k9-certs figcaption { margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8; }
+
+// Decision-making process diagram (Behavior Modification page): a rail of
+// steps, horizontal from tablet up, vertical on phones. Gold marks the
+// reinforcement that turns a response into a habit; the dashed mauve rail
+// below shows modification running backward.
+.k9-dmp {
+  --dmp-rail: var(--k9-pine);
+  --dmp-dot: 1rem;
+  margin: 3rem 0 2.5rem;
+}
+.content figure.k9-dmp { margin-left: 0; margin-right: 0; text-align: left; }
+.content ol.k9-dmp-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.content .k9-dmp-step { position: relative; margin: 0; padding: 1.75rem 0.75rem 0 0; }
+// Rail segment from this step's dot to the next step's dot.
+.k9-dmp-step::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--dmp-dot) / 2 - 1px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--dmp-rail);
+}
+.k9-dmp-step:last-child::before { display: none; }
+.k9-dmp-step::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dmp-dot);
+  height: var(--dmp-dot);
+  border-radius: 50%;
+  border: 2px solid var(--dmp-rail);
+  background: var(--bulma-scheme-main);
+}
+.k9-dmp-step.is-reinforced::before {
+  top: calc(var(--dmp-dot) / 2 - 2px);
+  height: 4px;
+  background: var(--k9-gold);
+}
+.k9-dmp-step.is-habit::after {
+  top: -0.25rem;
+  left: -0.25rem;
+  width: calc(var(--dmp-dot) + 0.5rem);
+  height: calc(var(--dmp-dot) + 0.5rem);
+  background: var(--k9-gold);
+}
+.k9-dmp-step a { display: block; color: inherit; text-decoration: none; }
+.k9-dmp-name {
+  display: block;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.k9-dmp-step a:hover .k9-dmp-name { text-decoration: underline; text-decoration-thickness: 2px; }
+.k9-dmp-eg { display: block; font-size: 0.875rem; line-height: 1.35; opacity: 0.75; margin-top: 0.25rem; }
+.k9-dmp-step.is-habit .k9-dmp-name { font-weight: 700; }
+.k9-dmp-reinf {
+  position: absolute;
+  top: -1.6rem;
+  left: 1.5rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  white-space: nowrap;
+}
+// Backward rail: dashed line with a left-pointing arrowhead.
+.content .k9-dmp-back {
+  position: relative;
+  margin: 1.5rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 2px dashed var(--k9-mauve);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.k9-dmp-back::before {
+  content: "";
+  position: absolute;
+  top: calc(-0.45rem - 1px);
+  left: -2px;
+  border: 0.45rem solid transparent;
+  border-left: 0;
+  border-right: 0.6rem solid var(--k9-mauve);
+}
+
+@media screen and (max-width: 768px) {
+  .content ol.k9-dmp-steps { grid-template-columns: 1fr; padding-right: 2.5rem; }
+  .content .k9-dmp-step { padding: 0 0 1.5rem 2rem; }
+  .k9-dmp-step::before {
+    top: calc(var(--dmp-dot) / 2);
+    bottom: calc(var(--dmp-dot) / -2);
+    left: calc(var(--dmp-dot) / 2 - 1px);
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .k9-dmp-step.is-reinforced::before {
+    top: calc(var(--dmp-dot) / 2);
+    left: calc(var(--dmp-dot) / 2 - 2px);
+    width: 4px;
+    height: auto;
+  }
+  .k9-dmp-step.is-habit { padding-bottom: 0; }
+  .k9-dmp-reinf { position: static; display: block; margin-top: 0.6rem; }
+  // Backward rail runs up the right side, arrowhead at the top.
+  .k9-dmp-body { position: relative; }
+  .k9-dmp-body::after {
+    content: "";
+    position: absolute;
+    top: 0.6rem;
+    right: 0.75rem;
+    height: calc(100% - 5rem);
+    border-right: 2px dashed var(--k9-mauve);
+  }
+  .k9-dmp-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(0.75rem - 0.45rem + 1px);
+    border: 0.45rem solid transparent;
+    border-top: 0;
+    border-bottom: 0.6rem solid var(--k9-mauve);
+  }
+  .content .k9-dmp-back { border-top: 0; padding-top: 0; }
+  .k9-dmp-back::before { display: none; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .k9-dmp { --dmp-rail: var(--k9-trad); }
+}
+[data-theme="dark"] .k9-dmp { --dmp-rail: var(--k9-trad); }

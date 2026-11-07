@@ -1,0 +1,29 @@
+{{- /* Decision-making process diagram (Behavior Modification page).
+       A rail of steps: horizontal from tablet up, vertical on phones (CSS only).
+       Each step links to its section on the page; the dashed rail underneath
+       shows that modification works backward, from habit to event. */ -}}
+{{- $steps := slice
+  (dict "name" "Event" "eg" "Another dog appears" "id" "event")
+  (dict "name" "Reflex" "eg" "Hackles go up" "id" "reflex")
+  (dict "name" "Reaction" "eg" "Fear" "id" "reaction")
+  (dict "name" "Response" "eg" "Stare, bark, lunge" "id" "response")
+  (dict "name" "Habit" "eg" "The behavior we see" "id" "habit")
+-}}
+<figure class="k9-dmp" aria-label="The decision-making process">
+  <div class="k9-dmp-body">
+    <ol class="k9-dmp-steps">
+      {{- range $steps }}
+      <li class="k9-dmp-step{{ if eq .id "response" }} is-reinforced{{ end }}{{ if eq .id "habit" }} is-habit{{ end }}">
+        <a href="#{{ .id }}">
+          <span class="k9-dmp-name">{{ .name }}</span>
+          <span class="k9-dmp-eg">{{ .eg }}</span>
+        </a>
+        {{- if eq .id "response" }}
+        <span class="k9-dmp-reinf">Reinforcement</span>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ol>
+    <p class="k9-dmp-back"><span>Modifying a behavior works backward: break the habit first, then work back to the event.</span></p>
+  </div>
+</figure>
