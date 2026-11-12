@@ -1,7 +1,7 @@
 ---
 title: "Group Lessons"
 requires: ["escape-and-avoidance-training"]
-weight: 3
+weight: 5
 rate: "$30/dog"
 duration: "Until every dog has a turn"
 summary: "Pack walk, nosework, obedience, and ball work. Check the schedule for what we're doing that day."

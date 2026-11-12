@@ -1,6 +1,6 @@
 ---
 title: "Food and Play Training"
-weight: 6
+weight: 2
 requires: ["in-home-consult"]
 duration: "1-2 sessions"
 aliases: ["/services/verbal-markers/", "/services/recall/", "/services/heeling/"]
@@ -30,6 +30,10 @@ Commands are markers too. We call them [higher-order](https://en.wikipedia.org/w
 Taught with food and play, commands bring out drive and excitement. Your dog wants to do them, and that's fun for both of you. We also build engagement: at first the distraction is probably just me, and if your dog is ready, we move somewhere more stimulating.
 
 ## What we train
+
+### Obedience
+
+**Basic:** *sit*, *down*, *place*, and *here*, taught with drive so your dog is excited to do them. **Advanced:** precise positions, position changes, and focus, the kind of movement food and play teaches best. If you want to go further, competitive obedience in [Group Lessons](/services/group-lessons/) builds on it.
 
 ### Recall
 

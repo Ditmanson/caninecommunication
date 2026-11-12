@@ -1,7 +1,7 @@
 ---
 title: "E-Collar Training"
 requires: ["escape-and-avoidance-training"]
-weight: 5
+weight: 7
 duration: "1-3 sessions"
 summary: "The safe way to ditch the leash."
 ---

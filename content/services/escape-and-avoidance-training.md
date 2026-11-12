@@ -1,6 +1,6 @@
 ---
 title: "Escape and Avoidance Training"
-weight: 7
+weight: 3
 requires: ["food-and-play-training"]
 duration: "1-2 sessions"
 aliases: ["/services/verbal-commands/", "/services/chill-training/"]
@@ -35,6 +35,10 @@ You'll notice the pressure I use on my dogs is extremely light. That's because m
 The commands your dog learned with food and play (*sit*, *down*, *place*, *here*) become reliable here. *Down* is a command, but it's also a continuation marker: your dog stays in the down to avoid pressure, even when something more exciting than you shows up. We proof commands through stress and in highly stimulating environments, so they hold up where food and play alone can't compete.
 
 ## What we train
+
+### Obedience
+
+**Basic:** *sit*, *down*, *place*, and *here* that your dog does every time, not just when there's a reward on the table. **Advanced:** commands that hold at a distance, for longer, and in highly stimulating places, through stress and distraction.
 
 ### Recall
 
