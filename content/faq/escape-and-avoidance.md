@@ -22,4 +22,4 @@ Yes, when it's done right. Two rules matter most:
 
 I don't use hitting, alpha rolls, yelling, or social pressure. Those are unclear, too intense, and give the dog no way out.
 
-See [equipment](/faq/pricing/#equipment) for the collars we use, and [What training styles do you use?](/faq/training-styles/) for how this fits with force free training.
+See [equipment](/faq/pricing/#equipment) for the collars we use, and [What training styles do you use?](/faq/training-styles/) for how this fits with force free training. I teach it in [Escape and Avoidance Training](/services/escape-and-avoidance-training/).

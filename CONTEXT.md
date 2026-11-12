@@ -16,7 +16,11 @@ Business/booking companion site to griz.sh. Same person and brand, but professio
 
 **Booking link-out** — The Book page's "Book online" button: a link to the owner's single Proton Calendar booking page (home area only), not an embed, since Proton booking pages are standalone hosted links. Travel-area clients book by email instead.
 
-**Service** — One bookable unit of training (e.g. Food and Play Training, Recall). Services build on each other: each lists the services it requires.
+**Service** — One bookable unit of training (e.g. Food and Play Training, Capstone). Services build on each other: each lists the services it requires.
+
+**Foundation services** — Food and Play Training, then Escape and Avoidance Training. Every other training service requires both. They replaced Verbal Markers/Commands and absorbed Recall, Heeling, and Chill Training.
+
+**Archive** — `/archive/`: retired service pages kept for reference. Unlisted (noindex, out of sitemap and chat index) and linked from nowhere on the site.
 _Avoid_: Class, package, day
 
 **Fundamentals Bootcamp** — An example full build that chains the core services in order. A guideline that gets customized per client, not a requirement.

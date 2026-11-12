@@ -18,7 +18,7 @@ The other half of the system gives behaviors clear consequences, to encourage th
 
 ## Every training style uses both
 
-All dog training — force free, Traditional (also called escape and avoidance training), balanced, or accidental — traces back to these two kinds of conditioning. Master both, and you can create or extinguish any behavior your dog is (or isn't) offering.
+All dog training — force free ([food and play](/services/food-and-play-training/)), Traditional ([escape and avoidance](/services/escape-and-avoidance-training/)), balanced, or accidental — traces back to these two kinds of conditioning. Master both, and you can create or extinguish any behavior your dog is (or isn't) offering.
 
 Every bad habit I extinguish and every good habit I build lives in the four quadrants of operant conditioning. This isn't just dog training; it's psychology, laid out by B.F. Skinner in [*The Behavior of Organisms*](https://en.wikipedia.org/wiki/The_Behavior_of_Organisms) (1938). Decades of sports and marine wildlife training have refined techniques for creating and extinguishing behaviors efficiently, and my communication system puts them to work.
 

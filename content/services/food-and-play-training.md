@@ -3,7 +3,7 @@ title: "Food and Play Training"
 weight: 6
 requires: ["in-home-consult"]
 duration: "1-2 sessions"
-aliases: ["/services/verbal-markers/"]
+aliases: ["/services/verbal-markers/", "/services/recall/", "/services/heeling/"]
 summary: "Recall, obedience, and engagement through food and play."
 ---
 
@@ -11,13 +11,11 @@ Food and play training covers two corners of [operant conditioning](https://www.
 
 {{< quadrant focus="ff" >}}
 
-We can train extremely complex movements with food and play, which makes it a great way to teach things like a focused [heel](/services/heeling/). It's also highly engaging between dog and handler, which makes it a great tool for distracting your dog from stimuli that scare them.
+We can train extremely complex movements with food and play, which makes it a great way to teach things like a [focused heel](#heeling). It's also highly engaging between dog and handler, which makes it a great tool for distracting your dog from stimuli that scare them.
 
 For most behaviors, I recommend we start with food and play. It takes the novelty out of a behavior, lets us [shape](https://en.wikipedia.org/wiki/Shaping_(psychology)) the behavior without stress, and is pretty much foolproof. What I mean by foolproof: even if you don't do it just right, we don't have to worry about creating trauma or making behaviors worse.
 
 It's possible to train a dog with only food and play. I've done it, but it takes more management than pairing it with [Escape and Avoidance Training](/services/escape-and-avoidance-training/).
-
-You'll need some [equipment](/faq/pricing/#equipment) before we start.
 
 ## Reward markers
 
@@ -30,6 +28,29 @@ For us, the neutral stimulus is a verbal marker like *yes*. Through pairing, the
 Commands are markers too. We call them [higher-order](https://en.wikipedia.org/wiki/Second-order_conditioning) markers because they get their meaning from the markers your dog already knows. We teach the commands every handler needs: *sit*, *down*, *place*, and *here*, plus others to fit your goals.
 
 Taught with food and play, commands bring out drive and excitement. Your dog wants to do them, and that's fun for both of you. We also build engagement: at first the distraction is probably just me, and if your dog is ready, we move somewhere more stimulating.
+
+## What we train
+
+### Recall
+
+Recall is the most important skill a dog needs, so we don't wait until the end. We play a variety of recall games with lots of [positive reinforcement](https://en.wikipedia.org/wiki/Reinforcement#Positive_reinforcement), building speed and excitement so your dog wants to come to you. Every session also builds engagement through distractions, which makes recall easier when we [bulletproof it](/services/escape-and-avoidance-training/#recall).
+
+### Heeling
+
+Heeling is a ton of fun. We tend to think of it as hard work, but it isn't. It's a dynamic skill we can always improve: it helps with reactivity, keeps your dog safe near traffic, holds their attention around other dogs and distractions, charges our markers, and strengthens your bond. You can heel from room to room, before dinner, out in the world, almost anywhere.
+
+Food and play is the best way to teach precise movement. Styles we work on:
+
+- Casual heeling
+- Contact heeling
+- Focused heeling
+- Heeling while running
+- Heeling while riding a bike
+- Heeling while driving a car
+
+### Settling
+
+We add distance and duration to *place*, *down*, and *sit*. Discussion centers on [reward schedules](https://en.wikipedia.org/wiki/Reinforcement#Intermittent_reinforcement_schedules): how to fade the rewards, the lure, and the place box. The place box is useful, but you won't always have one in the real world.
 
 ## What to expect
 

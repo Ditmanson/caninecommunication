@@ -1,0 +1,15 @@
+{{- /* Hidden archive of retired pages: unlisted (noindex, out of the chat index and
+       sitemap) and linked from nowhere. Pages use the services page layout. */ -}}
+{{ define "main" }}
+<section class="k9-hero">
+  <div class="container" style="max-width: 44rem;">
+    <h1 class="k9-display">{{ .Title }}</h1>
+    <div class="content k9-prose">{{ .Content }}</div>
+    <ul class="k9-ratecard">
+      {{ range .Pages.ByTitle }}
+        <li><a href="{{ .RelPermalink }}"><span class="k9-rc-main"><strong>{{ .Title }}</strong>{{ .Params.summary }}</span></a></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

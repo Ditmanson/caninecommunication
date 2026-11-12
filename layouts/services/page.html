@@ -1,7 +1,11 @@
 {{ define "main" }}
 <section class="k9-hero">
   <div class="container">
+    {{ if eq .Section "archive" }}
+    <p class="mb-4"><a class="k9-textlink" href="{{ "/archive/" | relURL }}">Archive</a>: this service is retired. See <a class="k9-textlink" href="{{ "/services" | relURL }}">current services</a>.</p>
+    {{ else }}
     <p class="mb-4"><a class="k9-textlink" href="{{ "/services" | relURL }}">All services</a></p>
+    {{ end }}
     <h1 class="k9-display">{{ .Title }}</h1>
     {{ with .Params.summary }}<p class="k9-lead">{{ . }}</p>{{ end }}
 
@@ -12,6 +16,7 @@
         </div>
       </div>
 
+      {{ if ne .Section "archive" }}
       <aside class="column is-4 k9-aside-col">
         <div class="k9-aside">
           <p class="k9-aside-price">{{ with .Params.deposit }}{{ . }}{{ else }}<a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">Pricing &rarr;</a>{{ end }}</p>
@@ -29,6 +34,7 @@
           {{ end }}
         </div>
       </aside>
+      {{ end }}
     </div>
   </div>
 </section>

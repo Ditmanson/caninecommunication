@@ -11,32 +11,16 @@ The Fundamentals Bootcamp links my core services into one complete build. Most c
 
 ## Days 1–2: Food and Play Training
 
-Reward markers through [classical conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses), then sit, down, place, and here taught with drive, plus engagement through distractions. [Details &rarr;](/services/food-and-play-training/)
+Reward markers through [classical conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses), then sit, down, place, and here taught with drive. Recall games, heeling, and settling with [reward schedules](https://en.wikipedia.org/wiki/Reinforcement#Intermittent_reinforcement_schedules). [Details &rarr;](/services/food-and-play-training/)
 
-## Day 3: Escape and Avoidance Training
+## Days 3–4: Escape and Avoidance Training
 
-Correction markers and leash pressure through [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment), and proofing commands under stress. [Details &rarr;](/services/escape-and-avoidance-training/)
+Correction markers and leash pressure through [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment). We proof commands under stress, fix leash pulling, bulletproof recall, and fade the leash. [Details &rarr;](/services/escape-and-avoidance-training/)
 
-## Day 4: Chill Training
+## Days 5–6: Layering in the real world
 
-Distance and duration, reward schedules, and fading the leash, lure, and place box. [Details &rarr;](/services/chill-training/)
-
-## Day 5: Heeling
-
-A fun, endlessly improvable skill that builds your bond and keeps your dog safe. [Details &rarr;](/services/heeling/)
-
-## Day 6: Recall
-
-Bulletproofing recall in real-world distractions. [Details &rarr;](/services/recall/)
+We take both into more stimulating places: parks, trails, other dogs, traffic. Food and play keeps the drive up; escape and avoidance keeps it reliable. Each session leans on whichever your dog needs that day.
 
 ## Day 7: Capstone
 
-Together we design a capstone that shows how well trained your dog is. The better you did with your homework, the better it can be. Common things we show:
-
-- **Enrichment walking:** *How do we handle leash pulling?*
-- **Impulse control:** *How does your dog go through a doorway, or wait for permission to eat?*
-- **Chillin':** *How long will your dog hold a place, down, or sit without rewards or corrections? If they still need them, what does the reward schedule look like, and how often do we reapply pressure?*
-- **Heeling:** *How good is the heel? Can it hold your dog's attention in heavy distraction, or keep them safe in unsafe conditions?*
-- **Recall:** *SPEED! SPEED! SPEED! How fast does your dog come, and how strong can the distractions get while recall stays bulletproof?*
-
-We record it as a [training record](/training-records/). [Details &rarr;](/services/capstone/)
+Together we design a capstone that shows how well trained your dog is. The better you did with your homework, the better it can be. We record it as a [training record](/training-records/). [Details &rarr;](/services/capstone/)

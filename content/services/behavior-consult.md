@@ -24,7 +24,7 @@ We are walking our dog, and as our paths cross another dog, our dog sees this do
 
 In the example above, we were trying to fix the dog's emotional reaction, to calm their fear. But because our dogs don't know English, all they learned is that this response gets them what they want. Our first step is breaking this habit, which means making sure we avoid reinforcing their negative response. When they decide to bark at the approaching dog to make it go away, or to get pets from us, we do not remove the trigger from the board, and we do not give treats or pets.
 
-Instead, we want to give the dog an alternative behavior to get past the trigger. In this case, since we are walking our dog outside, it could be putting the dog in a focused heel, or putting the dog in a down and letting the other dog walk by. When our dog starts performing the new, acceptable behavior, we can reinforce it with pets, treats, or play and create a new habit.
+Instead, we want to give the dog an alternative behavior to get past the trigger. In this case, since we are walking our dog outside, it could be putting the dog in a [focused heel](/services/food-and-play-training/#heeling), or putting the dog in a down and letting the other dog walk by. When our dog starts performing the new, acceptable behavior, we can reinforce it with pets, treats, or play and create a new habit.
 
 ### Response
 
