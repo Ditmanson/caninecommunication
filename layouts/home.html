@@ -31,9 +31,9 @@
         <span class="k9-num">1</span>
         <span><strong>In-Home Consult</strong>I meet you and your dog at home. $30 deposit, credited toward training. Video/phone consults are free.</span>
       </a></li>
-      <li><a href="{{ "/services/verbal-markers/" | relURL }}">
+      <li><a href="{{ "/services/food-and-play-training/" | relURL }}">
         <span class="k9-num">2</span>
-        <span><strong>Verbal Markers</strong>The foundation: your dog learns what your words predict.</span>
+        <span><strong>Food and Play, then Escape and Avoidance</strong>The foundation: drive and fun first, then reliability under stress.</span>
       </a></li>
       <li><a href="{{ "/services/" | relURL }}">
         <span class="k9-num">3</span>
@@ -124,30 +124,14 @@
     <div class="columns is-8-tablet mt-5">
       <div class="column is-5">
         <dl class="k9-legend">
-          <div><dt><span class="k9-swatch is-ff"></span>Force free</dt><dd>Training with food and/or play.</dd></div>
-          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd>Escape and avoidance training.</dd></div>
+          <div><dt><span class="k9-swatch is-ff"></span>Force free</dt><dd><a class="k9-textlink" href="{{ "/services/food-and-play-training/" | relURL }}">Food and play training</a>.</dd></div>
+          <div><dt><span class="k9-swatch is-trad"></span>Traditional</dt><dd><a class="k9-textlink" href="{{ "/services/escape-and-avoidance-training/" | relURL }}">Escape and avoidance training</a>.</dd></div>
           <div><dt><span class="k9-swatch is-ff"></span><span class="k9-swatch is-trad"></span>Balanced</dt><dd>A blend of force free and Traditional training.</dd></div>
         </dl>
         <p class="mt-4"><a class="k9-textlink" href="{{ "/faq/how-dogs-learn/" | relURL }}">How do dogs learn? Read more</a></p>
       </div>
       <div class="column is-7">
-        <div class="k9-quadrant" role="table" aria-label="The four corners of operant conditioning">
-          <div role="row" class="k9-q-head">
-            <span role="columnheader"></span>
-            <span role="columnheader">Positive<small>add something</small></span>
-            <span role="columnheader">Negative<small>take something away</small></span>
-          </div>
-          <div role="row">
-            <span role="rowheader" class="k9-q-row">Reinforcement<small>behavior goes up</small></span>
-            <span role="cell" class="k9-q-cell is-ff"><strong>Give a reward</strong>Force free</span>
-            <span role="cell" class="k9-q-cell is-trad"><strong>Release pressure</strong>Traditional</span>
-          </div>
-          <div role="row">
-            <span role="rowheader" class="k9-q-row">Punishment<small>behavior goes down</small></span>
-            <span role="cell" class="k9-q-cell is-trad"><strong>Apply a correction</strong>Traditional</span>
-            <span role="cell" class="k9-q-cell is-ff"><strong>Remove food, fun, or freedom</strong>Force free</span>
-          </div>
-        </div>
+        {{ partial "quadrant.html" (dict "focus" "") }}
         <p class="k9-caption">The four corners of <a href="https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment" target="_blank" rel="noopener">operant conditioning</a>, from the log book.</p>
       </div>
     </div>

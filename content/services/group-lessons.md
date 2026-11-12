@@ -1,6 +1,6 @@
 ---
 title: "Group Lessons"
-requires: ["verbal-markers"]
+requires: ["escape-and-avoidance-training"]
 weight: 3
 rate: "$30/dog"
 duration: "Until every dog has a turn"

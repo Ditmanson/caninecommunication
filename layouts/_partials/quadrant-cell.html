@@ -1,0 +1,7 @@
+{{- /* One quadrant cell; see quadrant.html. */ -}}
+  {{- $s := index .styles .style -}}
+  {{- if and .focus (ne .focus .style) -}}
+  <a role="cell" class="k9-q-cell is-{{ .style }} is-muted" href="{{ $s.url | relURL }}"><strong>{{ .label }}</strong>{{ $s.name }}</a>
+  {{- else -}}
+  <span role="cell" class="k9-q-cell is-{{ .style }}"><strong>{{ .label }}</strong>{{ $s.name }}</span>
+  {{- end -}}

@@ -13,7 +13,7 @@ The point here is to determine whether I'm a good fit as your dog trainer. We'll
 
 ## What happens at the In-Home Consult
 
-I meet you and your dog where you live. We talk through what's going on, what you want out of training, and which services fit. Most dogs start with [Verbal Markers](/services/verbal-markers/), the foundation everything else builds on. Expect it to take about 30 minutes.
+I meet you and your dog where you live. We talk through what's going on, what you want out of training, and which services fit. Most dogs start with [Food and Play Training](/services/food-and-play-training/), then [Escape and Avoidance Training](/services/escape-and-avoidance-training/), the foundation everything else builds on. Expect it to take about 30 minutes.
 
 For dangerously reactive dogs, we'll discuss how many desensitization sessions are needed before training can start. I need to be able to work safely around you and your dog, so an overly reactive dog may need [Behavior Modification](/services/behavior-consult/) first.
 

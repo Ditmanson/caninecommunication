@@ -1,0 +1,5 @@
+{{- /* {{< quadrant focus="ff" >}} or focus="trad": the operant conditioning grid with this page's two corners highlighted. */ -}}
+<figure class="k9-quadrant-fig">
+  {{ partial "quadrant.html" (dict "focus" (.Get "focus")) }}
+  <figcaption class="k9-caption">This service covers the {{ if eq (.Get "focus") "ff" }}mauve{{ else }}sage{{ end }} corners. The dashed corners are {{ if eq (.Get "focus") "ff" }}<a href="{{ "/services/escape-and-avoidance-training/" | relURL }}">Escape and Avoidance Training</a>{{ else }}<a href="{{ "/services/food-and-play-training/" | relURL }}">Food and Play Training</a>{{ end }}.</figcaption>
+</figure>

@@ -1,7 +1,7 @@
 ---
 title: "Fundamentals Bootcamp"
 weight: 4
-requires: ["verbal-markers"]
+requires: ["escape-and-avoidance-training"]
 download: "/downloads/Fundamentals.pdf"
 duration: "About 7 sessions"
 summary: "An example full build that trains your dog from the ground up. It's a guideline: we customize the sessions to fit you and your dog."
@@ -9,13 +9,13 @@ summary: "An example full build that trains your dog from the ground up. It's a 
 
 The Fundamentals Bootcamp links my core services into one complete build. Most clients don't follow it exactly. We pick the pieces your dog needs at the [consult](/services/in-home-consult/), and each piece builds on the one before it. See [Pricing](/faq/pricing/) for session costs and equipment.
 
-## Days 1–2: Verbal Markers
+## Days 1–2: Food and Play Training
 
-Reward markers through [classical conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses), then correction markers and leash pressure through [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment). The foundation for everything else. [Details &rarr;](/services/verbal-markers/)
+Reward markers through [classical conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses), then sit, down, place, and here taught with drive, plus engagement through distractions. [Details &rarr;](/services/food-and-play-training/)
 
-## Day 3: Verbal Commands
+## Day 3: Escape and Avoidance Training
 
-Sit, down, place, and here, plus engagement through distractions. [Details &rarr;](/services/verbal-commands/)
+Correction markers and leash pressure through [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment), and proofing commands under stress. [Details &rarr;](/services/escape-and-avoidance-training/)
 
 ## Day 4: Chill Training
 

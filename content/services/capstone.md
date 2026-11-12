@@ -1,7 +1,7 @@
 ---
 title: "Capstone"
 weight: 11
-requires: ["verbal-markers"]
+requires: ["escape-and-avoidance-training"]
 duration: "Set together"
 summary: "A custom goal we design together, recorded as a training record of where you and your dog are today."
 ---

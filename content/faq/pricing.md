@@ -6,7 +6,7 @@ outputs: ["html", "fragment"]
 
 ## Sessions
 
-Training sessions are **$100 each**. Sessions are designed to run about an hour, sometimes a little longer or shorter. You're charged by the session, not by the hour. Because every plan is built around your dog, the total depends on which services you need. For example, [Verbal Markers](/services/verbal-markers/) takes one or two sessions, and a full [Fundamentals](/services/fundamentals/) build is about seven.
+Training sessions are **$100 each**. Sessions are designed to run about an hour, sometimes a little longer or shorter. You're charged by the session, not by the hour. Because every plan is built around your dog, the total depends on which services you need. For example, [Food and Play Training](/services/food-and-play-training/) takes one or two sessions, and a full [Fundamentals](/services/fundamentals/) build is about seven.
 
 [Group Lessons](/services/group-lessons/) are $30 per dog. [E-Collar Training](/services/e-collar-bootcamp/) is billed per session, plus the cost of the collar.
 

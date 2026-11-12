@@ -30,6 +30,6 @@ Every marker gets stronger each time it predicts its outcome. Once *no* reliably
 
 ## Commands are markers too
 
-Once your dog knows the basic markers, commands like *sit* and *down* get their meaning from them. This is [higher-order conditioning](https://en.wikipedia.org/wiki/Second-order_conditioning). See [Verbal Commands](/services/verbal-commands/).
+Once your dog knows the basic markers, commands like *sit* and *down* get their meaning from them. This is [higher-order conditioning](https://en.wikipedia.org/wiki/Second-order_conditioning). We teach them in both [Food and Play Training](/services/food-and-play-training/#commands-with-drive) and [Escape and Avoidance Training](/services/escape-and-avoidance-training/#commands-you-can-count-on).
 
-Markers are taught in [Verbal Marker Training](/services/verbal-markers/), the foundation for everything else.
+Reward markers are taught in [Food and Play Training](/services/food-and-play-training/) and correction markers in [Escape and Avoidance Training](/services/escape-and-avoidance-training/), the foundation for everything else.

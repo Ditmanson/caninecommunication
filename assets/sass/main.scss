@@ -651,3 +651,19 @@ h1, h2, h3, h4, h5, h6,
   :root:not([data-theme="light"]) .k9-dmp { --dmp-rail: var(--k9-trad); }
 }
 [data-theme="dark"] .k9-dmp { --dmp-rail: var(--k9-trad); }
+
+// Quadrant on a foundation service page: this service's corners stay solid;
+// the other style's corners go dashed and link to that service.
+.content figure.k9-quadrant-fig { margin: 2rem 0 2.25rem; text-align: left; }
+.k9-quadrant-fig .k9-caption { margin-top: 0.6rem; }
+.k9-q-cell.is-muted {
+  background: transparent;
+  border: 2px dashed var(--k9-mauve);
+  color: inherit;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.k9-q-cell.is-muted.is-trad { border-color: hsl(166, 24%, 55%); }
+.k9-q-cell.is-muted:hover { opacity: 1; }
+.k9-q-cell.is-muted:hover strong { text-decoration: underline; text-decoration-thickness: 2px; }
+.content .k9-q-cell strong { color: inherit; }

@@ -1,7 +1,7 @@
 ---
 title: "Recall"
 weight: 9
-requires: ["verbal-commands"]
+requires: ["escape-and-avoidance-training"]
 duration: "1 session"
 summary: "Bulletproof your dog's recall in real-world distractions."
 ---

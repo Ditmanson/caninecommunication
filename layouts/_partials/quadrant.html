@@ -1,0 +1,25 @@
+{{- /* Operant conditioning quadrant (home page and the two foundation services).
+       Pass (dict "focus" "ff"|"trad"|""). With a focus, the other style's cells are
+       muted and link to its service page, so each page shows which corners it covers. */ -}}
+{{- $focus := .focus | default "" -}}
+{{- $styles := dict
+  "ff" (dict "name" "Food and play" "url" "/services/food-and-play-training/")
+  "trad" (dict "name" "Escape and avoidance" "url" "/services/escape-and-avoidance-training/")
+-}}
+<div class="k9-quadrant{{ with $focus }} has-focus{{ end }}" role="table" aria-label="The four corners of operant conditioning">
+  <div role="row" class="k9-q-head">
+    <span role="columnheader"></span>
+    <span role="columnheader">Positive<small>add something</small></span>
+    <span role="columnheader">Negative<small>take something away</small></span>
+  </div>
+  <div role="row">
+    <span role="rowheader" class="k9-q-row">Reinforcement<small>behavior goes up</small></span>
+    {{ partial "quadrant-cell.html" (dict "styles" $styles "focus" $focus "style" "ff" "label" "Give a reward") }}
+    {{ partial "quadrant-cell.html" (dict "styles" $styles "focus" $focus "style" "trad" "label" "Release pressure") }}
+  </div>
+  <div role="row">
+    <span role="rowheader" class="k9-q-row">Punishment<small>behavior goes down</small></span>
+    {{ partial "quadrant-cell.html" (dict "styles" $styles "focus" $focus "style" "trad" "label" "Apply a correction") }}
+    {{ partial "quadrant-cell.html" (dict "styles" $styles "focus" $focus "style" "ff" "label" "Remove food, fun, or freedom") }}
+  </div>
+</div>
