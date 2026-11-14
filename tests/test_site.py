@@ -180,6 +180,46 @@ class Payments(unittest.TestCase):
         self.assertNotIn("calendar.proton.me", consult)
 
 
+RESUME_VIDEOS = ["nDTvE199qhM", "6xY6tbOXQx8", "ytUBuQI52XQ", "V2qxq1B5FCA",
+                 "SnMAGTHxG2Y", "cFSE0V6iDTQ", "1piLf035sk8"]
+
+
+class DogsResume(unittest.TestCase):
+    RECORD = "/training-records/dogs-of-k9-communication/"
+
+    def test_record_embeds_every_video_and_links_its_services(self):
+        html = page(self.RECORD)
+        for vid in RESUME_VIDEOS:
+            self.assertIn(vid, html, vid)
+        for service in ["food-and-play-training", "escape-and-avoidance-training",
+                        "e-collar-bootcamp", "training-with-kids", "group-lessons"]:
+            self.assertIn(f'href="/services/{service}/', html, service)
+
+    def test_training_with_kids_service(self):
+        t = text(page("/services/training-with-kids/"))
+        self.assertIn("Training with Kids", t)
+        titles = re.findall(r"<strong>(.*?)</strong>", page("/services/"))
+        i = titles.index("Training with Kids")
+        self.assertEqual(titles[i - 1:i + 2],
+                         ["Escape and Avoidance Training", "Training with Kids", "Behavior Modification"])
+
+    def test_home_carousel(self):
+        home = page("/")
+        start = home.find('id="resume"')
+        self.assertNotEqual(start, -1)
+        self.assertLess(home.find('id="how-it-works"'), start)
+        self.assertLess(start, home.find('id="services"'))
+        resume = home[start:home.find('id="services"')]
+        self.assertEqual(text(re.search(r"<h2\b[^>]*>(.*?)</h2>", resume, re.S).group(1)).strip(),
+                         "My dogs are my resume")
+        # Kids handling big dogs leads; the rest follow the record's order.
+        rail = re.findall(r'<a href="https://www\.youtube\.com/watch\?v=([\w-]+)"', resume)
+        self.assertEqual(rail, RESUME_VIDEOS[-1:] + RESUME_VIDEOS[:-1])
+        self.assertIn(f'href="{self.RECORD}', resume)
+        # Players load on click, so the home page ships no YouTube iframes.
+        self.assertNotIn("<iframe", resume)
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()

@@ -1,0 +1,18 @@
+{{- /* The "my dogs are my resume" videos, from the Dogs of K9-Communication.com
+     training record's front matter, with each service slug resolved to its
+     title and URL. Returns a slice of dicts. */ -}}
+{{- $videos := slice -}}
+{{- with site.GetPage "/training-records/dogs-of-k9-communication" -}}
+  {{- range .Params.videos -}}
+    {{- $services := slice -}}
+    {{- range .services -}}
+      {{- with site.GetPage (printf "/services/%s" .) -}}
+        {{- $services = $services | append (dict "title" .Title "url" .RelPermalink) -}}
+      {{- else -}}
+        {{- errorf "resume video lists unknown service %q" . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $videos = $videos | append (dict "id" .id "title" .title "blurb" .blurb "services" $services) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $videos -}}

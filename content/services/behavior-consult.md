@@ -1,7 +1,7 @@
 ---
 title: "Behavior Modification"
 requires: ["in-home-consult"]
-weight: 4
+weight: 5
 duration: "30-120 min"
 summary: "Break a bad habit and replace it with a good habit."
 ---

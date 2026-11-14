@@ -667,3 +667,98 @@ h1, h2, h3, h4, h5, h6,
 .k9-q-cell.is-muted:hover { opacity: 1; }
 .k9-q-cell.is-muted:hover strong { text-decoration: underline; text-decoration-thickness: 2px; }
 .content .k9-q-cell strong { color: inherit; }
+
+// Home page "My dogs are my resume" carousel (layouts/_partials/resume.html).
+.k9r-nav { display: flex; gap: 0.5rem; }
+.k9r-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  border: 2px solid currentColor;
+}
+.k9r-arrow:hover { background: var(--k9-pine); border-color: var(--k9-pine); color: #fff; }
+.k9r-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: var(--k9-pine);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.k9r-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.k9r-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+// The play button is the gold drop from the hero ripple.
+.k9r-play {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding-left: 3px;
+  background: var(--k9-gold);
+  color: hsl(166, 31%, 14%);
+  box-shadow: 0 0 0 0 hsla(43, 74%, 56%, 0.5);
+}
+.k9r-thumb:hover .k9r-play,
+.k9r-thumb:focus-visible .k9r-play { box-shadow: 0 0 0 0.6rem hsla(43, 74%, 56%, 0.35); }
+.k9r-thumb.is-playing .k9r-play { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .k9r-play { transition: box-shadow 0.25s; }
+}
+.k9r-title { font-size: clamp(1.9rem, 3vw, 2.4rem); line-height: 1.1; margin-top: 0.25rem; }
+.k9r-blurb { font-size: 1.05rem; line-height: 1.45; margin-top: 0.35rem; max-width: 28em; }
+.k9r-svc { font-size: 0.95rem; margin-top: 0.4rem; }
+.k9r-count {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--k9-mauve);
+}
+.k9r-stage-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+}
+.k9r-rail {
+  list-style: none;
+  margin: 1.5rem -4px 0;
+  padding: 4px;
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.k9r-rail::-webkit-scrollbar { display: none; }
+.k9r-rail > li { flex: 1 0 8.5rem; }
+.k9r-rail a {
+  display: block;
+  padding-top: 0.5rem;
+  border-top: 4px solid transparent;
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  opacity: 0.7;
+}
+.k9r-rail a:hover { opacity: 1; }
+.k9r-rail a.is-on { opacity: 1; font-weight: 600; border-top-color: var(--k9-gold); }
+.k9r-rail img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+}
+@media screen and (max-width: 768px) {
+  .k9r-stage-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .k9r-rail > li { flex: 0 0 8.5rem; }
+}

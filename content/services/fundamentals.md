@@ -1,6 +1,6 @@
 ---
 title: "Fundamentals Bootcamp"
-weight: 6
+weight: 7
 requires: ["escape-and-avoidance-training"]
 download: "/downloads/Fundamentals.pdf"
 duration: "About 7 sessions"

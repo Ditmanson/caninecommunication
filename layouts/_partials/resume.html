@@ -1,0 +1,62 @@
+{{- /* Home page "My dogs are my resume" carousel: one stage player plus a
+     thumbnail rail. Videos come from the Dogs of K9-Communication.com
+     training record (resume-videos.html). Without JS every thumbnail is a
+     plain link to YouTube; with it, the player loads on click, so the
+     page ships no YouTube embeds up front. */ -}}
+{{- $videos := partial "resume-videos.html" . -}}
+{{- $first := index $videos 0 -}}
+<div x-data="k9Stage({{ $videos | jsonify }})">
+  <h2 class="k9-h2">My dogs are my resume</h2>
+  <p class="k9-body">Everything I teach, I train on my own dogs first.</p>
+  <div class="k9r-stage-grid mt-5">
+    <a class="k9r-thumb" x-ref="frame" href="https://www.youtube.com/watch?v={{ $first.id }}" :href="'https://www.youtube.com/watch?v=' + v.id" @click.prevent="play()">
+      <img src="https://i.ytimg.com/vi/{{ $first.id }}/hq720.jpg" :src="'https://i.ytimg.com/vi/' + v.id + '/hq720.jpg'" alt="" width="1280" height="720">
+      <span class="k9r-play" aria-hidden="true">{{ partial "resume-icon.html" "play" }}</span>
+      <span class="is-sr-only">Play video</span>
+    </a>
+    <div class="k9r-cap" aria-live="polite">
+      <p class="k9r-count"><span x-text="i + 1">1</span> of {{ len $videos }}</p>
+      <h3 class="k9r-title is-big" x-text="v.title">{{ $first.title }}</h3>
+      <p class="k9r-blurb" x-text="v.blurb">{{ $first.blurb }}</p>
+      <p class="k9r-svc">
+        <template x-for="(s, n) in v.services" :key="s.url"><span><span x-show="n">, </span><a class="k9-textlink" :href="s.url" x-text="s.title"></a></span></template>
+      </p>
+      <div class="k9r-nav mt-4">
+        <button type="button" class="k9r-arrow" aria-label="Previous video" @click="pick((i + videos.length - 1) % videos.length)">{{ partial "resume-icon.html" "prev" }}</button>
+        <button type="button" class="k9r-arrow" aria-label="Next video" @click="pick((i + 1) % videos.length)">{{ partial "resume-icon.html" "next" }}</button>
+      </div>
+    </div>
+  </div>
+  <ul class="k9r-rail">
+    {{ range $n, $v := $videos }}
+    <li>
+      <a href="https://www.youtube.com/watch?v={{ $v.id }}" :class="i === {{ $n }} && 'is-on'" :aria-current="i === {{ $n }} ? 'true' : null" @click.prevent="pick({{ $n }})">
+        <img src="https://i.ytimg.com/vi/{{ $v.id }}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+        <span>{{ $v.title }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  <p class="mt-4"><a class="k9-textlink" href="{{ "/training-records/dogs-of-k9-communication/" | relURL }}">Read the notes on each video</a></p>
+</div>
+<script>
+document.addEventListener('alpine:init', () => {
+  Alpine.data('k9Stage', (videos) => ({
+    videos, i: 0,
+    get v() { return this.videos[this.i]; },
+    play() {
+      const stage = this.$refs.frame;
+      stage.querySelector('iframe')?.remove();
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${this.v.id}?autoplay=1&rel=0`;
+      f.title = this.v.title;
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      stage.classList.add('is-playing');
+      stage.append(f);
+    },
+    // Picking a video from the rail or the arrows plays it.
+    pick(n) { this.i = n; this.play(); },
+  }));
+});
+</script>
