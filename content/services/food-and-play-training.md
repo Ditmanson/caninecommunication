@@ -17,6 +17,18 @@ For most behaviors, I recommend we start with food and play. It takes the novelt
 
 It's possible to train a dog with only food and play. I've done it, but it takes more management than pairing it with [Escape and Avoidance Training](/services/escape-and-avoidance-training/).
 
+## Why we use it
+
+- **Relationship building.** Your dog learns that working with you is the best part of their day.
+- **Enrichment.** It's an appropriate outlet for your dog's energy and instincts.
+- **No stress.** It takes the novelty out of a new behavior without putting pressure on your dog.
+- **Drive.** Working toward a goal runs on [dopamine](https://en.wikipedia.org/wiki/Dopamine), which lifts your dog's energy and makes them want more.
+- **Exercise.** It's healthy physical work for your dog, and often for you.
+
+## Where we use it
+
+We decide which stimuli you want your dog to behave around: your daily walk, guests at the door, other dogs. Then we find your dog's [threshold](/services/in-home-consult/#how-we-make-your-plan), the point where they can still perform the behavior, and extend it until the behavior is reliable for your lifestyle.
+
 ## Reward markers
 
 Dogs don't understand English, but they can seem to when a word reliably predicts a reward. This part is all about [classical conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/classical-conditioning-neutral-conditioned-and-unconditioned-stimuli-and-responses). In 1904, [Ivan Pavlov](https://en.wikipedia.org/wiki/Ivan_Pavlov) won the [Nobel Prize](https://en.wikipedia.org/wiki/Nobel_Prize_in_Physiology_or_Medicine) for his work on digestion in dogs. Along the way, he discovered that a neutral stimulus can take on the properties of a reward when the two are closely paired in time and space.

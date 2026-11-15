@@ -1,0 +1,6 @@
+{{- /* {{< steps >}} ... {{< /steps >}}: wraps a Markdown ordered list and sets
+       it as numbered steps. Start each item with a bold name:
+       1. **Pick the stimulus.** What it means. */ -}}
+<div class="k9-steps">
+{{ .Inner | .Page.RenderString (dict "display" "block") }}
+</div>

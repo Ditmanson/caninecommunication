@@ -220,6 +220,31 @@ class DogsResume(unittest.TestCase):
         self.assertNotIn("<iframe", resume)
 
 
+class Plan(unittest.TestCase):
+    ANCHOR = "/services/in-home-consult/#how-we-make-your-plan"
+
+    def test_consult_page_explains_the_plan(self):
+        html = page("/services/in-home-consult/")
+        self.assertIn('class="k9-thr"', html)
+        steps = html[html.find('class="k9-steps"'):html.find('id="what-a-layered-plan-looks-like"')]
+        self.assertEqual(len(re.findall(r"<li>", steps)), 5)
+        t = text(html)
+        self.assertLess(t.find("How we make your plan"), t.find("The deposit"))
+
+    def test_home_plan_step_links_to_it(self):
+        self.assertRegex(page("/"), re.escape(f'href="{self.ANCHOR}"') + r'>\s*<span class="k9-num">2</span>')
+
+    def test_foundation_services_say_why(self):
+        ff = text(page("/services/food-and-play-training/"))
+        self.assertLess(ff.find("Why we use it"), ff.find("Where we use it"))
+        self.assertLess(ff.find("Where we use it"), ff.find("Reward markers"))
+        self.assertIn(f'href="{self.ANCHOR}"', page("/services/food-and-play-training/"))
+        ea = text(page("/services/escape-and-avoidance-training/"))
+        self.assertLess(ea.find("Why we use it"), ea.find("How I use pressure"))
+        self.assertLess(ea.find("Why it becomes rewarding"), ea.find("Why we layer food and play back in"))
+        self.assertIn("Premack principle", ea)
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()

@@ -31,6 +31,13 @@ _Avoid_: Bootcamp (alone), program
 **Video/Phone Consult** — Optional, free call before the In-Home Consult to check fit and give general advice. Booked online (noted "video consult") or by call/text. Doesn't replace the In-Home Consult.
 _Avoid_: Day 0, Behavior Consult, evaluation
 
+**Stimulus** — Whatever a client's dog struggles to behave around: a place (the daily walk) or an event (people coming over). Every plan is built around one or more.
+_Avoid_: Trigger (reserved for the Behavior Modification decision-making process), distraction
+
+**Threshold** — How close a dog can get to a stimulus while still behaving appropriately. Training moves it.
+
+**Plan** — Written by the owner after the In-Home Consult and approved by the client before training starts: the stimulus, the threshold, the method (food and play, escape and avoidance, or both layered), and the sessions.
+
 **Consult deposit** — The $30 paid for the In-Home Consult, credited toward the first training session if booked within 60 days; non-refundable unless the owner declines the dog. Paid at the consult until online payment exists.
 
 **Returning client** — Someone who has completed an In-Home Consult and can book any service whose requirements they meet.

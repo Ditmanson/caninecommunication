@@ -762,3 +762,90 @@ h1, h2, h3, h4, h5, h6,
   .k9r-stage-grid { grid-template-columns: 1fr; gap: 1rem; }
   .k9r-rail > li { flex: 0 0 8.5rem; }
 }
+
+// Numbered steps ({{< steps >}} around a Markdown ordered list): the same
+// mauve numerals as "How it works" on the home page.
+.content .k9-steps ol {
+  list-style: none;
+  margin: 1.75rem 0 2rem;
+  counter-reset: k9-step;
+  border-bottom: 2px solid var(--bulma-border);
+}
+.content .k9-steps li {
+  position: relative;
+  counter-increment: k9-step;
+  margin: 0;
+  padding: 0.9rem 0 1rem 3.5rem;
+  border-top: 2px solid var(--bulma-border);
+}
+.k9-steps li::before {
+  content: counter(k9-step);
+  position: absolute;
+  left: 0;
+  top: 0.95rem;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 3rem;
+  line-height: 0.9;
+  font-weight: 700;
+  color: var(--k9-mauve);
+}
+.content .k9-steps li > strong:first-child {
+  display: block;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.15rem;
+}
+
+// Threshold figure ({{< threshold >}}): dog on the left, stimulus on the
+// right, gold line where the dog stops coping.
+.content figure.k9-thr { margin: 2.25rem 0 2.5rem; text-align: left; }
+.k9-thr-track {
+  display: grid;
+  grid-template-columns: 42% 4px 1fr;
+  margin-top: 1.75rem;
+}
+.k9-thr-ok,
+.k9-thr-goal { padding: 0.9rem 1rem 1rem; min-height: 6.5rem; }
+.k9-thr-track strong {
+  display: block;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: inherit;
+}
+.k9-thr-track small { display: block; font-size: 0.875rem; line-height: 1.3; margin-top: 0.2rem; }
+.k9-thr-ok {
+  background: var(--k9-trad);
+  color: hsl(166, 31%, 14%);
+  border-radius: 4px 0 0 4px;
+}
+.k9-thr-line { position: relative; background: var(--k9-gold); margin: -0.5rem 0; }
+.k9-thr-line span {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.k9-thr-goal {
+  border: 2px dashed var(--k9-mauve);
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+}
+.k9-thr-goal svg { display: block; color: var(--k9-gold); margin-bottom: 0.35rem; }
+.k9-thr-ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
+.k9-thr-ends span:last-child { text-align: right; }
+.k9-thr-ends small { display: block; font-weight: 400; font-size: 0.875rem; opacity: 0.75; }
+.k9-thr .k9-caption { margin-top: 0.9rem; }

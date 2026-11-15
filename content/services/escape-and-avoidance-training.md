@@ -15,6 +15,13 @@ The dog first learns to *escape* light pressure by doing the behavior, then to [
 
 It's important to point out that new escape and avoidance training is highly stressful for the dog. We see the signs of a [cortisol](https://en.wikipedia.org/wiki/Cortisol) spike: ears go back, the tail goes stiff or tucks under, and resistance to the training is high. As the novelty wears off, though, the fear and anxiety go away. Done correctly, it actually becomes rewarding to the dog. [Here's why.](#why-it-becomes-rewarding)
 
+## Why we use it
+
+- **It teaches dogs to handle stress.** Stress is part of life. A dog who has practiced working through a little of it copes far better with the rest.
+- **It interrupts a habit.** We stop what your dog is doing, show them a new path to choose, and give them agency over the outcomes in their life.
+- **It's the stronger motivator.** For most dogs and most behaviors, working toward a goal doesn't motivate as powerfully as escaping and avoiding a threat. That's true of most people, too.
+- **It becomes rewarding.** New escape and avoidance training comes with a cortisol dump. After proper [habituation](https://en.wikipedia.org/wiki/Habituation), your dog's brain uses dopamine to reward them for avoiding the stress instead. [Here's why.](#why-it-becomes-rewarding)
+
 ## How I use pressure
 
 Training with aversives is a hard sell, mostly because people misunderstand how they're used and how intense they need to be. I don't use hitting, [alpha rolls](https://en.wikipedia.org/wiki/Alpha_roll), yelling, or social pressure. Those punishers are unclear, too intense, and give the dog no way to escape or avoid them. I consider all of them inhumane, yelling included. But the world is full of aversives, and using them properly is usually the fastest way to solve the problem you came to me with. It can also save your dog's life.
@@ -59,6 +66,13 @@ Successfully avoiding something unpleasant runs through the brain's reward syste
 A 2025 study in mice found that different parts of the nucleus accumbens handle different stages of avoidance learning. Early on, dopamine responds to the unpleasant event itself. As learning progresses, it shifts to the warning cue, the moment the animal can act to stay safe ([Lopez et al., 2025](https://doi.org/10.1016/j.cub.2025.04.006)).
 
 These are lab studies in rodents, not dogs, but the takeaway carries over: once your dog knows how to turn the pressure off, getting it right feels good. That's why the stress fades with practice and why a well-conditioned dog works confidently, not fearfully.
+
+## Why we layer food and play back in
+
+Escape and avoidance training is fueled by two things: removing a threat, and having access to safety.
+
+- **We enrich the safety.** If safety comes with food or play, the brain switches faster from flooding the system with cortisol to using dopamine to avoid the stress completely.
+- **Grandma's rule.** Eat your vegetables, then you get dessert. There's a reason it works on so many kids. It's called the [Premack principle](https://en.wikipedia.org/wiki/Premack%27s_principle): a behavior your dog loves can reward one they don't. We take advantage of it here, and it's how I order [Group Lessons](/services/group-lessons/#the-premack-principle).
 
 ## What to expect
 
