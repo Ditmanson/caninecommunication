@@ -48,7 +48,7 @@ _Avoid_: Member, existing customer
 **Travel area** — Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln counties. Clients here book by email so drive time can be planned, and pay a mileage fee.
 _Avoid_: Surrounding counties, service radius
 
-**Mileage fee** — $0.70 per mile, round trip, measured from the El Paso County line, charged per visit in the travel area.
+**Mileage fee** — Charged per visit in the travel area. The rate is undecided: the owner removed it from the FAQ and the chat agent (it was $0.70 per mile, round trip from the El Paso County line). Don't publish a rate until the owner sets one.
 _Avoid_: Travel fee, trip charge
 
 **Client community** — The owner's Discord server, for clients and people the owner chooses to invite. Joined through an unlisted invite page, not linked publicly.

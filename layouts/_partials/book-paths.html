@@ -10,7 +10,7 @@
   <div class="column">
     <p class="has-text-weight-semibold">{{ if .online }}Outside El Paso County?{{ else }}Email me to book{{ end }}</p>
     <p class="k9-caption mt-0 mb-3">
-      {{ if .online }}Email me so I can plan drive time. A <a class="k9-textlink" href="{{ "/faq/pricing/#mileage" | relURL }}">mileage fee</a> applies.{{ else }}Online booking is coming soon. Outside El Paso County, a <a class="k9-textlink" href="{{ "/faq/pricing/#mileage" | relURL }}">mileage fee</a> applies.{{ end }}
+      {{ if .online }}Email me so I can plan drive time. A mileage fee applies.{{ else }}Online booking is coming soon. Outside El Paso County, a mileage fee applies.{{ end }}
     </p>
     <a class="button {{ if not .online }}is-primary{{ end }}" href="{{ .mailto | safeURL }}">Email {{ .email }}</a>
   </div>

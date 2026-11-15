@@ -245,6 +245,22 @@ class Plan(unittest.TestCase):
         self.assertIn("Premack principle", ea)
 
 
+class Pricing(unittest.TestCase):
+    def test_equipment_is_not_required(self):
+        t = text(page("/faq/pricing/"))
+        self.assertIn("None of this is required", t)
+        self.assertNotIn("I require", t)
+        self.assertNotIn("what equipment do I need", t)
+        for path in ["/faq/first-session/", "/services/escape-and-avoidance-training/"]:
+            self.assertNotRegex(text(page(path)), r"equipment you’ll need|need some equipment", path)
+
+    def test_no_mileage_rate_in_faq(self):
+        for root, _, files in os.walk(os.path.join(PUBLIC, "faq")):
+            for name in files:
+                with open(os.path.join(root, name), encoding="utf-8") as f:
+                    self.assertNotRegex(f.read().lower(), r"mileage|0\.70", os.path.join(root, name))
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()

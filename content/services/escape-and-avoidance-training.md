@@ -11,7 +11,7 @@ Escape and avoidance training covers the other two corners of [operant condition
 
 {{< quadrant focus="trad" >}}
 
-The dog first learns to *escape* light pressure by doing the behavior, then to [*avoid*](https://en.wikipedia.org/wiki/Avoidance_learning) it entirely by doing the behavior before the pressure ever arrives. See [What is escape and avoidance training?](/faq/escape-and-avoidance/) for more. You'll need some [equipment](/faq/pricing/#equipment) before we start.
+The dog first learns to *escape* light pressure by doing the behavior, then to [*avoid*](https://en.wikipedia.org/wiki/Avoidance_learning) it entirely by doing the behavior before the pressure ever arrives. See [What is escape and avoidance training?](/faq/escape-and-avoidance/) for more. See the [equipment](/faq/pricing/#equipment) I use.
 
 It's important to point out that new escape and avoidance training is highly stressful for the dog. We see the signs of a [cortisol](https://en.wikipedia.org/wiki/Cortisol) spike: ears go back, the tail goes stiff or tucks under, and resistance to the training is high. As the novelty wears off, though, the fear and anxiety go away. Done correctly, it actually becomes rewarding to the dog. [Here's why.](#why-it-becomes-rewarding)
 
