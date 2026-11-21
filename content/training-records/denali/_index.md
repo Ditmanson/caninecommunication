@@ -1,5 +1,5 @@
 ---
-title: "Denali"
+title: "Denali of K9-Communication"
 layout: dog
 dog: denali
 born: 2015-12-14

@@ -1,5 +1,5 @@
 ---
-title: "Griz"
+title: "Griz of K9-Communication"
 layout: dog
 dog: griz
 born: 2025-10-21
