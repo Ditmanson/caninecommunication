@@ -10,7 +10,7 @@ Single-context layout (`CONTEXT.md` + `docs/adr/` at the repo root). See `docs/a
 
 ## Project
 
-Business/booking site for griz.sh's owner — the professional, conversion-focused counterpart to griz.sh's casual dog-training blog. See `CONTEXT.md` for the domain glossary. griz.sh is not being migrated or retired as part of this project.
+Business/booking site for griz.sh's owner — the professional, conversion-focused counterpart to griz.sh's casual dog-training blog. See `CONTEXT.md` for the domain glossary. Griz and Denali's training records were copied from griz.sh into `/training-records/` (Nov 2026). griz.sh stays live and untouched until the owner decides to archive it; then redirect its posts here.
 
 ## Workflow
 

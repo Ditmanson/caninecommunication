@@ -25,3 +25,13 @@ To build food drive:
 To build toy drive, start with food rewards, then add chase and frustration games.
 
 In [Group Lessons](/services/group-lessons/), we chain these together with the [Premack principle](https://en.wikipedia.org/wiki/Premack%27s_principle), so each activity rewards the one before it.
+
+## Which treats I use
+
+How your dog feels about the taste matters less than how you give the treat.
+
+| Treat | When I use it |
+| -- | -- |
+| Cheap but healthy kibble or freeze-dried food | Most of the time. |
+| Bright red or orange and smelly | Food on the track. I can see red and orange, the dog can't, and the smell gets her to notice it in the footstep. |
+| Cheese or hot dog | When I need heavy food motivation but want the dog flat and calm. No chase games or frustration with these. |

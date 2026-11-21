@@ -2,11 +2,27 @@
 <section class="section">
   <div class="container">
     <h1 class="title is-2">{{ .Title }}</h1>
+    {{- /* A dated record of the owner's dogs: show the date and each dog's age. */ -}}
+    {{ with .Params.dogs }}
+      <p class="k9-record-meta mb-4">
+        {{ $.Date.Format "January 2, 2006" }}
+        {{ range . }}
+          {{ with site.GetPage (printf "/training-records/%s" .) }}
+            &middot; <a href="{{ .RelPermalink }}">{{ .Params.dog | title }}</a>, {{ partial "dog-age.html" (dict "born" (time .Params.born) "date" $.Date) }}
+          {{ end }}
+        {{ end }}
+      </p>
+    {{ end }}
     <div class="content">
       {{ .Content }}
     </div>
     {{ with .Params.link }}
       <a class="button is-primary" href="{{ . }}" target="_blank" rel="noopener">Visit {{ . | replaceRE "^https?://" "" }} &rarr;</a>
+    {{ end }}
+    {{ range .Params.dogs }}
+      {{ with site.GetPage (printf "/training-records/%s" .) }}
+        <a class="button is-text" href="{{ .RelPermalink }}">&larr; All of {{ .Params.dog | title }}&rsquo;s records</a>
+      {{ end }}
     {{ end }}
     <a class="button is-text" href="{{ "/training-records" | relURL }}">&larr; All training records</a>
   </div>

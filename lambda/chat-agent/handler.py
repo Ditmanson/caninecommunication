@@ -72,8 +72,6 @@ RATE_LIMIT_TABLE = "caninecommunication-chatbot-limits"
 # isn't live yet (AWS/domain/hosting setup is deliberately sequenced after
 # this ticket, see CLAUDE.md).
 SITE_CONTENT_INDEX_URL = "https://k9-communication.com/index.json"
-# griz.sh is already live - this one is real today.
-GRIZ_CONTENT_INDEX_URL = "https://griz.sh/index.json"
 
 CAPABILITIES_FILE = os.path.join(os.path.dirname(__file__), "capabilities.json")
 RESPONSES_DIR = os.path.join(os.path.dirname(__file__), "responses")
@@ -120,8 +118,7 @@ BUSINESS_FACTS = (
 
 SYSTEM_PROMPT_INSTRUCTIONS = (
     "You are a helpful assistant embedded on a dog training business's website. "
-    "This business's owner also writes a separate, more casual training blog at "
-    "griz.sh.\n\n"
+    "This site also has training records of the owner's own dogs, Griz and Denali.\n\n"
     "Business facts (authoritative; state them directly when relevant):\n"
     + BUSINESS_FACTS
     + "\n\nHow to answer:\n"
@@ -132,13 +129,12 @@ SYSTEM_PROMPT_INSTRUCTIONS = (
     "- For booking or availability, give the hours and say to text, call, or "
     "email to book.\n"
     "- For other questions about this business (services, policies, training "
-    "approach), use search_site_content. For general dog-training or "
-    "dog-psychology questions better suited to the blog, use "
-    "search_griz_content. For anything else not covered by a page, try "
+    "approach, the owner's dogs' training records), use search_site_content. "
+    "For anything else not covered by a page, try "
     "search_custom_responses.\n"
     "- Keep answers short: two to four sentences.\n"
-    "- Do not answer general-knowledge questions unrelated to this site's or "
-    "griz.sh's content; say you don't know and suggest calling or texting "
+    "- Do not answer general-knowledge questions unrelated to this site's "
+    "content; say you don't know and suggest calling or texting "
     "406-533-5127 or emailing training@k9-communication.com."
 )
 
@@ -218,7 +214,7 @@ def handler(event, context):
     # the real index size rather than the conservative fallback. Never
     # raises (see _get_content_index) - if this site's own index isn't
     # reachable yet (e.g. before it's deployed), this just caches empty
-    # and the agent still answers from griz.sh content and custom
+    # and the agent still answers from custom
     # responses.
     _get_content_index(SITE_CONTENT_INDEX_URL)
 
@@ -435,8 +431,6 @@ def _execute_tool(name, tool_input):
     query = tool_input.get("query", "")
     if name == "search_site_content":
         return _search_index(_get_content_index(SITE_CONTENT_INDEX_URL), query)
-    if name == "search_griz_content":
-        return _search_index(_get_content_index(GRIZ_CONTENT_INDEX_URL), query)
     if name == "search_custom_responses":
         return _search_index(_get_custom_responses(), query, url_field=None)
     return {"error": f"Tool '{name}' has no implementation."}
@@ -476,7 +470,7 @@ def _get_content_index(url):
     this warm container rather than crashing the request. This matters
     concretely right now - SITE_CONTENT_INDEX_URL points at a site that
     isn't deployed yet, so it fails every call until that changes, and the
-    agent should still answer from griz.sh content and custom responses
+    agent should still answer from custom responses
     in the meantime rather than 502ing every question."""
     global _content_index_cache
     if _content_index_cache is None:

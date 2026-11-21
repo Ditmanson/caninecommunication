@@ -857,3 +857,10 @@ h1, h2, h3, h4, h5, h6,
 .k9-thr-ends span:last-child { text-align: right; }
 .k9-thr-ends small { display: block; font-weight: 400; font-size: 0.875rem; opacity: 0.75; }
 .k9-thr .k9-caption { margin-top: 0.9rem; }
+
+// Dog training records list (layouts/training-records/dog.html)
+.k9-records { list-style: none; margin: 0 0 1.5rem; }
+.k9-records li { padding: 0.6rem 0; border-bottom: 1px solid hsla(0, 0%, 50%, 0.2); }
+.k9-records a { font-weight: 600; margin-right: 0.5rem; }
+.k9-record-meta { font-size: 0.875rem; opacity: 0.75; }
+.k9-records .k9-record-meta { white-space: nowrap; }

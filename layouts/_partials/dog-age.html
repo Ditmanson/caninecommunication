@@ -1,0 +1,16 @@
+{{- /* A dog's age on a given date, e.g. "17 wk", "5 mo", "1 yr 2 mo", "10 yr".
+       Call with (dict "born" <time> "date" <time>). Months come from the
+       Format strings because time.Month doesn't cast to int. */ -}}
+{{- $born := .born -}}
+{{- $date := .date -}}
+{{- $months := add (mul (sub $date.Year $born.Year) 12) (sub (int ($date.Format "1")) (int ($born.Format "1"))) -}}
+{{- if lt (int ($date.Format "2")) (int ($born.Format "2")) }}{{ $months = sub $months 1 }}{{ end -}}
+{{- if lt $months 4 -}}
+  {{- div (int (div ($date.Sub $born).Hours 24)) 7 }} wk
+{{- else if lt $months 12 -}}
+  {{- $months }} mo
+{{- else if lt $months 24 -}}
+  1 yr{{ with mod $months 12 }} {{ . }} mo{{ end }}
+{{- else -}}
+  {{- div $months 12 }} yr
+{{- end -}}

@@ -220,6 +220,51 @@ class DogsResume(unittest.TestCase):
         self.assertNotIn("<iframe", resume)
 
 
+def record_rows(dog):
+    html = page(f"/training-records/{dog}/")
+    return re.findall(r'<li>\s*<a href="([^"]+)">.*?</a>\s*<span class="k9-record-meta">(.*?)</span>', html, re.S)
+
+
+class DogRecords(unittest.TestCase):
+    def test_my_dogs_pinned_first_on_index(self):
+        cards = re.findall(r'class="title is-5"><a href="([^"]+)"', page("/training-records/"))
+        self.assertEqual(cards[:3], ["/training-records/dogs-of-k9-communication/",
+                                     "/training-records/griz/", "/training-records/denali/"])
+        self.assertNotIn("/training-records/records/", cards)
+
+    def test_newest_first_with_puppy_work_at_the_bottom(self):
+        rows = record_rows("griz")
+        self.assertGreater(len(rows), 20)
+        self.assertEqual(rows[0][0], "/training-records/records/my-dogs-are-my-resume/")
+        self.assertEqual(rows[-1][0], "/training-records/records/griz-13-weeks-detection/")
+        self.assertIn("11 wk", rows[-1][1])
+
+    def test_two_dog_record_on_both_pages(self):
+        url = "/training-records/records/sendaway-beginner/"
+        self.assertIn(url, [r[0] for r in record_rows("griz")])
+        denali = record_rows("denali")
+        self.assertIn(url, [r[0] for r in denali])
+        self.assertIn("10 yr", dict(denali)[url])
+
+    def test_no_video_twice_on_one_dogs_page(self):
+        for dog in ["griz", "denali"]:
+            seen = {}
+            for url, _ in record_rows(dog):
+                for vid in set(re.findall(r"youtube(?:-nocookie)?\.com/embed/([\w-]{11})", page(url))):
+                    self.assertNotIn(vid, seen, f"{vid} in {url} and {seen.get(vid)}")
+                    seen[vid] = url
+
+    def test_old_griz_url_redirects(self):
+        self.assertIn('url=https://k9-communication.com/training-records/griz/"', page("/training-records/griz-from-k9-communication/"))
+
+    def test_gear_faqs_embed_their_video(self):
+        for slug, vid in [("flat-collar", "fzAMa-VvzXk"), ("slip-collar", "CG1COnY4bFw"),
+                          ("agitation-collar", "lARyDup85lU"), ("e-collar", "Ki8EG31XYqU"),
+                          ("harness", "032e0MWPl4E")]:
+            self.assertIn(vid, page(f"/faq/{slug}/"), slug)
+        self.assertIn('id="which-treats-i-use"', page("/faq/reinforcers/"))
+
+
 class Plan(unittest.TestCase):
     ANCHOR = "/services/in-home-consult/#how-we-make-your-plan"
 

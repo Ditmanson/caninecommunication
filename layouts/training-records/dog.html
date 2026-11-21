@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{- /* One of the owner's dogs: bio, then every record tagged with this dog
+       (front matter `dogs: [griz]`), newest first so puppy work is at the
+       bottom. Records live in content/training-records/records/. */ -}}
+{{ $dog := .Params.dog }}
+{{ $born := time .Params.born }}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <h2 class="title is-4">Training records</h2>
+    <ul class="k9-records">
+      {{ range (where site.RegularPages "Params.dogs" "intersect" (slice $dog)).ByDate.Reverse }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="k9-record-meta">{{ .Date.Format "Jan 2, 2006" }} &middot; {{ partial "dog-age.html" (dict "born" $born "date" .Date) }}</span>
+        </li>
+      {{ end }}
+    </ul>
+
+    <a class="button is-text" href="{{ "/training-records" | relURL }}">&larr; All training records</a>
+  </div>
+</section>
+{{ end }}

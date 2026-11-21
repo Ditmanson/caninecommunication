@@ -20,6 +20,9 @@ Business/booking companion site to griz.sh. Same person and brand, but professio
 
 **Foundation services** — Food and Play Training, then Escape and Avoidance Training. Every other training service requires both. They replaced Verbal Markers/Commands and absorbed Recall, Heeling, and Chill Training.
 
+**Dog record** — One dated training session of the owner's dogs (Griz, Denali), in `content/training-records/records/`, tagged `dogs: [griz, denali]`. Listed newest first on each dog's page with the dog's age that day. A video appears in only one record per dog.
+_Avoid_: Post, blog entry
+
 **Archive** — `/archive/`: retired service pages kept for reference. Unlisted (noindex, out of sitemap and chat index) and linked from nowhere on the site.
 _Avoid_: Class, package, day
 
