@@ -2,6 +2,7 @@
 
 Run: python3 -m unittest discover tests
 """
+import json
 import os
 import re
 import shutil
@@ -258,6 +259,42 @@ class Pricing(unittest.TestCase):
             for name in files:
                 with open(os.path.join(root, name), encoding="utf-8") as f:
                     self.assertNotRegex(f.read().lower(), r"mileage|0\.70", os.path.join(root, name))
+
+
+class Search(unittest.TestCase):
+    def test_home_title_targets_colorado_springs(self):
+        title = text(re.search(r"<title>(.*?)</title>", page("/"), re.S).group(1)).strip()
+        self.assertEqual(title, "Dog Trainer in Colorado Springs, CO | Canine Communication")
+
+    def test_every_page_has_description_and_canonical(self):
+        for path in ["/", "/about/", "/services/", "/services/e-collar-bootcamp/",
+                     "/faq/puppies/", "/dog-training-colorado-springs/"]:
+            html = page(path)
+            desc = re.search(r'<meta name="description" content="([^"]*)"', html)
+            self.assertTrue(desc and 50 <= len(desc.group(1)) <= 160 and not desc.group(1).endswith("…"), path)
+            self.assertIn(f'<link rel="canonical" href="https://k9-communication.com{path}">', html)
+
+    def test_home_has_local_business_data(self):
+        data = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',
+                                    page("/"), re.S).group(1))
+        self.assertEqual(data["@type"], "LocalBusiness")
+        self.assertEqual(data["telephone"], "+14065335127")
+        self.assertIn("Colorado Springs, CO", [a["name"] for a in data["areaServed"]])
+
+    def test_colorado_springs_page_linked_from_footer(self):
+        self.assertIn('href="/dog-training-colorado-springs/"', page("/"))
+        self.assertIn("Palmer Park", text(page("/dog-training-colorado-springs/")))
+
+    def test_robots_points_to_sitemap(self):
+        with open(os.path.join(PUBLIC, "robots.txt"), encoding="utf-8") as f:
+            self.assertIn("Sitemap: https://k9-communication.com/sitemap.xml", f.read())
+
+    def test_sitemap_has_no_empty_or_placeholder_pages(self):
+        with open(os.path.join(PUBLIC, "sitemap.xml"), encoding="utf-8") as f:
+            sitemap = f.read()
+        for bad in ["/tags/", "/categories/", "placeholder"]:
+            self.assertNotIn(bad, sitemap)
+        self.assertIn("/dog-training-colorado-springs/", sitemap)
 
 
 class Links(unittest.TestCase):

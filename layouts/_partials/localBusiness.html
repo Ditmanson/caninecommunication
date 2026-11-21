@@ -1,0 +1,26 @@
+{{/* LocalBusiness structured data for Google. Facts come from hugo.yaml params so they stay in sync with the visible site. */}}
+{{ $areas := slice }}
+{{ range split (replace site.Params.serviceAreas ", and surrounding areas" "") ", " }}
+  {{ $areas = $areas | append (dict "@type" "City" "name" (printf "%s, CO" .)) }}
+{{ end }}
+{{ $data := dict
+  "@context" "https://schema.org"
+  "@type" "LocalBusiness"
+  "@id" (printf "%s#business" site.BaseURL)
+  "name" site.Title
+  "description" site.Params.description
+  "url" site.BaseURL
+  "logo" ("/images/logo.png" | absURL)
+  "image" ("/images/logo.png" | absURL)
+  "telephone" site.Params.phoneTel
+  "email" site.Params.bookingEmail
+  "priceRange" "$30-$100"
+  "areaServed" $areas
+  "openingHoursSpecification" (slice
+    (dict "@type" "OpeningHoursSpecification" "dayOfWeek" (slice "Monday" "Tuesday" "Wednesday" "Thursday") "opens" "07:00" "closes" "08:00")
+    (dict "@type" "OpeningHoursSpecification" "dayOfWeek" (slice "Monday" "Tuesday" "Wednesday" "Thursday") "opens" "15:30" "closes" "17:30")
+    (dict "@type" "OpeningHoursSpecification" "dayOfWeek" (slice "Friday" "Saturday") "opens" "07:00" "closes" "17:30")
+  )
+  "sameAs" (slice "https://griz.sh")
+}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>

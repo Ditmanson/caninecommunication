@@ -1,5 +1,6 @@
 ---
 title: "About Me"
+description: "About your Colorado Springs dog trainer: Air Force EOD veteran who worked with military working dogs, trained through the Michael Ellis School for Dog Trainers."
 type: "about"
 ---
 

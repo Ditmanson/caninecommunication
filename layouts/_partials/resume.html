@@ -10,7 +10,7 @@
   <p class="k9-body">Everything I teach, I train on my own dogs first.</p>
   <div class="k9r-stage-grid mt-5">
     <a class="k9r-thumb" x-ref="frame" href="https://www.youtube.com/watch?v={{ $first.id }}" :href="'https://www.youtube.com/watch?v=' + v.id" @click.prevent="play()">
-      <img src="https://i.ytimg.com/vi/{{ $first.id }}/hq720.jpg" :src="'https://i.ytimg.com/vi/' + v.id + '/hq720.jpg'" alt="" width="1280" height="720">
+      <img src="https://i.ytimg.com/vi/{{ $first.id }}/hq720.jpg" :src="'https://i.ytimg.com/vi/' + v.id + '/hq720.jpg'" alt="Dog training video: {{ $first.blurb }}" :alt="'Dog training video: ' + v.blurb" width="1280" height="720">
       <span class="k9r-play" aria-hidden="true">{{ partial "resume-icon.html" "play" }}</span>
       <span class="is-sr-only">Play video</span>
     </a>

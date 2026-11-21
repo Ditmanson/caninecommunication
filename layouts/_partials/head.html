@@ -2,11 +2,32 @@
 {{ if .Params.unlisted }}<meta name="robots" content="noindex, nofollow">{{ end }}
 <title>
   {{ if .IsHome }}
-    {{ .Site.Title }}
+    {{ site.Params.homeTitle }} | {{ .Site.Title }}
   {{ else }}
     {{ .Title }} | {{ .Site.Title }}
   {{ end }}
 </title>
+
+{{/* Search snippet: front matter description, else the page summary tagged with the city, else the site default. */}}
+{{ $description := .Description }}
+{{ if not $description }}
+  {{ with .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+    {{ $city := " Dog training in Colorado Springs, CO." }}
+    {{ $description = printf "%s%s" (. | truncate (sub 155 (len $city))) $city }}
+  {{ end }}
+{{ end }}
+{{ $description = $description | default site.Params.description | replaceRE `\s+` " " | strings.TrimSpace | truncate 160 }}
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Params.homeTitle }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ "/images/logo.png" | absURL }}">
+
+{{ if .IsHome }}{{ partial "localBusiness.html" . }}{{ end }}
 
 {{ $sassOpts := dict "transpiler" "dartsass" "outputStyle" "compressed" "includePaths" (slice "node_modules") }}
 {{ $style := resources.Get "sass/main.scss" | css.Sass $sassOpts | resources.Fingerprint }}

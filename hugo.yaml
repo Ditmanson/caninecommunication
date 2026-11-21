@@ -23,7 +23,15 @@ outputs:
     - RSS
     - JSON
 
+# No tags or categories on this site; their empty list pages were in the sitemap.
+disableKinds: ["taxonomy", "term"]
+
 params:
+  # Home page <title> and default search snippet. The home page title is what
+  # Google shows for "dog trainer colorado springs", so keep the city in it.
+  homeTitle: "Dog Trainer in Colorado Springs, CO"
+  description: "In-home dog training in Colorado Springs, Fountain, Pueblo, and surrounding areas. Obedience, recall, reactive dogs, e-collar, and kids. $100/session."
+
   # Booking hours, shown on Book, Home, and Contact. Must match data/schedule.yaml
   # and BUSINESS_FACTS in lambda/chat-agent/handler.py.
   hours: "Monday&ndash;Thursday 7&ndash;8am and 3:30&ndash;5:30pm, and Friday&ndash;Saturday 7am&ndash;5:30pm"

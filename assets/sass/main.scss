@@ -164,6 +164,14 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 600;
 }
 .k9-area { margin-top: 1.5rem; font-size: 0.95rem; }
+.k9-kicker {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+.k9-hero-ripple .k9-kicker { color: var(--k9-gold); }
 
 // Pine hero, the ripple from the pitch drawn behind it
 .k9-hero-ripple {
