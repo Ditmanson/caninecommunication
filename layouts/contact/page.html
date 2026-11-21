@@ -8,8 +8,8 @@
       <p><strong>Call or text:</strong> <a href="tel:{{ site.Params.phoneTel }}">{{ site.Params.phone }}</a></p>
       <p><strong>Email:</strong> <a href="mailto:{{ site.Params.bookingEmail }}">{{ site.Params.bookingEmail }}</a></p>
       <p>
-        I train {{ site.Params.hours | safeHTML }} in El Paso County, Colorado, and
-        <a href="{{ "/faq/location/" | relURL }}">surrounding areas</a>.
+        I train {{ site.Params.hours | safeHTML }} in {{ site.Params.serviceAreas }}.
+        <a href="{{ "/faq/location/" | relURL }}">More on locations</a>.
         Clients also get an invite to my Discord community. New clients start with an <a href="{{ "/services/in-home-consult/" | relURL }}">In-Home Consult</a>.
       </p>
     </div>

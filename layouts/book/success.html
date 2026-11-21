@@ -3,15 +3,8 @@
   <div class="container" style="max-width: 44rem;">
     <h1 class="k9-display">Payment received.</h1>
     <p class="k9-lead">Thank you. Stripe has emailed you a receipt.</p>
-    {{ if ne .Site.Params.protonBookingURL "#" }}
-      <p class="k9-body">Still need a time? In El Paso County, pick one on the scheduling page and I&rsquo;ll confirm by email. Outside El Paso County, <a class="k9-textlink" href="mailto:{{ .Site.Params.bookingEmail }}">email me</a> so I can plan drive time.</p>
-    {{ else }}
-      <p class="k9-body">I&rsquo;ll email you to set up a time.</p>
-    {{ end }}
+    <p class="k9-body">Need a time? <a class="k9-textlink" href="sms:{{ .Site.Params.phoneTel }}">Text</a> or <a class="k9-textlink" href="mailto:{{ .Site.Params.bookingEmail }}">email me</a> and I&rsquo;ll confirm.</p>
     <div class="k9-actions mt-5">
-      {{ if ne .Site.Params.protonBookingURL "#" }}
-        <a class="button is-primary is-medium" href="{{ .Site.Params.protonBookingURL }}" target="_blank" rel="noopener noreferrer">Schedule a time</a>
-      {{ end }}
       <a class="k9-textlink" href="{{ "/" | relURL }}">Back to the home page</a>
     </div>
   </div>

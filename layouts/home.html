@@ -10,7 +10,7 @@
     <div class="columns is-variable is-8">
       <div class="column is-7">
         <div class="k9-pitch">{{ partial "pitch.html" . }}</div>
-        <p class="k9-area">El Paso County, Colorado, and <a href="{{ "/faq/location/" | relURL }}">surrounding areas</a></p>
+        <p class="k9-area">{{ site.Params.serviceAreas }}. <a href="{{ "/faq/location/" | relURL }}">Details</a></p>
       </div>
       <div class="column is-5">
         {{ partial "chatWidget.html" (dict "suggestions" (slice
@@ -77,7 +77,7 @@
       </div>
       <div class="column">
         <p class="k9-body">I train {{ site.Params.hours | safeHTML }}, in your home and out in the world.</p>
-        <p class="k9-body">El Paso County at no extra cost. Surrounding counties have a mileage fee.</p>
+        <p class="k9-body">Serving {{ site.Params.serviceAreas }}.</p>
       </div>
     </div>
     <p><a class="k9-textlink" href="{{ "/faq/pricing/" | relURL }}">Full pricing and equipment</a></p>

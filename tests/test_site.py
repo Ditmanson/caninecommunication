@@ -42,8 +42,8 @@ class HomePage(unittest.TestCase):
         self.assertIsNotNone(h1)
         self.assertEqual(text(h1.group(1)).strip(),
                          "Dog. Man’s Best Friend.")
-        self.assertIn("El Paso County, Colorado, and surrounding areas", text(self.html))
-        self.assertRegex(self.html, r'<a [^>]*href="/faq/location/"[^>]*>surrounding areas</a>')
+        self.assertIn("Colorado Springs, Fountain, Pueblo", text(self.html))
+        self.assertRegex(self.html, r'<a [^>]*href="/faq/location/"[^>]*>Details</a>')
 
     def test_sections_in_order(self):
         ids = ["hero", "how-it-works", "services", "pricing", "how-i-train", "book"]
@@ -74,7 +74,7 @@ class HomePage(unittest.TestCase):
 
     def test_pricing_and_area_facts(self):
         pricing = text(self.html[self.html.find('id="pricing"'):self.html.find('id="how-i-train"')])
-        for fact in ["$30 deposit", "$100", "Friday", "Saturday", "mileage fee"]:
+        for fact in ["$30 deposit", "$100", "Friday", "Saturday", "Colorado Springs"]:
             self.assertIn(fact, pricing)
 
     def test_no_placeholder_testimonial(self):
@@ -174,10 +174,9 @@ class Payments(unittest.TestCase):
 
     def test_book_page_when_payments_are_on(self):
         html = self.live_page("/book/")
-        self.assertIn("Pay $30 deposit", text(html))
         self.assertIn('href="/pay/"', html)
-        consult = html[html.find("k9-book-main"):html.find("Returning client?")]
-        self.assertNotIn("calendar.proton.me", consult)
+        self.assertNotRegex(text(html[html.find("k9-hero"):html.find("<footer")]), r"\$\d")
+        self.assertNotIn("calendar.proton.me", html)
 
 
 RESUME_VIDEOS = ["nDTvE199qhM", "6xY6tbOXQx8", "ytUBuQI52XQ", "V2qxq1B5FCA",

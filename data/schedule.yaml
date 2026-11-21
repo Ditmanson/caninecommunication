@@ -1,0 +1,6 @@
+# Weekly availability shown on the Book page. Times are when sessions can start.
+# Keep Params.hours (hugo.yaml) and BUSINESS_FACTS in lambda/chat-agent/handler.py in sync.
+- days: "Monday&ndash;Thursday"
+  times: "7&ndash;8am and 3:30&ndash;5:30pm"
+- days: "Friday&ndash;Saturday"
+  times: "7am&ndash;5:30pm"

@@ -24,17 +24,15 @@ outputs:
     - JSON
 
 params:
-  # Placeholder until Proton Pro is purchased - Proton Calendar's booking
-  # pages are standalone hosted links (calendar.proton.me/bookings/...),
-  # not embeddable, so swapping this one value is the entire migration.
-  protonBookingURL: "https://calendar.proton.me/bookings#RaA1nfdGmAgrmQS2LC3O5z3LQnh5XVBL9T0nsn_Cy1w="
+  # Booking hours, shown on Book, Home, and Contact. Must match data/schedule.yaml
+  # and BUSINESS_FACTS in lambda/chat-agent/handler.py.
+  hours: "Monday&ndash;Thursday 7&ndash;8am and 3:30&ndash;5:30pm, and Friday&ndash;Saturday 7am&ndash;5:30pm"
 
-  # Booking hours, shown on Book, Home, and Contact. Must match the Proton
-  # booking page and BUSINESS_FACTS in lambda/chat-agent/handler.py.
-  hours: "weekdays 7&ndash;8am and 4:30&ndash;6:30pm, Fridays and Saturdays 7am&ndash;6:30pm, and Sundays 2&ndash;4pm"
-
-  # Where booking emails go (Book page email path; travel-area clients).
+  # Where booking emails go (Book page).
   bookingEmail: "training@k9-communication.com"
+
+  # Cities served, shown on Book, Home, Contact, and the location FAQ.
+  serviceAreas: "Colorado Springs, Fountain, Pueblo, Hanover, Woodland Park, Falcon, Ellicott, Yoder, Calhan, and surrounding areas"
 
   # Client community (Discord) invite. Only rendered on the unlisted
   # /join-the-pack/ page; never link it elsewhere on the site.

@@ -14,7 +14,7 @@ Business/booking companion site to griz.sh. Same person and brand, but professio
 
 **Client record** — A DynamoDB row for one client/lead: name, email, consent timestamp, appointment history. Written by the client-capture form.
 
-**Booking link-out** — The Book page's "Book online" button: a link to the owner's single Proton Calendar booking page (home area only), not an embed, since Proton booking pages are standalone hosted links. Travel-area clients book by email instead.
+**Booking** — Clients text, call, or email the owner; the owner confirms by hand. No online booking, no prices on the Book page. The Book page shows weekly availability from `data/schedule.yaml`.
 
 **Service** — One bookable unit of training (e.g. Food and Play Training, Capstone). Services build on each other: each lists the services it requires.
 
@@ -28,7 +28,7 @@ _Avoid_: Bootcamp (alone), program
 
 **In-Home Consult** — The entry service every new client starts with, held at the client's home. Booked with a consult deposit; about 30 minutes.
 
-**Video/Phone Consult** — Optional, free call before the In-Home Consult to check fit and give general advice. Booked online (noted "video consult") or by call/text. Doesn't replace the In-Home Consult.
+**Video/Phone Consult** — Optional, free call before the In-Home Consult to check fit and give general advice. Requested by text, call, or email. Doesn't replace the In-Home Consult.
 _Avoid_: Day 0, Behavior Consult, evaluation
 
 **Stimulus** — Whatever a client's dog struggles to behave around: a place (the daily walk) or an event (people coming over). Every plan is built around one or more.
@@ -43,13 +43,8 @@ _Avoid_: Trigger (reserved for the Behavior Modification decision-making process
 **Returning client** — Someone who has completed an In-Home Consult and can book any service whose requirements they meet.
 _Avoid_: Member, existing customer
 
-**Home area** — El Paso County. Clients here can book online: weekdays 7–8am and 4:30–6:30pm, Fridays and Saturdays 7am–6:30pm, Sundays 2–4pm (1-hour slots).
-
-**Travel area** — Teller, Douglas, Elbert, Pueblo, Fremont, and Lincoln counties. Clients here book by email so drive time can be planned, and pay a mileage fee.
-_Avoid_: Surrounding counties, service radius
-
-**Mileage fee** — Charged per visit in the travel area. The rate is undecided: the owner removed it from the FAQ and the chat agent (it was $0.70 per mile, round trip from the El Paso County line). Don't publish a rate until the owner sets one.
-_Avoid_: Travel fee, trip charge
+**Service area** — Colorado Springs, Fountain, Pueblo, Hanover, Woodland Park, Falcon, Ellicott, Yoder, Calhan, and surrounding areas (`serviceAreas` in hugo.yaml). Replaces the old home/travel county split; no mileage fee is published.
+_Avoid_: Home area, travel area
 
 **Client community** — The owner's Discord server, for clients and people the owner chooses to invite. Joined through an unlisted invite page, not linked publicly.
 _Avoid_: Club, chat, Discord channel
