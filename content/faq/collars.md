@@ -14,12 +14,15 @@ My rescued Husky, Denali, taught me that force free training has its limits. I u
 
 ## What each piece of gear is for
 
+None of this is required. It's the gear I use and recommend. At the consult, we'll go over what you already have and what would help. Some gear you own may be the wrong size.
+
 - [Flat collar](/faq/flat-collar/)
 - [Slip collar](/faq/slip-collar/)
 - [Prong collar](/faq/prong-collar/)
 - [Agitation collar](/faq/agitation-collar/)
 - [E-collar](/faq/e-collar/)
 - [Harness](/faq/harness/)
+- [Leashes](/faq/leashes/)
+- [Muzzle](/faq/muzzle/)
+- [Treat pouch](/faq/treat-pouch/)
 - [Treats](/faq/reinforcers/#which-treats-i-use)
-
-See the [equipment](/faq/pricing/#equipment) we use.

@@ -7,7 +7,7 @@ duration: "About 7 sessions"
 summary: "An example full build that trains your dog from the ground up. It's a guideline: we customize the sessions to fit you and your dog."
 ---
 
-The Fundamentals Bootcamp links my core services into one complete build. Most clients don't follow it exactly. We pick the pieces your dog needs at the [consult](/services/in-home-consult/#how-we-make-your-plan), and each piece builds on the one before it. See [Pricing](/faq/pricing/) for session costs and equipment.
+The Fundamentals Bootcamp links my core services into one complete build. Most clients don't follow it exactly. We pick the pieces your dog needs at the [consult](/services/in-home-consult/#how-we-make-your-plan), and each piece builds on the one before it. See [Pricing](/faq/pricing/) for session costs.
 
 ## Days 1–2: Food and Play Training
 

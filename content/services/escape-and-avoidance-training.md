@@ -7,11 +7,11 @@ aliases: ["/services/verbal-commands/", "/services/chill-training/"]
 summary: "Teach your dog to handle stress and expectations, and bulletproof behaviors in highly stimulating environments competing for your dog's attention."
 ---
 
-Escape and avoidance training covers the other two corners of [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment): [negative reinforcement](https://en.wikipedia.org/wiki/Reinforcement#Negative_reinforcement) and [positive punishment](https://en.wikipedia.org/wiki/Punishment_(psychology)#Positive). Sometimes called Traditional dog training, this is where we tell a dog to do something and enforce the rules with some sort of pressure. The pressure I use most is leash pressure with a [pinch collar](/faq/pricing/#equipment).
+Escape and avoidance training covers the other two corners of [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment): [negative reinforcement](https://en.wikipedia.org/wiki/Reinforcement#Negative_reinforcement) and [positive punishment](https://en.wikipedia.org/wiki/Punishment_(psychology)#Positive). Sometimes called Traditional dog training, this is where we tell a dog to do something and enforce the rules with some sort of pressure. The pressure I use most is leash pressure with a [pinch collar](/faq/prong-collar/).
 
 {{< quadrant focus="trad" >}}
 
-The dog first learns to *escape* light pressure by doing the behavior, then to [*avoid*](https://en.wikipedia.org/wiki/Avoidance_learning) it entirely by doing the behavior before the pressure ever arrives. See [What is escape and avoidance training?](/faq/escape-and-avoidance/) for more. See the [equipment](/faq/pricing/#equipment) I use.
+The dog first learns to *escape* light pressure by doing the behavior, then to [*avoid*](https://en.wikipedia.org/wiki/Avoidance_learning) it entirely by doing the behavior before the pressure ever arrives. See [What is escape and avoidance training?](/faq/escape-and-avoidance/) for more. See the [equipment](/faq/collars/#what-each-piece-of-gear-is-for) I use.
 
 It's important to point out that new escape and avoidance training is highly stressful for the dog. We see the signs of a [cortisol](https://en.wikipedia.org/wiki/Cortisol) spike: ears go back, the tail goes stiff or tucks under, and resistance to the training is high. As the novelty wears off, though, the fear and anxiety go away. Done correctly, it actually becomes rewarding to the dog. [Here's why.](#why-it-becomes-rewarding)
 
@@ -31,7 +31,7 @@ Two rules keep it safe:
 - **The pressure must always be escapable.** Pressure the dog can't escape leads to fear and [learned helplessness](https://en.wikipedia.org/wiki/Learned_helplessness).
 - **Start low.** We begin below the level that changes behavior and raise it only until we see results. It's easier than it sounds, and I'll demonstrate with my own dogs.
 
-Leash pressure isn't the only form of escape and avoidance training. It just has the most uses. We'll likely use a correction collar of some kind and teach your dog to follow the pressure. Anything your dog isn't comfortable with can be worked through the same way: force fetch, being picked up, grooming, and [muzzle training](/faq/pricing/#equipment) can all be aversive to your dog.
+Leash pressure isn't the only form of escape and avoidance training. It just has the most uses. We'll likely use a correction collar of some kind and teach your dog to follow the pressure. Anything your dog isn't comfortable with can be worked through the same way: force fetch, being picked up, grooming, and [muzzle training](/faq/muzzle/) can all be aversive to your dog.
 
 ## Correction markers
 

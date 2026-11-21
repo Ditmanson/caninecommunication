@@ -35,3 +35,7 @@ How your dog feels about the taste matters less than how you give the treat.
 | Cheap but healthy kibble or freeze-dried food | Most of the time. |
 | Bright red or orange and smelly | Food on the track. I can see red and orange, the dog can't, and the smell gets her to notice it in the footstep. |
 | Cheese or hot dog | When I need heavy food motivation but want the dog flat and calm. No chase games or frustration with these. |
+
+{{< youtube W8seUewZZCY >}}
+
+Keep them in a [treat pouch](/faq/treat-pouch/).

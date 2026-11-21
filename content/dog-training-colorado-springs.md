@@ -32,6 +32,6 @@ I learned dog training alongside military working dogs in an Air Force Explosive
 
 ## Pricing and hours
 
-Sessions are **$100 each**, about an hour, charged by the session. I train Monday&ndash;Thursday 7&ndash;8am and 3:30&ndash;5:30pm, and Friday&ndash;Saturday 7am&ndash;5:30pm. [Full pricing and equipment](/faq/pricing/).
+Sessions are **$100 each**, about an hour, charged by the session. I train Monday&ndash;Thursday 7&ndash;8am and 3:30&ndash;5:30pm, and Friday&ndash;Saturday 7am&ndash;5:30pm. [Full pricing](/faq/pricing/).
 
 Questions? Call or text [406-533-5127](tel:+14065335127) or email [training@k9-communication.com](mailto:training@k9-communication.com).

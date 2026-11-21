@@ -260,7 +260,8 @@ class DogRecords(unittest.TestCase):
     def test_gear_faqs_embed_their_video(self):
         for slug, vid in [("flat-collar", "fzAMa-VvzXk"), ("slip-collar", "CG1COnY4bFw"),
                           ("agitation-collar", "lARyDup85lU"), ("e-collar", "Ki8EG31XYqU"),
-                          ("harness", "032e0MWPl4E")]:
+                          ("harness", "032e0MWPl4E"), ("prong-collar", "c-bvRYEpFLs"),
+                          ("reinforcers", "W8seUewZZCY")]:
             self.assertIn(vid, page(f"/faq/{slug}/"), slug)
         self.assertIn('id="which-treats-i-use"', page("/faq/reinforcers/"))
 
@@ -292,8 +293,9 @@ class Plan(unittest.TestCase):
 
 class Pricing(unittest.TestCase):
     def test_equipment_is_not_required(self):
+        self.assertIn("None of this is required", text(page("/faq/collars/")))
         t = text(page("/faq/pricing/"))
-        self.assertIn("None of this is required", t)
+        self.assertNotIn('id="equipment"', page("/faq/pricing/"))
         self.assertNotIn("I require", t)
         self.assertNotIn("what equipment do I need", t)
         for path in ["/faq/first-session/", "/services/escape-and-avoidance-training/"]:

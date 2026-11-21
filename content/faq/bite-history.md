@@ -12,7 +12,7 @@ Every case starts with an [In-Home Consult](/services/in-home-consult/). I'll as
 
 ## The safety plan
 
-- **Muzzle training first.** Your dog will be comfortable in a [muzzle](https://en.wikipedia.org/wiki/Muzzle_(mouth_guard)) before we work around people or other dogs.
+- **Muzzle training first.** Your dog will be comfortable in a [muzzle](/faq/muzzle/) before we work around people or other dogs.
 - **Find the cause.** Fear-based and predatory aggression need very different approaches. See [Behavior Modification](/services/behavior-consult/).
 - **Controlled steps.** We work at a distance and intensity your dog can handle, and only move closer when they're ready.
 - **Clear communication.** Your dog learns reward and correction markers so they always know what's expected and what comes next.
