@@ -7,13 +7,13 @@ aliases: ["/services/verbal-markers/", "/services/recall/", "/services/heeling/"
 summary: "Recall, obedience, and engagement through food and play."
 ---
 
-Food and play training covers two corners of [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment). We reinforce behaviors by paying the dog with food or play, and we punish behaviors by taking away something the dog wants. That's removal from the fun, with cues that show the fun isn't possible right now, like toys being put up.
+Food and play training covers two corners of [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment). We reinforce behaviors by paying the dog with food or play, and we punish behaviors by taking away something the dog wants. If I'm using food to train a sit and the dog downs, they get the *uh-uhhh* and I withhold the food. It works best when a behavior is first being learned, before we start variable reinforcement schedules.
 
 {{< quadrant focus="ff" >}}
 
 We can train extremely complex movements with food and play, which makes it a great way to teach things like a [focused heel](#heeling). It's also highly engaging between dog and handler, which makes it a great tool for distracting your dog from stimuli that scare them.
 
-For most behaviors, I recommend we start with food and play. It takes the novelty out of a behavior, lets us [shape](https://en.wikipedia.org/wiki/Shaping_(psychology)) the behavior without stress, and is pretty much foolproof. What I mean by foolproof: even if you don't do it just right, we don't have to worry about creating trauma or making behaviors worse.
+For most behaviors, I recommend we start with food and play. It takes the novelty out of a behavior, lets us [shape](https://en.wikipedia.org/wiki/Shaping_(psychology)) the behavior without stress, and is foolproof. What I mean by foolproof: you can't cause any trauma to your dog. Doing it wrong doesn't hurt them, it just makes the behavior less clear, and most dogs will figure it out with enough reps anyway.
 
 It's possible to train a dog with only food and play. I've done it, but it takes more management than pairing it with [Escape and Avoidance Training](/services/escape-and-avoidance-training/).
 

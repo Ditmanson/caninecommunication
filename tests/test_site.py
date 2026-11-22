@@ -396,6 +396,23 @@ class DenaliClaims(unittest.TestCase):
             self.assertIn(dates, body.replace("\u2013", "-"))
 
 
+class TrainingClaims(unittest.TestCase):
+    def test_negative_punishment_does_not_remove_freedom(self):
+        for path in ("/", "/faq/training-styles/", "/services/food-and-play-training/",
+                     "/services/escape-and-avoidance-training/"):
+            with self.subTest(path=path):
+                self.assertNotIn("fun, or freedom", text(page(path)))
+
+    def test_food_and_play_matches_the_blog(self):
+        body = text(page("/services/food-and-play-training/"))
+        self.assertNotRegex(body, r"toys being put up|behaviors worse")
+        for claim in ("uh-uhhh", "can’t cause any trauma"):
+            self.assertIn(claim, body)
+
+    def test_2025_dopamine_study_claims_what_it_found(self):
+        self.assertNotIn("shifts to the warning cue", text(page("/services/escape-and-avoidance-training/")))
+
+
 class ECollars(unittest.TestCase):
     def test_faq_is_the_invisible_leash_and_negative_reinforcement_only(self):
         body = text(page("/faq/e-collar/"))
