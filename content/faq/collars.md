@@ -10,7 +10,7 @@ We never train with aversives without showing your dog an alternative they can d
 
 ## Denali's story
 
-My rescued Husky, Denali, taught me that force free training has its limits. I used e-collars and light aversive training with her for a couple of years before she became the well-behaved dog she is now. Today I can trust her with no collar in any environment. See [Denali's training records](/training-records/denali/).
+My rescued Husky, Denali, taught me that force free training has its limits. I used negative reinforcement with the e-collar for a couple of years before she became the well-behaved dog she is now. Today she behaves appropriately in any environment without input from me, and I can trust her with no collar. She still wears the e-collar around prey animals and traffic, because it's not worth the risk to me. See [Denali's training records](/training-records/denali/).
 
 ## What each piece of gear is for
 

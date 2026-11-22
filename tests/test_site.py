@@ -374,6 +374,16 @@ class GrizClaims(unittest.TestCase):
         self.assertIn("I don’t train protection", text(page("/faq/agitation-collar/")))
 
 
+class DenaliClaims(unittest.TestCase):
+    def test_well_mannered_anywhere_and_negative_reinforcement(self):
+        for path in ("/about/", "/faq/collars/", "/training-records/denali/"):
+            with self.subTest(path=path):
+                body = text(page(path))
+                self.assertNotRegex(body, r"(?i)light aversive|no collar in any environment")
+                for claim in ("negative reinforcement with the e-collar", "without input from me", "prey animals"):
+                    self.assertIn(claim, body)
+
+
 class ECollars(unittest.TestCase):
     def test_faq_is_the_invisible_leash_and_negative_reinforcement_only(self):
         body = text(page("/faq/e-collar/"))
