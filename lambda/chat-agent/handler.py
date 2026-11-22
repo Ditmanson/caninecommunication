@@ -32,50 +32,77 @@ MONTHLY_SPEND_CEILING_USD = 10.00
 # first query was too narrow.
 MAX_TOOL_ITERATIONS = 3
 
-INPUT_COST_PER_TOKEN_USD = 1.00 / 1_000_000
-OUTPUT_COST_PER_TOKEN_USD = 5.00 / 1_000_000
+# Bedrock Haiku 4.5 through a "us." inference profile in us-east-2 (10% over
+# the global price). The system prompt is over the model's 4096-token caching
+# minimum, and usage.input_tokens leaves cached tokens out, so those are
+# priced separately.
+INPUT_COST_PER_TOKEN_USD = 1.10 / 1_000_000
+OUTPUT_COST_PER_TOKEN_USD = 5.50 / 1_000_000
+CACHE_WRITE_COST_PER_TOKEN_USD = 1.375 / 1_000_000
+CACHE_READ_COST_PER_TOKEN_USD = 0.11 / 1_000_000
 
 _ESTIMATED_MAX_INPUT_TOKENS = MAX_INPUT_CHARS // 4
-_FALLBACK_SYSTEM_PROMPT_TOKENS = 3000
+_FALLBACK_SYSTEM_PROMPT_TOKENS = 5000
+# The tool definitions plus the tool-use preamble the API adds to them.
+_ESTIMATED_TOOL_TOKENS = 900
+# One search's results (a 400-character excerpt, title, URL, tags for each)
+# plus the model's request for it, resent on every later call.
+_ESTIMATED_SEARCH_ROUND_TOKENS = 1600
 
 
 def _max_request_cost_microdollars():
     """Worst case: every one of MAX_TOOL_ITERATIONS calls resends the full
-    system prompt (both content indexes + instructions) plus the user's
-    question. Deliberately conservative, same reasoning as griz.sh's
-    version of this function."""
+    system prompt (both content indexes + instructions) and tools at the
+    cache-write price, plus the user's question and every earlier search's
+    results. Deliberately conservative."""
     if _content_index_cache is None:
         system_prompt_tokens = _FALLBACK_SYSTEM_PROMPT_TOKENS
     else:
         system_prompt_tokens = len(_build_system_prompt()) // 4
-    per_call_input_tokens = system_prompt_tokens + _ESTIMATED_MAX_INPUT_TOKENS
+    cacheable_tokens = system_prompt_tokens + _ESTIMATED_TOOL_TOKENS
+    earlier_rounds = sum(range(MAX_TOOL_ITERATIONS))
+    uncached_tokens = (
+        MAX_TOOL_ITERATIONS * _ESTIMATED_MAX_INPUT_TOKENS
+        + earlier_rounds * _ESTIMATED_SEARCH_ROUND_TOKENS
+    )
     return round(
         (
-            per_call_input_tokens * INPUT_COST_PER_TOKEN_USD
-            + MAX_OUTPUT_TOKENS * OUTPUT_COST_PER_TOKEN_USD
+            MAX_TOOL_ITERATIONS * cacheable_tokens * CACHE_WRITE_COST_PER_TOKEN_USD
+            + uncached_tokens * INPUT_COST_PER_TOKEN_USD
+            + MAX_TOOL_ITERATIONS * MAX_OUTPUT_TOKENS * OUTPUT_COST_PER_TOKEN_USD
         )
         * 1_000_000
-        * MAX_TOOL_ITERATIONS
     )
 
 
-# A separate table from griz.sh's chatbot-limits - this is a separate
-# Lambda by design (see ADR 0003: cheaper on Bedrock tokens than a shared
-# bot carrying both sites' indexes in every system prompt), so it tracks
-# its own rate limit and spend independently rather than sharing a budget
-# with griz.sh's bot.
+def _usage_cost_microdollars(usage):
+    return round(
+        (
+            (usage.get("input_tokens") or 0) * INPUT_COST_PER_TOKEN_USD
+            + (usage.get("output_tokens") or 0) * OUTPUT_COST_PER_TOKEN_USD
+            + (usage.get("cache_creation_input_tokens") or 0) * CACHE_WRITE_COST_PER_TOKEN_USD
+            + (usage.get("cache_read_input_tokens") or 0) * CACHE_READ_COST_PER_TOKEN_USD
+        )
+        * 1_000_000
+    )
+
+
+# This agent's own rate limit and spend. The blog (griz.sh) has no bot of
+# its own; this one reads its index too.
 RATE_LIMIT_TABLE = "caninecommunication-chatbot-limits"
 
 # --- Site content / capabilities -------------------------------------------
 
-# This site's own index, once deployed. Placeholder domain - the real site
-# isn't live yet (AWS/domain/hosting setup is deliberately sequenced after
-# this ticket, see CLAUDE.md).
 SITE_CONTENT_INDEX_URL = "https://k9-communication.com/index.json"
+# The owner's blog. Same title/url/tags/summary shape; its extra body and card
+# fields (for the blog's own search) never go to the model.
+BLOG_CONTENT_INDEX_URL = "https://griz.sh/index.json"
 
 CAPABILITIES_FILE = os.path.join(os.path.dirname(__file__), "capabilities.json")
 RESPONSES_DIR = os.path.join(os.path.dirname(__file__), "responses")
 MAX_TOOL_RESULT_ITEMS = 5
+# On top of the site's, so a site full of matches can't crowd the blog out.
+MAX_BLOG_RESULT_ITEMS = 3
 
 # Core business facts the agent states directly instead of only linking to
 # a page. Keep in sync with the site (FAQ pricing, Book page, CONTEXT.md):
@@ -118,7 +145,8 @@ BUSINESS_FACTS = (
 
 SYSTEM_PROMPT_INSTRUCTIONS = (
     "You are a helpful assistant embedded on the website of K9-Communication LLC, a dog training business. "
-    "This site also has training records of the owner's own dogs, Griz and Denali.\n\n"
+    "This site also has training records of the owner's own dogs, Griz and Denali, "
+    "and the owner writes a casual blog at griz.sh about gear, dogs, training, food, and adventures.\n\n"
     "Business facts (authoritative; state them directly when relevant):\n"
     + BUSINESS_FACTS
     + "\n\nHow to answer:\n"
@@ -129,12 +157,14 @@ SYSTEM_PROMPT_INSTRUCTIONS = (
     "- For booking or availability, give the hours and say to text, call, or "
     "email to book.\n"
     "- For other questions about this business (services, policies, training "
-    "approach, the owner's dogs' training records), use search_site_content. "
+    "approach, the owner's dogs' training records, the blog), use search_site_content. "
+    "It searches this site and the blog. Link this site for services, prices, and "
+    "policies, and the blog for the owner's stories, gear, and what their dogs eat. "
     "For anything else not covered by a page, try "
     "search_custom_responses.\n"
     "- Keep answers short: two to four sentences.\n"
     "- Do not answer general-knowledge questions unrelated to this site's "
-    "content; say you don't know and suggest calling or texting "
+    "or the blog's content; say you don't know and suggest calling or texting "
     "406-533-5127 or emailing training@k9-communication.com."
 )
 
@@ -212,11 +242,10 @@ def handler(event, context):
 
     # Pre-warm the cache before spend-reservation math runs, so it reflects
     # the real index size rather than the conservative fallback. Never
-    # raises (see _get_content_index) - if this site's own index isn't
-    # reachable yet (e.g. before it's deployed), this just caches empty
-    # and the agent still answers from custom
-    # responses.
+    # raises (see _get_content_index) - an unreachable index just caches
+    # empty and the agent answers from the rest.
     _get_content_index(SITE_CONTENT_INDEX_URL)
+    _get_content_index(BLOG_CONTENT_INDEX_URL)
 
     reserved_microdollars = _reserve_monthly_spend()
     if reserved_microdollars is None:
@@ -229,12 +258,7 @@ def handler(event, context):
         )
 
     try:
-        answer, total_input_tokens, total_output_tokens = _answer_question(question)
-
-        actual_cost_microdollars = round(
-            total_input_tokens * INPUT_COST_PER_TOKEN_USD * 1_000_000
-            + total_output_tokens * OUTPUT_COST_PER_TOKEN_USD * 1_000_000
-        )
+        answer, actual_cost_microdollars = _answer_question(question)
         _true_up_monthly_spend(actual_cost_microdollars, reserved_microdollars)
 
         return _response(200, _markdown_to_safe_html(answer))
@@ -333,16 +357,13 @@ def _markdown_to_safe_html(text):
 def _answer_question(question):
     tools = _get_enabled_tools()
     messages = [{"role": "user", "content": question}]
-    total_input_tokens = 0
-    total_output_tokens = 0
+    total_cost_microdollars = 0
 
     payload = None
     for i in range(MAX_TOOL_ITERATIONS):
         is_last_call = i == MAX_TOOL_ITERATIONS - 1
         payload = _invoke_bedrock(messages, None if is_last_call else tools)
-        usage = payload.get("usage", {})
-        total_input_tokens += usage.get("input_tokens", 0)
-        total_output_tokens += usage.get("output_tokens", 0)
+        total_cost_microdollars += _usage_cost_microdollars(payload.get("usage", {}))
 
         if payload.get("stop_reason") != "tool_use":
             break
@@ -367,7 +388,7 @@ def _answer_question(question):
             "I couldn't find a clear answer to that - try rephrasing your "
             "question or browsing the site directly."
         )
-    return answer, total_input_tokens, total_output_tokens
+    return answer, total_cost_microdollars
 
 
 def _invoke_bedrock(messages, tools):
@@ -396,17 +417,21 @@ def _invoke_bedrock(messages, tools):
 
 
 def _build_system_prompt():
-    site_index = _get_content_index(SITE_CONTENT_INDEX_URL)
-    compact_site_index = [
-        {"title": p.get("title") or "", "url": p.get("url") or "", "tags": p.get("tags") or []}
-        for p in site_index
-    ]
     return (
         SYSTEM_PROMPT_INSTRUCTIONS
         + "\n\nThis site's content index (titles, URLs, tags - use "
         "search_site_content for full excerpts of any of these):\n"
-        + json.dumps(compact_site_index)
+        + json.dumps(_compact_index(_get_content_index(SITE_CONTENT_INDEX_URL)))
+        + "\n\nThe blog's content index (same format and search tool):\n"
+        + json.dumps(_compact_index(_get_content_index(BLOG_CONTENT_INDEX_URL)))
     )
+
+
+def _compact_index(index):
+    return [
+        {"title": p.get("title") or "", "url": p.get("url") or "", "tags": p.get("tags") or []}
+        for p in index
+    ]
 
 
 def _enabled_capabilities():
@@ -430,18 +455,20 @@ def _execute_tool(name, tool_input):
 
     query = tool_input.get("query", "")
     if name == "search_site_content":
-        return _search_index(_get_content_index(SITE_CONTENT_INDEX_URL), query)
+        return _search_index(_get_content_index(SITE_CONTENT_INDEX_URL), query) + _search_index(
+            _get_content_index(BLOG_CONTENT_INDEX_URL), query, limit=MAX_BLOG_RESULT_ITEMS
+        )
     if name == "search_custom_responses":
         return _search_index(_get_custom_responses(), query, url_field=None)
     return {"error": f"Tool '{name}' has no implementation."}
 
 
-def _search_index(index, query, url_field="url"):
+def _search_index(index, query, url_field="url", limit=MAX_TOOL_RESULT_ITEMS):
     query_lower = query.lower().strip()
     if not query_lower:
         return []
     matches = [p for p in index if query_lower in _page_haystack(p)]
-    return [_page_result(p, url_field) for p in matches[:MAX_TOOL_RESULT_ITEMS]]
+    return [_page_result(p, url_field) for p in matches[:limit]]
 
 
 def _page_haystack(page):
@@ -466,19 +493,19 @@ def _page_result(page, url_field):
 
 
 def _get_content_index(url):
-    """Never raises: a fetch failure caches an empty index for the rest of
-    this warm container rather than crashing the request. This matters
-    concretely right now - SITE_CONTENT_INDEX_URL points at a site that
-    isn't deployed yet, so it fails every call until that changes, and the
-    agent should still answer from custom responses
-    in the meantime rather than 502ing every question."""
+    """Never raises: a failed fetch or unexpected shape caches an empty index
+    for the rest of this warm container, so with either site down the agent
+    still answers from the other one and the custom responses."""
     global _content_index_cache
     if _content_index_cache is None:
         _content_index_cache = {}
     if url not in _content_index_cache:
         try:
             with urllib.request.urlopen(url, timeout=5) as resp:
-                _content_index_cache[url] = json.loads(resp.read())
+                index = json.loads(resp.read())
+            if not isinstance(index, list) or not all(isinstance(p, dict) for p in index):
+                raise ValueError("not a list of pages")
+            _content_index_cache[url] = index
         except Exception as e:
             print(f"Content index fetch failed for {url}:", str(e))
             _content_index_cache[url] = []

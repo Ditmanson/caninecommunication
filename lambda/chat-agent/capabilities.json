@@ -3,7 +3,7 @@
     {
       "name": "search_site_content",
       "enabled": true,
-      "description": "Search this business site's own published pages (services, FAQ, about, contact, and training records of the owner's dogs) by keyword. Returns matching pages with title, URL, and a short excerpt. Use this for questions about services, pricing structure, policies, or anything specific to this business.",
+      "description": "Search this business site's own published pages (services, FAQ, about, contact, and training records of the owner's dogs) and the owner's blog at griz.sh (gear, dogs, training, food, adventures) by keyword. The query must appear word for word, so use one or two words. Returns matching pages with title, URL, and a short excerpt. Use this for questions about services, pricing structure, policies, or anything specific to this business.",
       "input_schema": {
         "type": "object",
         "properties": {
