@@ -353,6 +353,16 @@ class Search(unittest.TestCase):
         self.assertIn("/dog-training-colorado-springs/", sitemap)
 
 
+class Blog(unittest.TestCase):
+    def test_nav_and_footer_link_to_the_blog(self):
+        for path in ("/", "/faq/"):
+            html = page(path)
+            for part in ("header", "footer"):
+                chunk = re.search(rf"<{part}>(.*?)</{part}>", html, re.S).group(1)
+                self.assertRegex(chunk, r'href="https://griz\.sh/?"', f"{part} on {path}")
+            self.assertNotIn("Follow Griz", html)
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()

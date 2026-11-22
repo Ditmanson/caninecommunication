@@ -100,3 +100,8 @@ menu:
       name: "Training Records"
       url: "/training-records"
       weight: 70
+
+    - identifier: "Blog"
+      name: "Blog"
+      url: "https://griz.sh/"
+      weight: 80

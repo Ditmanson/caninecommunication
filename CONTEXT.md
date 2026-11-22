@@ -2,13 +2,14 @@
 
 ## What this is
 
-Business/booking companion site to griz.sh. Same person and brand, but professional and conversion-focused: services, payments, appointment scheduling, and a client list. griz.sh remains the casual, content-focused blog — this site doesn't replace it.
+The business/booking site of K9-Communication LLC, companion to the Blog at griz.sh. Same person and brand, but professional and conversion-focused: services, payments, appointment scheduling, and a client list. The Blog is the casual, content-focused side — this site doesn't replace it.
 
 ## Glossary
 
-**griz.sh** — The existing Hugo-based dog-training blog at griz.sh, titled "Canine Communication with Griz." Has its own AWS-hosted chatbot (Lambda + Bedrock) that searches its published content. Stays independent of this site.
+**Blog** — K9-Communication LLC's Blog at griz.sh, live since 2026-11-22 from its own repo (`Ditmanson/k9-blog`, with its own glossary). Replaced the old "Canine Communication with Griz" site without carrying its posts over. No chat agent of its own.
+_Avoid_: Griz's training blog
 
-**Cross-site agent** — This site's own chat agent, run on a separate Lambda from griz.sh's chatbot. Answers from three sources: this site's own content, griz.sh's public `index.json`, and the custom-responses data directory.
+**Cross-site agent** — This site's chat agent. Answers from three sources: this site's own content, the Blog's public `index.json`, and the custom-responses data directory.
 
 **Custom-responses data directory** — A local, hand-editable data directory holding canned Q&A the site owner can add to directly, searched by the cross-site agent alongside real page content. Format decided when the agent is built.
 
