@@ -7,7 +7,7 @@ aliases: ["/services/verbal-markers/", "/services/recall/", "/services/heeling/"
 summary: "Recall, obedience, and engagement through food and play."
 ---
 
-Food and play training covers two corners of [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment). We reinforce behaviors by paying the dog with food or play, and we punish behaviors by taking away something the dog wants. That's removal from the fun, with cues that show the fun isn't possible right now, like toys being put up or confinement.
+Food and play training covers two corners of [operant conditioning](https://www.khanacademy.org/test-prep/mcat/behavior/learning-slug/v/operant-conditioning-positive-and-negative-reinforcement-and-punishment). We reinforce behaviors by paying the dog with food or play, and we punish behaviors by taking away something the dog wants. That's removal from the fun, with cues that show the fun isn't possible right now, like toys being put up.
 
 {{< quadrant focus="ff" >}}
 
