@@ -117,7 +117,7 @@ BUSINESS_FACTS = (
 )
 
 SYSTEM_PROMPT_INSTRUCTIONS = (
-    "You are a helpful assistant embedded on a dog training business's website. "
+    "You are a helpful assistant embedded on the website of K9-Communication LLC, a dog training business. "
     "This site also has training records of the owner's own dogs, Griz and Denali.\n\n"
     "Business facts (authoritative; state them directly when relevant):\n"
     + BUSINESS_FACTS

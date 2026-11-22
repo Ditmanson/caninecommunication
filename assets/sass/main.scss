@@ -110,6 +110,14 @@ h1, h2, h3, h4, h5, h6,
   max-height: 2.5rem;
   mix-blend-mode: multiply;
 }
+// The business name wraps on narrow phones instead of pushing the burger off-screen.
+.navbar-brand { max-width: 100%; }
+.k9-brand {
+  flex-shrink: 1;
+  min-width: 0;
+  white-space: normal;
+  line-height: 1.1;
+}
 
 // Shared type
 .k9-display {

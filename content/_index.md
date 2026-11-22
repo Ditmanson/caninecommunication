@@ -1,3 +1,3 @@
 ---
-title: "Canine Communication"
+title: "K9-Communication LLC"
 ---

@@ -1,5 +1,5 @@
 baseURL: "https://k9-communication.com"
-title: "Canine Communication"
+title: "K9-Communication LLC"
 
 # Fragment: a chrome-less output format (no baseof, no nav/footer) for a
 # single FAQ answer. Opted into per-page via `outputs: ["html", "fragment"]`

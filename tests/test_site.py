@@ -311,7 +311,16 @@ class Pricing(unittest.TestCase):
 class Search(unittest.TestCase):
     def test_home_title_targets_colorado_springs(self):
         title = text(re.search(r"<title>(.*?)</title>", page("/"), re.S).group(1)).strip()
-        self.assertEqual(title, "Dog Trainer in Colorado Springs, CO | Canine Communication")
+        self.assertEqual(title, "Dog Trainer in Colorado Springs, CO | K9-Communication LLC")
+
+    def test_business_name_everywhere(self):
+        for root, _, files in os.walk(PUBLIC):
+            for name in files:
+                if name.endswith((".html", ".json", ".xml")):
+                    with open(os.path.join(root, name), encoding="utf-8") as f:
+                        self.assertNotIn("Canine Communication", f.read(), os.path.join(root, name))
+        with open(os.path.join(ROOT, "lambda/chat-agent/handler.py"), encoding="utf-8") as f:
+            self.assertIn("K9-Communication LLC", f.read())
 
     def test_every_page_has_description_and_canonical(self):
         for path in ["/", "/about/", "/services/", "/services/e-collar-bootcamp/",
