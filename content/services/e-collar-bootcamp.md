@@ -8,20 +8,20 @@ summary: "The safe way to ditch the leash."
 
 ## Why an e-collar?
 
-An e-collar is an invisible leash. It lets us use [escape and avoidance training](/services/escape-and-avoidance-training/), also called Traditional training ([training styles](/faq/training-styles/)), at a distance with a single tool.
+An e-collar is an invisible leash. It lets us use [escape and avoidance training](/services/escape-and-avoidance-training/) at a distance with a single tool. I use it for negative reinforcement, the same way I use a [prong collar](/faq/prong-collar/). With it, we can work on recall, heeling, barking, and reactivity, and give your dog off-leash freedom.
 
-## Two methods
+## Leash pressure first
 
-There are two approaches. Method 1 keeps your dog *collar-dumb*: they don't know the collar delivers the corrections. Method 2 makes your dog *collar-savvy*. You can always move from method 1 to method 2, but never back.
+An e-collar works at large distances, but it isn't directional. So your dog learns leash pressure first, then we layer the e-collar on top of it.
 
-### Method 1: collar-dumb
+## Getting used to the collar
 
-The collar is used sparingly, strictly for [positive punishment](https://en.wikipedia.org/wiki/Punishment_(psychology)). This can solve some problems quickly and permanently, and the collar comes off earlier in your dog's development.
+We start with collar neutralization: a period of time where your dog wears the collar without it being used. Collars are typically a bit irritating and itchy at first, and this gives your dog time to get used to it.
 
-I go out of my way to keep your dog from learning what the collar or remote is. We use it for jumping on people, counter surfing, digging, chewing, and other unwanted behaviors. We can try it for recall, but that greatly increases the chance of a collar-savvy dog. The collar is used as little as possible, at high stimulation.
+## Low stimulation
 
-### Method 2: collar-savvy
+I typically work at 15% power and go up if the dog doesn't respond. It varies with the dog, how stimulating the environment is, and how much desensitization they've been through.
 
-The e-collar becomes far more useful once your dog understands it. Then we can use it for [negative reinforcement](https://en.wikipedia.org/wiki/Reinforcement#Negative_reinforcement) as well as positive punishment, and fold it into any training: recall, heeling, barking, and reactivity. This is where extra sessions come in.
+## Collar-dumb or collar-savvy
 
-Because the collar is now the main rule enforcer rather than a secret, we switch from high to low stimulation, usually 10–25 depending on the dog. I strongly prefer this method, but remember: a collar-savvy dog can never go back to collar-dumb.
+There's more than one way to do this. Some trainers keep a dog *collar-dumb*: the dog doesn't know the stimulation comes from the collar. I prefer *collar-savvy* dogs, who know it comes from the collar and have a say in turning it off or avoiding it. You can always move from collar-dumb to collar-savvy, but never back.

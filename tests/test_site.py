@@ -381,6 +381,12 @@ class ECollars(unittest.TestCase):
         self.assertIn("invisible leash", body)
         self.assertIn("15%", body)
 
+    def test_training_page_is_negative_reinforcement_only(self):
+        body = text(page("/services/e-collar-bootcamp/"))
+        self.assertNotRegex(body, r"(?i)punish|high stimulation")
+        for expected in ("invisible leash", "negative reinforcement", "15%", "neutralization"):
+            self.assertIn(expected, body)
+
 
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
