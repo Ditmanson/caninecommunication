@@ -4,17 +4,11 @@ weight: 70
 outputs: ["html", "fragment"]
 ---
 
-E-collars are the best tool for negative reinforcement there is. I used to think of them as punishment, best used when the dog treats it like a superstitious superpower. After working both styles, I've found negative reinforcement is easier and works better.
+An e-collar is an invisible leash. I use it for negative reinforcement, the same way I use a [prong collar](/faq/prong-collar/). It works at large distances, but it isn't directional, so I layer it with leash pressure. Your dog should understand leash pressure first.
 
-Typical levels on my dogs:
+I keep stimulation low. I typically work at 15% power and go up if the dog doesn't respond. It varies with the dog, how stimulating the environment is, and how much desensitization they've been through. See [E-Collar Training](/services/e-collar-bootcamp/).
 
-| Situation | Level |
-| -- | -- |
-| No distractions | 10-15 |
-| Mildly distracting environment | 20-25 |
-| Punishment | 30-40 |
-
-The collar goes to 100, but I've never seen a reason to go past 40. See [E-Collar Training](/services/e-collar-bootcamp/).
+I use Educator collars, which put both of my dogs on a single remote.
 
 {{< youtube Ki8EG31XYqU >}}
 

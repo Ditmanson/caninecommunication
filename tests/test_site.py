@@ -374,6 +374,14 @@ class GrizClaims(unittest.TestCase):
         self.assertIn("I don’t train protection", text(page("/faq/agitation-collar/")))
 
 
+class ECollars(unittest.TestCase):
+    def test_faq_is_the_invisible_leash_and_negative_reinforcement_only(self):
+        body = text(page("/faq/e-collar/"))
+        self.assertNotRegex(body, r"(?i)punish|superstitio")
+        self.assertIn("invisible leash", body)
+        self.assertIn("15%", body)
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()
