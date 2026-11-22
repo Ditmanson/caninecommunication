@@ -39,14 +39,14 @@ type: "about"
 {{< certs >}}
 
 ## My dogs
-- 2026-Present **Griz**
+- 2025-Present **Griz**
     - High-drive working line German Shepherd
     - Search and rescue dog, working toward certification with NASAR and SARDOC (Search and Rescue Dogs of Colorado)
     - Highly trained in all aspects of what I teach. See her [training records](/training-records/griz/).
-- 2015-Present **Denali** ([training records](/training-records/denali/))
+- 2016-Present **Denali** ([training records](/training-records/denali/))
     - Rescued Husky
     - She's the one who taught me that force free has its limitations. I used negative reinforcement with the e-collar for a couple of years before she became the well-behaved dog she is now.
-    - She behaves appropriately in any environment without input from me, and I can trust her with no collar. She still trains with me occasionally. I don't need her to do complex tasks or be a show-off like Griz, so for the most part her training is done. We mostly train now because she enjoys it. I still use an e-collar with her in environments with prey animals and vehicle traffic. I can call her off a rabbit with a verbal cue, but it's not worth the risk to me.
+    - She behaves appropriately in any environment without input from me, and I can trust her with no collar. I don't need her to do complex tasks or be a show-off like Griz. She's older and well-mannered, so her training could be done, but she asks for more, so I keep giving it to her. I still use an e-collar with her in environments with prey animals and vehicle traffic. I can call her off a rabbit with a verbal cue, but it's not worth the risk to me.
 
 ## My family
 - 2019-Present **Jade**

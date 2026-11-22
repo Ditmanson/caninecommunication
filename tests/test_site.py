@@ -383,6 +383,18 @@ class DenaliClaims(unittest.TestCase):
                 for claim in ("negative reinforcement with the e-collar", "without input from me", "prey animals"):
                     self.assertIn(claim, body)
 
+    def test_asks_for_more_training(self):
+        for path in ("/about/", "/training-records/denali/"):
+            with self.subTest(path=path):
+                body = text(page(path))
+                self.assertNotRegex(body, r"(?i)mostly done|training is done")
+                self.assertIn("asks for more", body)
+
+    def test_about_dates(self):
+        body = text(page("/about/"))
+        for dates in ("2025-Present Griz", "2016-Present Denali"):
+            self.assertIn(dates, body.replace("\u2013", "-"))
+
 
 class ECollars(unittest.TestCase):
     def test_faq_is_the_invisible_leash_and_negative_reinforcement_only(self):
