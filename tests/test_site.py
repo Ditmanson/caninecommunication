@@ -363,6 +363,17 @@ class Blog(unittest.TestCase):
             self.assertNotIn("Follow Griz", html)
 
 
+class GrizClaims(unittest.TestCase):
+    def test_search_and_rescue_says_working_toward_certification(self):
+        for path in ("/about/", "/faq/qualifications/", "/training-records/griz/"):
+            with self.subTest(path=path):
+                self.assertIn("working toward certification with NASAR and SARDOC", text(page(path)))
+
+    def test_does_not_claim_protection_training(self):
+        self.assertNotIn("obedience, and protection", text(page("/training-records/griz/")))
+        self.assertIn("I don’t train protection", text(page("/faq/agitation-collar/")))
+
+
 class Links(unittest.TestCase):
     def test_internal_links_and_anchors_resolve(self):
         broken = set()

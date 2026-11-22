@@ -41,7 +41,7 @@ type: "about"
 ## My dogs
 - 2026-Present **Griz**
     - High-drive working line German Shepherd
-    - Search and rescue dog with Search and Rescue Dogs of Colorado
+    - Search and rescue dog, working toward certification with NASAR and SARDOC (Search and Rescue Dogs of Colorado)
     - Highly trained in all aspects of what I teach. See her [training records](/training-records/griz/).
 - 2015-Present **Denali** ([training records](/training-records/denali/))
     - Rescued Husky
