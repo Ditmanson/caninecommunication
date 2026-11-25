@@ -254,6 +254,12 @@ class DogRecords(unittest.TestCase):
                     self.assertNotIn(vid, seen, f"{vid} in {url} and {seen.get(vid)}")
                     seen[vid] = url
 
+    def test_client_dog_record(self):
+        rows = record_rows("donar")
+        self.assertEqual(rows[0][0], "/training-records/records/donar-first-day/")
+        self.assertIn("5 yr", rows[0][1])
+        self.assertIn("/training-records/donar/", page("/training-records/"))
+
     def test_old_griz_url_redirects(self):
         self.assertIn('url=https://k9-communication.com/training-records/griz/"', page("/training-records/griz-from-k9-communication/"))
 
