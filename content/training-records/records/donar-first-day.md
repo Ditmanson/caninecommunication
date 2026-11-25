@@ -17,7 +17,7 @@ Our first session with Donar.
 
 - **Feeding schedule:** once a day, preferably, with snacks, to get him ready for fasting. Snacks go to training treats, or get hidden as a scent game.
 - **Meals in the vehicle:** his main meal happens in the vehicle.
-- **Walk after the meal:** this one was his handler's idea, and a good one. Walking him after his meal is Granny's rule done right, and it makes the vehicle seem a little better.
+- **Walk after the meal:** this one was his handler's idea, and a good one. Walking him after his meal is **[Granny's rule/Premack principle](https://en.wikipedia.org/wiki/Premack%27s_principle)** done right, and it makes the vehicle seem a little better.
 - **Fetch on a line:** we introduced playing fetch with a tug on a line.
 
 ## Goals for fetch

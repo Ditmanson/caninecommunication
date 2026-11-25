@@ -29,9 +29,9 @@ Make the vehicle a place Donar wants to be, then build the skills his family wan
 - **A safe space:** use positive reinforcement to make the vehicle a place he wants to be.
 - **Stress training:** start [force fetch and leash pressure](/services/escape-and-avoidance-training/).
 
-## Granny's rule
+## Granny's rule/Premack principle
 
-The [Premack principle](https://en.wikipedia.org/wiki/Premack%27s_principle), aka Granny's rule: each activity rewards the one before it. We use it to make him love the vehicle.
+**[Granny's rule/Premack principle](https://en.wikipedia.org/wiki/Premack%27s_principle)**: each activity rewards the one before it. We use it to make him love the vehicle.
 
 | First | Then | Then |
 | -- | -- | -- |
