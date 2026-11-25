@@ -4,25 +4,24 @@ weight: 20
 summary: "Dog-on-dog reactivity and a history of fights: muzzle work, markers, and early leash pressure."
 ---
 
-Odie came to me with a history of dog fights and dog-on-dog reactivity. Two videos show how we worked with him.
+Odie is my dad's dog. He's a rescue, and he came with a history of dog fights and dog-on-dog reactivity. That was why we started working together in the first place.
 
-## Reactivity: manage first, then teach
+## Manage first, then teach
+
+We started with muzzle training so everyone was safe around other dogs. Then we exposed him to other dogs, beginning with my dogs, Griz and Denali, also muzzled.
+
+We spent a lot of time on [markers](https://griz.sh/posts/food-and-play/) and on redirecting with [leash pressure](https://griz.sh/posts/escape-and-avoidance/). Instead of telling Odie "no" and hammering him once he was reactive, I applied pressure early, which kept the pressure low. Leash pressure plus obedience showed him how to manage the situation himself.
 
 {{< youtube bWfeBAtPs6U >}}
 
-This is why we started working with Odie in the first place.
+## Making it fun
 
-- **Manage the situation.** We started with muzzle training so everyone is safe around other dogs.
-- **Expose him to other dogs.** We began with my dog, also muzzled for safety.
-- **Train markers and redirection.** We spent a lot of time on markers and redirecting with leash pressure.
-- **Be proactive, not punitive.** Instead of telling Odie "no" and hammering him once he's reactive, I apply pressure early. That keeps the pressure low. Leash pressure plus obedience shows him how to manage the situation himself.
-
-## Layering positive and negative reinforcement
+We layered positive reinforcement with negative reinforcement using a sendaway. It was fun for him, and it let us work impulse control with place commands. The termination marker rewarded the good behavior. It habituated Odie to stress and made him a lot more fun to train with.
 
 {{< youtube 43qKTFfH2So >}}
 
-This video layers positive reinforcement with negative reinforcement.
+## Where he is now
 
-- **Sendaway.** We teach it because it's fun for the dog. It also lets us use negative reinforcement to work on impulse control with place commands.
-- **Termination marker.** It positively reinforces the good behavior.
-- **Result.** This habituates Odie to stress and makes him a lot more fun to train with.
+Today he's home, living happy.
+
+Got a reactive dog? Here's how to [work with me](/book/).
