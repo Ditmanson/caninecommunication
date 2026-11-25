@@ -27,7 +27,7 @@ Business/booking site of K9-Communication LLC — the professional, conversion-f
 `newcontent.md` (repo root, untracked) is the owner's scratch inbox for new material (notes, video links, rough copy). When told to "review the new content":
 
 1. Read `newcontent.md`; if unclear, ask (grill) before building.
-2. Make the edits: new/updated pages, training records, FAQ, `BUSINESS_FACTS` sync if facts changed, etc.
+2. Make the edits: new/updated pages, training records (`new-training-record` skill), FAQ, `BUSINESS_FACTS` sync if facts changed, etc.
 3. Run the tests and check the build.
 4. When the owner says we're done, reset the inbox with `echo > newcontent.md`. Never reset before then.
 
